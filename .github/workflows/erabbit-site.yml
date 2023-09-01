@@ -20,6 +20,8 @@ jobs:
         with: 
           version: 8    
       - run: pnpm install
+      - run: pnpm run build-cli
+      - run: pnpm run build
       - run: pnpm run build-site
       #- run: npm run test
       - uses: actions/upload-artifact@v3
