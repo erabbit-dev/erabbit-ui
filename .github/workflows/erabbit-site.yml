@@ -16,6 +16,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 'v16.13.0'
+      - uses: pnpm/action-setup@2
+        with: 
+          version: 8    
       - run: pnpm install
       - run: pnpm run build-site
       #- run: npm run test
