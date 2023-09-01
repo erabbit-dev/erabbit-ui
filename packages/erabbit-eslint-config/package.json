@@ -1,0 +1,35 @@
+{
+  "name": "@erabbit/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint config of erabbit",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "release": "erabbit-cli release",
+    "update:deps": "pnpm update --latest --interactive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erabbit-dev/erabbit-ui.git",
+    "directory": "packages/erabbit-eslint-config"
+  },
+  "bugs": "https://github.com/erabbit-dev/erabbit-ui/issues",
+  "author": "zhoushugang",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "eslint-plugin-vue": "^9.16.1",
+    "prettier": "^3.0.2",
+    "typescript": "~5.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.48.0"
+  }
+}

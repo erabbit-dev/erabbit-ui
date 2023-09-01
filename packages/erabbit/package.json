@@ -1,0 +1,22 @@
+{
+  "name": "erabbit",
+  "version": "0.0.1",
+  "description": "Erabbit UI Components built with Vue3",
+  "scripts": {
+    "build": "vite build && erabbit-cli build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "zhoushugang",
+  "license": "MIT",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.mjs",
+  "typings": "dist/lib/index.d.ts",
+  "unpkg": "dist/erabbit-ui.min.js",
+  "jsdelivr": "dist/erabbit-ui.min.js",
+  "style": "dist/erabbit-ui.min.css",
+  "files": [
+    "dist"
+  ]
+}

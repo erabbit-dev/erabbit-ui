@@ -1,0 +1,26 @@
+{
+  "name": "@erabbit/cli",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "./lib/index.mjs",
+  "type": "module",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "bin": {
+    "erabbit-cli": "./bin.js"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "autoprefixer": "^10.4.15",
+    "commander": "^11.0.0",
+    "consola": "^3.2.3",
+    "esbuild": "^0.19.2",
+    "fs-extra": "^11.1.1",
+    "postcss": "^8.4.29",
+    "unbuild": "^2.0.0"
+  }
+}

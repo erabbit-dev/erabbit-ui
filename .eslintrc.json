@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["@erabbit-ui/eslint-config"]
+}
