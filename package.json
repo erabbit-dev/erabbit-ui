@@ -8,7 +8,8 @@
     "format": "prettier --write packages/",
     "test": "pnpm --dir packages/erabbit test",
     "coverage": "pnpm --dir packages/erabbit coverage",
-    "build": "pnpm --dir packages/erabbit build"
+    "build": "pnpm --dir packages/erabbit build",
+    "build-site": "pnpm --dir packages/docs docs:build"
   },
   "keywords": [],
   "author": "zhoushugang",
