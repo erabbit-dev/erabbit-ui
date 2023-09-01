@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 'v18.13.0'
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v3
         with: 
           version: 8    
       - run: pnpm install
@@ -31,9 +31,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref=='refs/heads/master'
+    if: github.ref=='refs/heads/main'
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           node-version: 'v18.13.0'
           path: ./packages/docs/.vitepress/dist
