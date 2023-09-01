@@ -5,6 +5,7 @@ import MarkdownPreview from 'vite-plugin-markdown-preview'
 export default defineConfig({
   title: "Erabbit UI",
   description: "Erabbit UI docs",
+  base: '/erabbit-ui/',
   vite: {
     plugins: [MarkdownPreview()]
   },
