@@ -23,7 +23,7 @@ Use type and size to define Button's style.
   </div>
 </template>
 
-<style>
+<style scoped>
 .demo .er-button {
   margin-right: 20px;
   margin-bottom: 20px;
@@ -31,9 +31,8 @@ Use type and size to define Button's style.
 </style>
 ```
 
-## Button API
 
-### Button Attributes
+## Button Attributes
 
 | Name | Description | Type | Default |
 | ---- | ----------- | ---- | ---- |

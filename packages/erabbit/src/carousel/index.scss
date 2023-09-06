@@ -1,0 +1,82 @@
+.er-carousel {
+  min-width: 300px;
+  position: relative;
+  .carousel {
+    &-body {
+      width: 100%;
+      height: min-content;
+    }
+    &-item {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.5s linear;
+      &.fade {
+        opacity: 1;
+        z-index: 1;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    &-indicator {
+      position: absolute;
+      left: 0;
+      bottom: 5%;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      span {
+        width: 12px;
+        height: 12px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        ~ span {
+          margin-left: 12px;
+        }
+        &.active {
+          background: #fff;
+        }
+      }
+    }
+    &-btn {
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      opacity: 0;
+      transition: all 0.5s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.prev {
+        left: 20px;
+      }
+      &.next {
+        right: 20px;
+      }
+      i {
+        font-style: normal;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 200;
+        transform: scale(1, 1.5);
+      }
+    }
+  }
+  &:hover {
+    .carousel-btn {
+      opacity: 1;
+      color: var(--primary-color);
+    }
+  }
+}
