@@ -12,12 +12,14 @@ node_modules
 # Bundle
 dist
 lib
-coverage
 
 # local env files
 *.local
 
-# testing
-
+# Testing
+coverage
 dev.ts
 index.html
+
+# Docs
+cache
