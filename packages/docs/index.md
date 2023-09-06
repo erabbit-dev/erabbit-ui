@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Get Start
-      link: /get-start
+      link: /installation
     - theme: alt
       text: Components Docs
-      link: /components-docs/
+      link: /components-docs/button
   image: /logo3.png
 
 features:

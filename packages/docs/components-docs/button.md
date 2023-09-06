@@ -1,3 +1,9 @@
+---
+
+outline: deep
+
+---
+
 # Button
 
 Commonly used button.
@@ -31,8 +37,9 @@ Use type and size to define Button's style.
 </style>
 ```
 
+## Button API
 
-## Button Attributes
+### Button Attributes
 
 | Name | Description | Type | Default |
 | ---- | ----------- | ---- | ---- |

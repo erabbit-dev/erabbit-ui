@@ -12,16 +12,16 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Get Start', link: '/get-start' },
-      { text: 'Components Docs', link: '/components-docs/' }
+      { text: 'Get Start', link: '/installation' },
+      { text: 'Components Docs', link: '/components-docs/button' }
     ],
 
     sidebar: [
       {
         text: 'Get Start',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Installation', link: '/installation' },
+          { text: 'Quick Start', link: '/quick-start' }
         ]
       },
       {
@@ -35,6 +35,11 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/erabbit-dev/erabbit-ui' }
-    ]
+    ],
+
+    outline: {
+      level: 'deep',
+      label: 'CONTENTS'
+    }
   }
 })

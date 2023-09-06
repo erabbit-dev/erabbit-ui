@@ -1,4 +1,4 @@
-# Carousel
+  # Carousel
 
 carousel component.
 
@@ -71,8 +71,9 @@ Content of each slide is completely customizable, and you just need to place it 
 </style>
 ```
 
+## Carousel API
 
-## Carousel Attributes
+### Carousel Attributes
 
 | Name | Description | Type | Default |
 | ---- | ----------- | ---- | ---- |
@@ -81,13 +82,13 @@ Content of each slide is completely customizable, and you just need to place it 
 | height | carousel height | `string` | `300px`|
 
 
-## Carousel Events
+### Carousel Events
 
 | Name | Description | Parameters |
 | ---- | ----------- | ---- |
 | change | triggers when the active slide switches | index of the new active slide |
 
-## Carousel Methods
+### Carousel Methods
 
 | Name | Description | Parameters |
 | ---- | ----------- | ---- |
