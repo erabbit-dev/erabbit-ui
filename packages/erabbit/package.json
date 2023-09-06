@@ -19,8 +19,5 @@
   "style": "dist/erabbit-ui.min.css",
   "files": [
     "dist"
-  ],
-  "devDependencies": {
-    "vitest": "^0.34.3"
-  }
+  ]
 }

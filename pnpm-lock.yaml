@@ -90,11 +90,7 @@ importers:
         specifier: 1.0.0-rc.10
         version: 1.0.0-rc.10(@algolia/client-search@4.19.1)(@types/node@20.4.7)(sass@1.66.1)(search-insights@2.8.1)
 
-  packages/erabbit:
-    devDependencies:
-      vitest:
-        specifier: ^0.34.3
-        version: 0.34.3(jsdom@22.1.0)(sass@1.66.1)
+  packages/erabbit: {}
 
   packages/erabbit-auto-import: {}
 
