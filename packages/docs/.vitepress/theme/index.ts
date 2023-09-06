@@ -5,7 +5,7 @@ import Theme from 'vitepress/theme'
 
 import { Button, Carousel, CarouselItem, Breadcrumb, BreadcrumbItem } from 'erabbit'
 import 'erabbit/dist/erabbit-ui.min.css'
-import './style.css'
+import './style.scss'
 
 export default {
   extends: Theme,
