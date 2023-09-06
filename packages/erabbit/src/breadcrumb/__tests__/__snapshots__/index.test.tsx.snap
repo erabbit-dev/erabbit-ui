@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default Carousel 1`] = `
+"<div class=\\"er-breadcrumb\\">
+  <div class=\\"er-breadcrumb-item\\"><a href=\\"javascript:;\\">首页</a>
+    <!---->
+  </div>
+  <div class=\\"er-breadcrumb-item\\"><a href=\\"javascript:;\\">活动管理</a>
+    <!---->
+  </div>
+  <div class=\\"er-breadcrumb-item\\">活动编辑
+    <!---->
+  </div>
+</div>"
+`;

@@ -100,7 +100,7 @@ test('should trigger mouseenter mouseleave and auto-play toggle active item', as
 
   await wrapper.find('.er-carousel').trigger('mouseleave')
 
-  await later(210)
+  await later(610)
 
-  expect(wrapper.find('.carousel-item.fade').text()).toBe('3')
+  expect(wrapper.find('.carousel-item.fade').text()).toBe('1')
 })

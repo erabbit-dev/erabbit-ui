@@ -6,30 +6,24 @@ import {
 } from 'vue'
 import { isVNode } from 'vue'
 
-function flattenVNodes(children: VNodeNormalizedChildren) {
+function flattedChildren(children: VNodeNormalizedChildren) {
+  const vNodes = Array.isArray(children) ? children : [children]
   const result: VNode[] = []
 
-  const traverse = (children: VNodeNormalizedChildren) => {
-    if (Array.isArray(children)) {
-      children.forEach((child) => {
-        if (isVNode(child)) {
-          result.push(child)
-
-          if (child.component?.subTree) {
-            result.push(child.component.subTree)
-            traverse(child.component.subTree.children)
-          }
-
-          if (child.children) {
-            traverse(child.children)
-          }
-        }
-      })
+  vNodes.forEach((child) => {
+    if (Array.isArray(child)) {
+      result.push(...flattedChildren(child))
+    } else if (isVNode(child) && Array.isArray(child.children)) {
+      result.push(...flattedChildren(child.children))
+    } else {
+      result.push(child as VNode)
+      if (isVNode(child) && child.component?.subTree) {
+        result.push(
+          ...flattedChildren(child.component.subTree as unknown as VNode[])
+        )
+      }
     }
-  }
-
-  traverse(children)
-
+  })
   return result
 }
 
@@ -38,7 +32,7 @@ const getOrderedChildren = <T>(
   childComponentName: string,
   children: Record<number, T>
 ): T[] => {
-  const nodes = flattenVNodes(vm.subTree.children).filter(
+  const nodes = flattedChildren(vm.subTree.children).filter(
     (n): n is VNode =>
       isVNode(n) &&
       (n.type as any)?.name === childComponentName &&

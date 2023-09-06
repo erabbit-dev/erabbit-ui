@@ -5,7 +5,8 @@
   "scripts": {
     "build": "vite build && erabbit-cli build",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "dev": "vite dev"
   },
   "keywords": [],
   "author": "zhoushugang",

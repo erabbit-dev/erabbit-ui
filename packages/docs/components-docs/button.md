@@ -4,7 +4,7 @@ Commonly used button.
 
 ## Basic usage
 
-Use type and size to define Button's style.
+Use `type` and `size` to define Button's style.
 
 ```vue preview
 <template>

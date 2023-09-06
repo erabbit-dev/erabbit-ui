@@ -16,3 +16,8 @@ coverage
 
 # local env files
 *.local
+
+# testing
+
+dev.ts
+index.html

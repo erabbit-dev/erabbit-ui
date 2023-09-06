@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import { carouselContextKey } from './constants'
+import { CarouselContextKey } from './constants'
 import { inject } from 'vue'
 import { onMounted } from 'vue'
 import { getCurrentInstance } from 'vue'
@@ -11,7 +11,7 @@ export default defineComponent({
   name: 'ErCarouselItem',
   setup(props, { slots }) {
     const { index, items, addItem, removeItem } =
-      inject<CarouselContext>(carouselContextKey)!
+      inject<CarouselContext>(CarouselContextKey)!
 
     const instance = getCurrentInstance()
     const selfIndex = computed(() =>

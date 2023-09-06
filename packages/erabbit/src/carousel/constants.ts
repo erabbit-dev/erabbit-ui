@@ -1,1 +1,1 @@
-export const carouselContextKey = Symbol('carouselContextKey')
+export const CarouselContextKey = Symbol('carouselContextKey')

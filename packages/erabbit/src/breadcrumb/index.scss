@@ -1,0 +1,23 @@
+.er-breadcrumb {
+  display: flex;
+  padding: 25px 10px;
+  align-items: center;
+  font-size: 14px;
+  &-item {
+    margin-right: 5px;
+    a {
+      color: #666;
+      transition: all 0.4s;
+      text-decoration: none;
+      line-height: 1;
+      &:hover {
+        color: var(--xtx-color);
+      }
+    }
+  }
+  i {
+    font-size: 12px;
+    margin-left: 5px;
+    font-style: normal;
+  }
+}

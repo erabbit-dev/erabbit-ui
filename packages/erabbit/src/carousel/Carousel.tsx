@@ -8,7 +8,8 @@ import {
   watch
 } from 'vue'
 import { useChildren } from '../composables'
-import { carouselContextKey } from './constants'
+import { CarouselContextKey } from './constants'
+import { onMounted } from 'vue'
 
 export type CarouselContext = {
   index: Ref<number>
@@ -61,7 +62,7 @@ export default defineComponent({
 
     const index = ref(0)
 
-    provide(carouselContextKey, {
+    provide(CarouselContextKey, {
       items,
       addItem,
       removeItem,
@@ -69,7 +70,7 @@ export default defineComponent({
     })
 
     let timer: ReturnType<typeof setInterval>
-    const autoPlayFn = () => {
+    const play = () => {
       if (timer) clearInterval(timer)
       timer = setInterval(() => {
         index.value++
@@ -78,17 +79,20 @@ export default defineComponent({
         }
       }, props.duration)
     }
+    const pause = () => {
+      if (timer) clearInterval(timer)
+    }
 
     watch(items, () => {
       play()
     })
 
-    const play = () => {
+    onMounted(() => {
       if (items.value.length === 0) return
       if (!props.autoPlay) return
 
-      autoPlayFn()
-    }
+      play()
+    })
 
     const onToggle = (newIndex: number) => {
       if (newIndex > items.value.length - 1) {
@@ -104,17 +108,16 @@ export default defineComponent({
       emit('change', index.value)
     }
 
-    const onStop = () => {
-      if (timer) clearInterval(timer)
-    }
+    const onStop = () => pause()
 
     const onStart = () => {
+      if (items.value.length === 0) return
+      if (!props.autoPlay) return
+
       play()
     }
 
-    onUnmounted(() => {
-      if (timer) clearInterval(timer)
-    })
+    onUnmounted(() => pause())
 
     const exposeContext: CarouselExpose = {
       prev: () => {
