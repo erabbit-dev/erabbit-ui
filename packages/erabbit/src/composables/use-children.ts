@@ -30,8 +30,6 @@ function flattenVNodes(children: VNodeNormalizedChildren) {
 
   traverse(children)
 
-  console.log(result)
-
   return result
 }
 
@@ -46,7 +44,6 @@ const getOrderedChildren = <T>(
       (n.type as any)?.name === childComponentName &&
       !!n.component
   )
-  console.log(nodes)
   const uids = nodes.map((n) => n.component!.uid)
   return uids.map((uid) => children[uid]).filter((p) => !!p)
 }

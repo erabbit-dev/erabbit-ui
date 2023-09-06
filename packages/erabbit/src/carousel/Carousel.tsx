@@ -1,3 +1,4 @@
+import type { ComponentPublicInstance, ExtractPropTypes, Ref } from 'vue'
 import {
   defineComponent,
   getCurrentInstance,
@@ -8,6 +9,13 @@ import {
 } from 'vue'
 import { useChildren } from '../composables'
 import { carouselContextKey } from './constants'
+
+export type CarouselContext = {
+  index: Ref<number>
+  items: Ref<{ uid: number }[]>
+  addItem: (item: { uid: number }) => void
+  removeItem: (uid: number) => void
+}
 
 const carouselProps = {
   duration: {
@@ -23,6 +31,19 @@ const carouselProps = {
     default: '300px'
   }
 }
+
+export type CarouselProps = ExtractPropTypes<typeof carouselProps>
+
+export type CarouselExpose = {
+  prev: () => void
+  next: () => void
+  setActiveItem: (index: number) => void
+}
+
+export type CarouselInstance = ComponentPublicInstance<
+  CarouselProps,
+  CarouselExpose
+>
 
 export default defineComponent({
   name: 'ErCarousel',
@@ -95,7 +116,7 @@ export default defineComponent({
       if (timer) clearInterval(timer)
     })
 
-    expose({
+    const exposeContext: CarouselExpose = {
       prev: () => {
         onToggle(index.value - 1)
       },
@@ -105,7 +126,9 @@ export default defineComponent({
       setActiveItem: (index: number) => {
         onToggle(index)
       }
-    })
+    }
+
+    expose(exposeContext)
 
     return () => (
       <div

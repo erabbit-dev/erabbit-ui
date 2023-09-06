@@ -1,9 +1,3 @@
----
-
-outline: deep
-
----
-
 # Button
 
 Commonly used button.

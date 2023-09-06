@@ -5,11 +5,13 @@ import { onMounted } from 'vue'
 import { getCurrentInstance } from 'vue'
 import { onUnmounted } from 'vue'
 import { computed } from 'vue'
+import type { CarouselContext } from './Carousel'
 
 export default defineComponent({
   name: 'ErCarouselItem',
   setup(props, { slots }) {
-    const { index, items, addItem, removeItem } = inject<{}>(carouselContextKey)
+    const { index, items, addItem, removeItem } =
+      inject<CarouselContext>(carouselContextKey)!
 
     const instance = getCurrentInstance()
     const selfIndex = computed(() =>
@@ -18,12 +20,12 @@ export default defineComponent({
 
     onMounted(() => {
       addItem({
-        uid: instance?.uid
+        uid: instance!.uid
       })
     })
 
     onUnmounted(() => {
-      removeItem(instance?.uid)
+      removeItem(instance!.uid)
     })
 
     return () => (
