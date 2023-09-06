@@ -28,9 +28,14 @@ jobs:
         with:
           path: ./packages/docs/.vitepress/dist
 
-      - uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Run test cases
+        run: pnpm run coverage
+
+      - name: Upload coverage to Codecov  
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./packages/erabbit/coverage
 
   deploy:
     needs: build
