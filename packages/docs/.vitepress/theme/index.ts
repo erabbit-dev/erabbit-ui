@@ -3,7 +3,7 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 
 
-import { Button, Carousel, CarouselItem } from 'erabbit'
+import { Button, Carousel, CarouselItem, Breadcrumb, BreadcrumbItem } from 'erabbit'
 import 'erabbit/dist/erabbit-ui.min.css'
 import './style.css'
 
@@ -19,5 +19,7 @@ export default {
     app.component(Button.name, Button)
     app.component(Carousel.name, Carousel)
     app.component(CarouselItem.name, CarouselItem)
+    app.component(Breadcrumb.name, Breadcrumb)
+    app.component(BreadcrumbItem.name, BreadcrumbItem)
   }
 }

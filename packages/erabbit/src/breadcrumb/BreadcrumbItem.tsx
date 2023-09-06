@@ -61,7 +61,7 @@ export default defineComponent({
     const renderItemContent = () => {
       if (props.to) {
         return (
-          <a href="javascript:;" onClick={() => onClick}>
+          <a href="javascript:;" onClick={onClick}>
             {slots.default?.()}
           </a>
         )

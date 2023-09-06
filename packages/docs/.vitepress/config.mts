@@ -13,7 +13,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Get Start', link: '/installation' },
-      { text: 'Components Docs', link: '/components-docs/button' }
+      { text: 'Components Docs', link: '/components-docs/carousel' }
     ],
 
     sidebar: [
@@ -28,6 +28,7 @@ export default defineConfig({
         text: 'Components Docs',
         items: [
           { text: 'Button', link: '/components-docs/button' },
+          { text: 'Breadcrumb', link: '/components-docs/breadcrumb' },
           { text: 'Carousel', link: '/components-docs/carousel' }
         ]
       }
