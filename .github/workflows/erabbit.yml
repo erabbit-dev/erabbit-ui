@@ -28,6 +28,10 @@ jobs:
         with:
           path: ./packages/docs/.vitepress/dist
 
+      - uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
