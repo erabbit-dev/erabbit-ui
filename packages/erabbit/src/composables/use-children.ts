@@ -1,10 +1,10 @@
 import {
+  isVNode,
   shallowRef,
   type ComponentInternalInstance,
   type VNode,
   type VNodeNormalizedChildren
 } from 'vue'
-import { isVNode } from 'vue'
 
 function flattedChildren(children: VNodeNormalizedChildren) {
   const vNodes = Array.isArray(children) ? children : [children]
