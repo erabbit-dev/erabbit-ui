@@ -17,7 +17,7 @@ const props = {
 
 export type ErButtonProps = ExtractPropTypes<typeof props>
 
-const className = createNamespace('button')
+const [className, bem] = createNamespace('button')
 
 export default defineComponent({
   name: 'ErButton',
@@ -26,7 +26,7 @@ export default defineComponent({
 
   setup(props, { slots }) {
     return () => (
-      <button class={[className, 'ellipsis', props.size, props.type]}>
+      <button class={[className, 'ellipsis', bem(props.size, props.type)]}>
         {slots.default?.()}
       </button>
     )

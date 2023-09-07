@@ -1,5 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render default button 1`] = `"<button class=\\"er-button ellipsis middle default\\">Submit</button>"`;
+exports[`should render default button 1`] = `"<button class=\\"er-button ellipsis er-button--middle er-button--default\\">Submit</button>"`;
 
-exports[`should trigger click event 1`] = `"<button class=\\"er-button ellipsis large primary\\">Submit</button>"`;
+exports[`should trigger click event 1`] = `"<button class=\\"er-button ellipsis er-button--large er-button--primary\\">Submit</button>"`;

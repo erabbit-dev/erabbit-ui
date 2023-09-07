@@ -29,7 +29,8 @@ export default defineConfig({
         items: [
           { text: 'Button', link: '/components-docs/button' },
           { text: 'Breadcrumb', link: '/components-docs/breadcrumb' },
-          { text: 'Carousel', link: '/components-docs/carousel' }
+          { text: 'Carousel', link: '/components-docs/carousel' },
+          { text: 'Checkbox', link: '/components-docs/checkbox' },
         ]
       }
     ],

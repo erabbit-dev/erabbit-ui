@@ -1,4 +1,4 @@
-  # Carousel
+  # Breadcrumb
 
 Displays the location of the current page, making it easier to browser back.
 
@@ -21,6 +21,8 @@ In `el-breadcrumb`, each `el-breadcrumb-item` is a tag that stands for every lev
     <er-breadcrumb-item>活动编辑</er-breadcrumb-item>
   </er-breadcrumb>
 </template>
+
+<style scoped></style>
 ```
 
 ## Use Transition
@@ -44,6 +46,8 @@ const show = ref(false)
     </transition>
   </er-breadcrumb>
 </template>
+
+<style scoped></style>
 ```
 
 ## Breadcrumb API

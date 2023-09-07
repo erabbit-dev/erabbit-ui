@@ -10,6 +10,7 @@ import type { Router } from 'vue-router'
 import type { CarouselContext } from './Breadcrumb'
 import { BreadcrumbContextKey } from './constants'
 import type { ExtractPropTypes } from 'vue'
+import { createNamespace } from '../utils'
 
 const breadcrumbItemProps = {
   to: {
@@ -23,6 +24,8 @@ const breadcrumbItemProps = {
 }
 
 export type BreadcrumbItemProps = ExtractPropTypes<typeof breadcrumbItemProps>
+
+const [className, bem] = createNamespace('breadcrumb-item')
 
 export default defineComponent({
   name: 'ErBreadcrumbItem',
@@ -66,17 +69,17 @@ export default defineComponent({
           </a>
         )
       }
-      return slots.default?.()
+      return <span>{slots.default?.()}</span>
     }
 
     const renderItemSeparator = () => {
       if (selfIndex.value < items.value.length - 1) {
-        return <i>{parentProps.separator}</i>
+        return <i class={bem('__separator')}>{parentProps.separator}</i>
       }
     }
 
     return () => (
-      <div class="er-breadcrumb-item">
+      <div class={className}>
         {renderItemContent()}
         {renderItemSeparator()}
       </div>

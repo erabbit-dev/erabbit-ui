@@ -3,22 +3,26 @@
   padding: 25px 10px;
   align-items: center;
   font-size: 14px;
+  line-height: 1;
   &-item {
     margin-right: 5px;
+    display: flex;
+    align-items: center;
+    color: #222;
     a {
       color: #666;
+      font-weight: normal;
       transition: all 0.4s;
       text-decoration: none;
-      line-height: 1;
       &:hover {
         color: var(--xtx-color);
       }
     }
-  }
-  i {
-    font-size: 12px;
-    margin-left: 5px;
-    font-style: normal;
-    line-height: 1;
+    &__separator {
+      font-size: 12px;
+      margin-left: 5px;
+      font-style: normal;
+      color: #555;
+    }
   }
 }

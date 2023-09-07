@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Breadcrumb, BreadcrumbItem } from '..'
+import {
+  Breadcrumb as ErBreadcrumb,
+  BreadcrumbItem as ErBreadcrumbItem
+} from '..'
 import '../index.scss'
 
 const show = ref(false)
@@ -8,20 +11,22 @@ const show = ref(false)
 
 <template>
   <div class="demo">
-    <Breadcrumb>
-      <BreadcrumbItem to="/">首页</BreadcrumbItem>
-      <BreadcrumbItem to="/" @click="show = !show">活动管理</BreadcrumbItem>
-      <Transition name="fade-right" mode="out-in">
-        <BreadcrumbItem v-if="show">活动列表</BreadcrumbItem>
-        <BreadcrumbItem v-else>活动编辑</BreadcrumbItem>
-      </Transition>
-    </Breadcrumb>
+    <er-breadcrumb>
+      <er-breadcrumb-item to="/">首页</er-breadcrumb-item>
+      <er-breadcrumb-item to="/" @click="show = !show">
+        活动管理
+      </er-breadcrumb-item>
+      <transition name="fade-right" mode="out-in">
+        <er-breadcrumb-item v-if="show">活动列表</er-breadcrumb-item>
+        <er-breadcrumb-item v-else>活动编辑</er-breadcrumb-item>
+      </transition>
+    </er-breadcrumb>
 
-    <Breadcrumb separator="&gt;">
-      <BreadcrumbItem to="/">首页</BreadcrumbItem>
-      <BreadcrumbItem to="/">活动管理</BreadcrumbItem>
-      <BreadcrumbItem>活动编辑</BreadcrumbItem>
-    </Breadcrumb>
+    <er-breadcrumb separator="&gt;">
+      <er-breadcrumb-item to="/">首页</er-breadcrumb-item>
+      <er-breadcrumb-item to="/">活动管理</er-breadcrumb-item>
+      <er-breadcrumb-item>活动编辑</er-breadcrumb-item>
+    </er-breadcrumb>
   </div>
 </template>
 

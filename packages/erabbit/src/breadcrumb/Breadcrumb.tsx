@@ -36,8 +36,6 @@ export default defineComponent({
       props
     })
 
-    console.log(items)
-
     return () => <div class="er-breadcrumb">{slots.default?.()}</div>
   }
 })
