@@ -1,3 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render default button 1`] = `"<label class=\\"er-checkbox\\"><span class=\\"er-checkbox__input\\"><input class=\\"er-checkbox__origin\\" type=\\"checkbox\\"><span class=\\"er-checkbox__inner\\"></span></span><span class=\\"er-checkbox__label\\">Submit</span></label>"`;
+exports[`should render default Checkbox 1`] = `"<label class=\\"er-checkbox\\"><span class=\\"er-checkbox__input\\"><input class=\\"er-checkbox__origin\\" type=\\"checkbox\\"><span class=\\"er-checkbox__inner\\"></span></span><span class=\\"er-checkbox__label\\">Checkbox</span></label>"`;
+
+exports[`should use v-model 1`] = `"<label class=\\"er-checkbox\\"><span class=\\"er-checkbox__input\\"><input class=\\"er-checkbox__origin\\" type=\\"checkbox\\"><span class=\\"er-checkbox__inner\\"></span></span><span class=\\"er-checkbox__label\\">Checkbox</span></label>"`;
