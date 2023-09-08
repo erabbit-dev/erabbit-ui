@@ -14,12 +14,14 @@
   white-space: nowrap;
   user-select: none;
   margin-right: 30px;
+  height: 32px;
 
   &__label {
     display: inline-block;
     padding-left: 8px;
     line-height: 1;
     font-size: var(--el-checkbox-font-size);
+    transition: all 0.15s;
   }
 
   &__input {
@@ -74,6 +76,9 @@
           transform: rotate(45deg) scaleY(1);
           border-color: #fff;
         }
+      }
+      &__label {
+        color: var(--er-checkbox-color);
       }
     }
   }
