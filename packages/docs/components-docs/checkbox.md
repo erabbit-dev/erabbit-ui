@@ -27,7 +27,7 @@ The `indeterminate` property can help you to achieve a 'check all' effect.
 
 ```vue preview
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
 const check = ref(false)
 
