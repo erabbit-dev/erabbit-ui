@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import { Checkbox as ErCheckbox } from '..'
 import '../index.scss'
+import { onMounted } from 'vue'
 
 const check = ref(false)
 
@@ -13,15 +14,15 @@ const checkItems = ref([
   { label: 'Orange', value: false }
 ])
 
-watch(
-  check,
-  (val) => {
-    checkItems.value.forEach((item) => {
-      item.value = val
-    })
-  },
-  { immediate: true }
-)
+const onChange = (val: boolean) => {
+  checkItems.value.forEach((item) => {
+    item.value = val
+  })
+}
+
+onMounted(() => {
+  onChange(check.value)
+})
 
 watch(
   checkItems,
@@ -48,7 +49,11 @@ watch(
 
 <template>
   <div class="demo">
-    <er-checkbox v-model="check" :indeterminate="indeterminate">
+    <er-checkbox
+      v-model="check"
+      :indeterminate="indeterminate"
+      @change="onChange"
+    >
       Check All
     </er-checkbox>
     <hr />
