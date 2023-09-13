@@ -21,10 +21,10 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@erabbit/eslint-config": "workspace:^1.0.0",
-    "@erabbit/cli": "workspace:^1.0.0",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@erabbit/cli": "workspace:^1.0.0",
+    "@erabbit/eslint-config": "workspace:^1.0.0",
     "@tsconfig/node18": "^18.2.1",
     "@vitejs/plugin-vue": "^4.3.1",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
@@ -42,6 +42,7 @@
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.3",
     "vitest": "^0.34.3",
+    "vitest-fetch-mock": "^0.2.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   }
