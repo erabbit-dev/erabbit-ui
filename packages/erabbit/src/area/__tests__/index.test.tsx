@@ -56,7 +56,9 @@ test('should select Region to display the next region ', async () => {
 
   expect(wrapper.html()).toContain('<span class="ellipsis">东城区</span>')
 
+  // @ts-ignore
   const outer = document.createElement('div', { class: 'outer' })
+  // @ts-ignore
   document.body.appendChild(outer)
   await outer.click()
 
