@@ -1,7 +1,7 @@
 {
   "name": "erabbit",
   "version": "0.0.1",
-  "description": "",
+  "description": "Erabbit UI Components built with Vue3",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
