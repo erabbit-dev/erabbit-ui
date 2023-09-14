@@ -27,6 +27,7 @@ export default defineConfig({
       {
         text: 'Components Docs',
         items: [
+          { text: 'Area', link: '/components-docs/area' },
           { text: 'Button', link: '/components-docs/button' },
           { text: 'Breadcrumb', link: '/components-docs/breadcrumb' },
           { text: 'Carousel', link: '/components-docs/carousel' },
