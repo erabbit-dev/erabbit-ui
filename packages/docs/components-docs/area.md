@@ -24,7 +24,11 @@ const value = ref('')
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.demo {
+  height: 320px;
+}
+</style>
 ```
 
 
