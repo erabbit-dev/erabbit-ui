@@ -1,6 +1,6 @@
 {
-  "name": "erabbit-ui",
-  "version": "1.0.0",
+  "name": "erabbit",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "test": "pnpm --dir packages/erabbit test",
     "coverage": "pnpm --dir packages/erabbit coverage",
     "build": "pnpm --dir packages/erabbit build",
+    "release": "pnpm --dir packages/erabbit release",
     "dev": "pnpm --dir packages/erabbit dev",
     "build-site": "pnpm --dir packages/docs docs:build",
     "dev-site": "pnpm --dir packages/docs docs:dev",

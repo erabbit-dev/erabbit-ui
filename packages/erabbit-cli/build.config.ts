@@ -19,6 +19,8 @@ export default defineBuildConfig({
     'esbuild',
     'fs-extra',
     'postcss',
-    'unbuild'
+    'unbuild',
+    'picocolors',
+    'enquirer'
   ]
 })

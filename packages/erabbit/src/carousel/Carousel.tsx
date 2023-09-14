@@ -83,16 +83,9 @@ export default defineComponent({
       if (timer) clearInterval(timer)
     }
 
-    watch(items, () => {
-      play()
-    })
+    watch(items, () => onStart())
 
-    onMounted(() => {
-      if (items.value.length === 0) return
-      if (!props.autoPlay) return
-
-      play()
-    })
+    onMounted(() => onStart())
 
     const onToggle = (newIndex: number) => {
       if (newIndex > items.value.length - 1) {

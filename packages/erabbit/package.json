@@ -6,7 +6,8 @@
     "build": "vite build && erabbit-cli build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "dev": "vite dev"
+    "dev": "vite dev",
+    "release": "erabbit-cli release"
   },
   "keywords": [],
   "author": "zhoushugang",
@@ -19,5 +20,12 @@
   "style": "dist/erabbit-ui.min.css",
   "files": [
     "dist"
-  ]
+  ],
+  "peerDependencies": {
+    "vue": "^3.3.4",
+    "@vueuse/core": "^10.4.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
