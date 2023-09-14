@@ -3,7 +3,7 @@ import { cliVersion } from './index.js'
 
 const program = new Command()
 
-program.version(`erabbit-cli ${cliVersion}`);
+program.version(`erabbit-cli ${cliVersion}`)
 
 program
   .command('build')
@@ -13,4 +13,4 @@ program
     return buildStyle()
   })
 
-  program.parse();
+program.parse()

@@ -24,7 +24,6 @@ async function compileFile(filePath: string) {
   }
 }
 
-
 const allStyleFile = join(process.cwd(), 'dist/erabbit-ui.min.css')
 const allStyle: string[] = []
 export async function compileStyle(filePath: string, format: Format) {

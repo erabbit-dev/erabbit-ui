@@ -8,7 +8,7 @@ export default defineConfig({
     minify: false,
     outDir: 'dist',
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '@vueuse/core'],
       input: ['src/index.ts'],
       output: [
         {
@@ -29,7 +29,8 @@ export default defineConfig({
           dir: 'dist',
           name: 'ErabbitUI',
           globals: {
-            vue: 'Vue'
+            vue: 'Vue',
+            '@vueuse/core': 'VueUse'
           }
         }
       ]

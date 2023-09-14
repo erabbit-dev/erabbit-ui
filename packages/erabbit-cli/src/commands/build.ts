@@ -3,25 +3,23 @@ import fse from 'fs-extra'
 import { join } from 'node:path'
 import { compileStyle, type Format } from '../compiler/compile-style'
 
-const { remove, readdir, lstatSync, copy } = fse
+const { readdir, lstatSync, copy } = fse
 
 const ES_DIR = join(process.cwd(), 'dist/es')
 const LIB_DIR = join(process.cwd(), 'dist/lib')
 const SRC_DIR = join(process.cwd(), 'src')
 const REG = /\.(css|scss)$/
 
-async function clean() {
-  return Promise.all([    
-    remove(ES_DIR),
-    remove(LIB_DIR)
-  ])
-}
+// async function clean() {
+//   return Promise.all([remove(ES_DIR), remove(LIB_DIR)])
+// }
 
 async function copySourceCode() {
   const options = {
     filter: (filePath: string) => {
-      const isDir = lstatSync(filePath).isDirectory() && !/__tests__/.test(filePath)
-      return isDir|| REG.test(filePath)
+      const isDir =
+        lstatSync(filePath).isDirectory() && !/__tests__|demo/.test(filePath)
+      return isDir || REG.test(filePath)
     }
   }
   return Promise.all([
@@ -43,22 +41,21 @@ async function compileDir(dir: string, format: Format) {
     files.map((filename) => {
       const filePath = join(dir, filename)
       const isDir = lstatSync(filePath).isDirectory()
-      return isDir ? compileDir(filePath, format) : compileFile(filePath, format)
+      return isDir
+        ? compileDir(filePath, format)
+        : compileFile(filePath, format)
     })
   )
 }
 
 export async function buildStyle() {
   try {
-    // await clean()
-    // consola.success('Copy successfully')
     await copySourceCode()
-    consola.success('Copy successfully')
     await compileDir(ES_DIR, 'es')
     await compileDir(LIB_DIR, 'lib')
     consola.success('Compile sass successfully')
   } catch (error) {
-    consola.error('Build failed', error)
+    consola.error('Build sass failed', error)
     process.exit(1)
   }
 }

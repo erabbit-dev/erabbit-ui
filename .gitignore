@@ -18,8 +18,8 @@ lib
 
 # Testing
 coverage
-dev.ts
-index.html
+# dev.ts
+# index.html
 
 # Docs
 cache

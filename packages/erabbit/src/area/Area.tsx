@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { onClickOutside } from '@vueuse/core'
 import type { ExtractPropTypes } from 'vue'
 import { computed, defineComponent, ref } from 'vue'
@@ -6,7 +7,7 @@ import { createNamespace } from '../utils'
 const [className, bem] = createNamespace('area')
 
 const areaProps = {
-  value: {
+  fullLocation: {
     type: String,
     default: ''
   },
@@ -25,17 +26,32 @@ export interface AreaItem {
   areaList?: AreaItem[]
 }
 
+const defaultResult = {
+  provinceCode: '',
+  provinceName: '',
+  cityCode: '',
+  cityName: '',
+  countyCode: '',
+  countyName: '',
+  fullLocation: ''
+}
+
+export type AreaResult = typeof defaultResult
+
+const url =
+  'https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/area.json'
+
 export default defineComponent({
   name: 'ErArea',
 
   props: areaProps,
 
-  emits: ['change'],
+  emits: {
+    change: (val: AreaResult) => true
+  },
 
   setup(props, { emit }) {
     const area = ref<AreaItem[]>([])
-    const url =
-      'https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/area.json'
 
     const loading = ref(false)
     const getAreaData = () => {
@@ -67,15 +83,6 @@ export default defineComponent({
       }
     }
 
-    const defaultResult = {
-      provinceCode: '',
-      provinceName: '',
-      cityCode: '',
-      cityName: '',
-      countyCode: '',
-      countyName: '',
-      value: ''
-    }
     const changeResult = ref({ ...defaultResult })
 
     const currAreaList = computed(() => {
@@ -109,7 +116,7 @@ export default defineComponent({
         changeResult.value.countyCode = item.code
         changeResult.value.countyName = item.name
         // 完整
-        changeResult.value.value = `${changeResult.value.provinceName} ${changeResult.value.cityName} ${changeResult.value.countyName}`
+        changeResult.value.fullLocation = `${changeResult.value.provinceName} ${changeResult.value.cityName} ${changeResult.value.countyName}`
 
         visible.value = false
         emit('change', changeResult.value)
@@ -124,9 +131,9 @@ export default defineComponent({
     return () => (
       <div class={className} ref={target}>
         <div class={bem('__input')} onClick={onToggle}>
-          {props.value ? <span>{props.value}</span> : null}
-          {!props.value ? <span>{props.placeholder}</span> : null}
-          <span class={bem('__arrow')}> &gt;</span>
+          {props.fullLocation ? <span>{props.fullLocation}</span> : null}
+          {!props.fullLocation ? <span>{props.placeholder}</span> : null}
+          <span class={bem('__arrow')}> ▼</span>
         </div>
         {visible.value ? (
           <div class={bem('__popper')}>

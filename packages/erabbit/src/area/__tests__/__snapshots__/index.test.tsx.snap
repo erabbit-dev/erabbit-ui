@@ -3,7 +3,7 @@
 exports[`should render default Area 1`] = `
 "<div class=\\"er-area\\">
   <div class=\\"er-area__input\\">
-    <!----><span>请选择地区</span><span class=\\"er-area__arrow\\"> &gt;</span>
+    <!----><span>请选择地区</span><span class=\\"er-area__arrow\\"> ▼</span>
   </div>
   <!---->
 </div>"

@@ -1,3 +1,4 @@
+export * from './area'
 export * from './button'
 export * from './breadcrumb'
 export * from './carousel'

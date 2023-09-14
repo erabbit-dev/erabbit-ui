@@ -2,7 +2,7 @@ import _Area from './Area'
 
 export const Area = _Area
 
-export type { AreaProps } from './Area'
+export type { AreaProps, AreaResult } from './Area'
 
 declare module 'vue' {
   export interface GlobalComponents {

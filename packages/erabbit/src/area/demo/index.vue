@@ -8,7 +8,11 @@ const value = ref('')
 
 <template>
   <div class="demo">
-    <er-area :value="value" @change="value = $event.value" />
+    <er-area
+      :full-location="value"
+      @change="value = $event.fullLocation"
+      placeholder="请选择收货地址"
+    />
   </div>
 </template>
 
