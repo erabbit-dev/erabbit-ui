@@ -1,6 +1,6 @@
 {
   "name": "erabbit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Erabbit UI Components built with Vue3",
   "scripts": {
     "build": "vite build && erabbit-cli build",
@@ -25,8 +25,7 @@
   "jsdelivr": "dist/erabbit-ui.min.js",
   "style": "dist/erabbit-ui.min.css",
   "files": [
-    "dist",
-    "../../README.md"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
