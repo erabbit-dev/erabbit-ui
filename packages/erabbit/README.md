@@ -23,6 +23,7 @@
 
 A Vue 3 based component library for erabbit web applications
 
+
 ## All Contributors
 
 Thanks to the following friends for their contributions to ErabbitUI:
