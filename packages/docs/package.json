@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "erabbit": "workspace:^0.0.2",
     "vite-plugin-markdown-preview": "^1.1.1",
     "vitepress": "1.0.0-rc.10"
   }
