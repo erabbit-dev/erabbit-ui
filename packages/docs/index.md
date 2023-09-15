@@ -19,7 +19,7 @@ features:
   - title: Sku Components
     icon: 🍧
     details: Implementation front-end specifications are optional and disabled
-  - title: High quality
+  - title: High Quality
     icon: 🍽️
     details: 10+ High quality components, 90%+ Unit test coverage, Support Tree Shaking
   - title: Actual Combat

@@ -24,7 +24,7 @@ bun add erabbit -S
 
 :::
 
-## What is VitePress?
+## What is Erabbit UI ?
 
 Practical & Beautiful component library, A Vue 3 based component library for erabbit web applications.
 
