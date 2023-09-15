@@ -9,7 +9,13 @@
     "dev": "vite dev",
     "release": "erabbit-cli release"
   },
-  "keywords": [],
+  "keywords": [
+    "ui",
+    "vue",
+    "vue3",
+    "erabbit",
+    "components"
+  ],
   "author": "zhoushugang",
   "license": "MIT",
   "main": "dist/lib/index.js",
@@ -19,9 +25,15 @@
   "jsdelivr": "dist/erabbit-ui.min.js",
   "style": "dist/erabbit-ui.min.css",
   "files": [
-    "dist"
+    "dist",
+    "../../README.md"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erabbit-dev/erabbit-ui.git",
+    "directory": "packages/erabbit"
   }
 }
