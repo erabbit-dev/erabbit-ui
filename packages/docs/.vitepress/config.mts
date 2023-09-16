@@ -32,6 +32,15 @@ export default defineConfig({
           { text: 'Breadcrumb', link: '/components-docs/breadcrumb' },
           { text: 'Carousel', link: '/components-docs/carousel' },
           { text: 'Checkbox', link: '/components-docs/checkbox' },
+          { text: 'Dialog', link: '/components-docs/dialog' },
+          { text: 'ImageView', link: '/components-docs/image-view' },
+          { text: 'InfiniteLoading', link: '/components-docs/infinite-loading' },
+          { text: 'Message', link: '/components-docs/message' },
+          { text: 'More', link: '/components-docs/more' },
+          { text: 'Pagination', link: '/components-docs/pagination' },
+          { text: 'Sku', link: '/components-docs/sku' },
+          { text: 'Step', link: '/components-docs/step' },
+          { text: 'Tab', link: '/components-docs/tab' }
         ]
       }
     ],
