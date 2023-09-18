@@ -4,7 +4,7 @@ import Theme from 'vitepress/theme'
 
 
 import { Button, Carousel, CarouselItem, Breadcrumb, BreadcrumbItem, Checkbox, Area , Icon} from 'erabbit'
-import 'erabbit/dist/erabbit-ui.min.css'
+import 'erabbit/dist/erabbit.min.css'
 import './style.scss'
 
 import IconCollection from './components/IconCollection.vue'
