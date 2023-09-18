@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import config from '@erabbit/icons';
+
 defineOptions({
   name: 'IconCollection',
 });
@@ -6,8 +8,6 @@ defineOptions({
 defineProps<{
   type: 'basic' | 'outlined' | 'filled';
 }>();
-
-import config from '@erabbit/icons';
 </script>
 
 <template>
