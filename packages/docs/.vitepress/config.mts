@@ -33,6 +33,7 @@ export default defineConfig({
           { text: 'Carousel', link: '/components-docs/carousel' },
           { text: 'Checkbox', link: '/components-docs/checkbox' },
           { text: 'Dialog', link: '/components-docs/dialog' },
+          { text: 'Icon', link: '/components-docs/icon' },
           { text: 'ImageView', link: '/components-docs/image-view' },
           { text: 'InfiniteLoading', link: '/components-docs/infinite-loading' },
           { text: 'Message', link: '/components-docs/message' },

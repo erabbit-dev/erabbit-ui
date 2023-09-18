@@ -1,6 +1,6 @@
   # Carousel
 
-carousel component.
+Loop a series of images or texts in a limited space.
 
 
 ## Basic Usage

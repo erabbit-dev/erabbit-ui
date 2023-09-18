@@ -26,6 +26,7 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@erabbit/cli": "workspace:^1.0.0",
     "@erabbit/eslint-config": "workspace:^1.0.0",
+    "@erabbit/icons": "workspace:^1.0.0",
     "@tsconfig/node18": "^18.2.1",
     "@vitejs/plugin-vue": "^4.3.1",
     "@vitejs/plugin-vue-jsx": "^3.0.2",

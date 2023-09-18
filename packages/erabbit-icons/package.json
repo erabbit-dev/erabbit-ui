@@ -1,0 +1,11 @@
+{
+  "name": "@erabbit/icons",
+  "version": "1.0.0",
+  "description": "erabbit icons",
+  "main": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "author": "zhousg",
+  "license": "MIT"
+}

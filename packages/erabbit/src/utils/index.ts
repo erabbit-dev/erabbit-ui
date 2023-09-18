@@ -18,3 +18,6 @@ export function createNamespace(
 
   return [prefixedName, bem]
 }
+
+export const isNumeric = (val: number | string): val is string =>
+  typeof val === 'number' || /^\d+(\.\d+)?$/.test(val)

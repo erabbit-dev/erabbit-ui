@@ -3,9 +3,11 @@ import { h } from 'vue'
 import Theme from 'vitepress/theme'
 
 
-import { Button, Carousel, CarouselItem, Breadcrumb, BreadcrumbItem, Checkbox, Area } from 'erabbit'
+import { Button, Carousel, CarouselItem, Breadcrumb, BreadcrumbItem, Checkbox, Area , Icon} from 'erabbit'
 import 'erabbit/dist/erabbit-ui.min.css'
 import './style.scss'
+
+import IconCollection from './components/IconCollection.vue'
 
 export default {
   extends: Theme,
@@ -23,5 +25,8 @@ export default {
     app.component(BreadcrumbItem.name, BreadcrumbItem)
     app.component(Checkbox.name, Checkbox)
     app.component(Area.name, Area)
+    app.component(Icon.name, Icon)
+    
+    app.component(IconCollection.name, IconCollection)
   }
 }

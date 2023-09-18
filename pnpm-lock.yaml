@@ -20,6 +20,9 @@ importers:
       '@erabbit/eslint-config':
         specifier: workspace:^1.0.0
         version: link:packages/erabbit-eslint-config
+      '@erabbit/icons':
+        specifier: workspace:^1.0.0
+        version: link:packages/erabbit-icons
       '@tsconfig/node18':
         specifier: ^18.2.1
         version: 18.2.1
@@ -158,6 +161,8 @@ importers:
       eslint:
         specifier: ^8.48.0
         version: 8.48.0
+
+  packages/erabbit-icons: {}
 
   packages/playground: {}
 

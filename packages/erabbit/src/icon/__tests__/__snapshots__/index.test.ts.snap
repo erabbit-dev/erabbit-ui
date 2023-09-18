@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default icon 1`] = `"<i class=\\"er-icon er-icon--weixin\\" style=\\"font-size: 30px; color: red;\\"></i>"`;
