@@ -8,8 +8,9 @@ import {
   watch
 } from 'vue'
 import { useChildren } from '../composables'
-import '@erabbit/icons/src/index.scss'
+
 import { Icon } from '../icon'
+
 import { CarouselContextKey } from './constants'
 import { onMounted } from 'vue'
 import { computed } from 'vue'
@@ -132,8 +133,6 @@ export default defineComponent({
       // @ts-ignore
       return Math.max(...items.value.map((item) => item.height))
     })
-
-    console.log(height)
 
     expose(exposeContext)
 
