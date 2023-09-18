@@ -13,9 +13,7 @@ const show = ref(false)
   <div class="demo">
     <er-breadcrumb>
       <er-breadcrumb-item to="/">首页</er-breadcrumb-item>
-      <er-breadcrumb-item to="/" @click="show = !show">
-        活动管理
-      </er-breadcrumb-item>
+      <er-breadcrumb-item @click="show = !show"> 活动管理 </er-breadcrumb-item>
       <transition name="fade-right" mode="out-in">
         <er-breadcrumb-item v-if="show">活动列表</er-breadcrumb-item>
         <er-breadcrumb-item v-else>活动编辑</er-breadcrumb-item>
