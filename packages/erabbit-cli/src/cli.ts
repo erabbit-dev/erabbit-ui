@@ -6,10 +6,10 @@ const program = new Command()
 program.version(`erabbit-cli ${cliVersion}`)
 
 program
-  .command('build')
+  .command('build-sass')
   .description('Compile components in production mode')
   .action(async () => {
-    const { buildStyle } = await import('./commands/build.js')
+    const { buildStyle } = await import('./commands/build-sass.js')
     return buildStyle()
   })
 

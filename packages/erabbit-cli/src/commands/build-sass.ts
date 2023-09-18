@@ -53,9 +53,9 @@ export async function buildStyle() {
     await copySourceCode()
     await compileDir(ES_DIR, 'es')
     await compileDir(LIB_DIR, 'lib')
-    consola.success('Compile sass successfully')
+    consola.success('erabbit cli compile sass successfully')
   } catch (error) {
-    consola.error('Build sass failed', error)
+    consola.error('erabbit cli build sass failed', error)
     process.exit(1)
   }
 }

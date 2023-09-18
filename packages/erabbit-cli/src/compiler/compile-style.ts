@@ -24,7 +24,13 @@ async function compileFile(filePath: string) {
   }
 }
 
-const allStyleFile = join(process.cwd(), 'dist/erabbit-ui.min.css')
+function getStyleDir() {
+  const pkgJson = join(process.cwd(), 'package.json')
+  const pkg = fse.readJSONSync(pkgJson)
+  return pkg.style || 'index.min.css'
+}
+const allStyleFile = join(process.cwd(), getStyleDir())
+
 const allStyle: string[] = []
 export async function compileStyle(filePath: string, format: Format) {
   const css = await compileFile(filePath)

@@ -24,8 +24,8 @@ export default defineConfig({
           dir: 'dist/lib'
         },
         {
-          format: 'umd',
-          entryFileNames: 'erabbit-ui.umd.js',
+          format: 'iife',
+          entryFileNames: 'erabbit.min.js',
           dir: 'dist',
           name: 'ErabbitUI',
           globals: {
