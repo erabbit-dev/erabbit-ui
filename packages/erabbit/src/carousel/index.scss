@@ -47,7 +47,7 @@
       width: 44px;
       height: 44px;
       background: rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
+      border-radius: 22px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -64,21 +64,11 @@
       &.next {
         right: 20px;
       }
-      i {
-        font-style: normal;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 200;
-        transform: scale(1, 1.5);
-        position: relative;
-        top: -1px;
-      }
     }
   }
   &:hover {
     .carousel-btn {
       opacity: 1;
-      color: var(--primary-color);
     }
   }
 }

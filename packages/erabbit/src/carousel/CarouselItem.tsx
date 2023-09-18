@@ -6,6 +6,7 @@ import { getCurrentInstance } from 'vue'
 import { onUnmounted } from 'vue'
 import { computed } from 'vue'
 import type { CarouselContext } from './Carousel'
+import { ref } from 'vue'
 
 export default defineComponent({
   name: 'ErCarouselItem',
@@ -18,9 +19,11 @@ export default defineComponent({
       items.value.findIndex((item) => item.uid === instance?.uid)
     )
 
+    const rootRef = ref<HTMLDivElement>()
     onMounted(() => {
       addItem({
-        uid: instance!.uid
+        uid: instance!.uid,
+        height: rootRef.value?.offsetHeight
       })
     })
 
@@ -34,6 +37,7 @@ export default defineComponent({
           'carousel-item': true,
           fade: index.value === selfIndex.value
         }}
+        ref={rootRef}
       >
         {slots.default?.()}
       </div>

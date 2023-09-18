@@ -8,13 +8,17 @@ import {
   watch
 } from 'vue'
 import { useChildren } from '../composables'
+import '@erabbit/icons/src/index.scss'
+import { Icon } from '../icon'
 import { CarouselContextKey } from './constants'
 import { onMounted } from 'vue'
+import { computed } from 'vue'
 
+type Item = { uid: number; height?: number }
 export type CarouselContext = {
   index: Ref<number>
-  items: Ref<{ uid: number }[]>
-  addItem: (item: { uid: number }) => void
+  items: Ref<Item[]>
+  addItem: (item: Item) => void
   removeItem: (uid: number) => void
 }
 
@@ -29,7 +33,7 @@ const carouselProps = {
   },
   height: {
     type: String,
-    default: '300px'
+    default: 'auto'
   }
 }
 
@@ -124,29 +128,38 @@ export default defineComponent({
       }
     }
 
+    const height = computed(() => {
+      // @ts-ignore
+      return Math.max(...items.value.map((item) => item.height))
+    })
+
+    console.log(height)
+
     expose(exposeContext)
 
     return () => (
-      <div
-        class="er-carousel"
-        onMouseenter={onStop}
-        onMouseleave={onStart}
-        style={{ height: props.height }}
-      >
-        <div class="carousel-body">{slots.default?.()}</div>
+      <div class="er-carousel" onMouseenter={onStop} onMouseleave={onStart}>
+        <div
+          class="carousel-body"
+          style={{
+            height: props.height === 'auto' ? height.value + 'px' : props.height
+          }}
+        >
+          {slots.default?.()}
+        </div>
         <a
           onClick={() => onToggle(index.value - 1)}
           href="javascript:;"
           class="carousel-btn prev"
         >
-          <i class="iconfont icon-angle-left">&lt;</i>
+          <Icon name="angle-left" color="#fff" size="18px" />
         </a>
         <a
           onClick={() => onToggle(index.value + 1)}
           href="javascript:;"
           class="carousel-btn next"
         >
-          <i class="iconfont icon-angle-right">&gt;</i>
+          <Icon name="angle-right" color="#fff" size="18px" />
         </a>
         <div class="carousel-indicator">
           {items.value.map((item, i) => (

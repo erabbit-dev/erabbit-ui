@@ -9,7 +9,7 @@ Combine `el-carousel` with `el-carousel-item`, and you'll get a carousel. The pr
 
 ```vue preview
 <template>
-  <er-carousel height="260px">
+  <er-carousel>
     <er-carousel-item>
       <img
         src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/6d202d8e-bb47-4f92-9523-f32ab65754f4.jpg"
@@ -36,7 +36,7 @@ Content of each slide is completely customizable, and you just need to place it 
 
 ```vue preview
 <template>
-  <er-carousel height="200px" :auto-play="false">
+  <er-carousel :auto-play="false">
     <er-carousel-item>
       <div class="product-list">
         <div class="product-item" v-for="i in 4"></div>
@@ -60,6 +60,7 @@ Content of each slide is completely customizable, and you just need to place it 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .product-item {
   width: 150px;
