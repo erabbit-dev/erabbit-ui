@@ -35,6 +35,7 @@ Practical & Beautiful component library, A Vue 3 based component library for era
 | `Breadcrumb`      | <input type="checkbox" checked disabled />  | Breadcrumb Component      |
 | `Carousel`        | <input type="checkbox" checked disabled />  | Carousel Component        |
 | `Checkbox`        | <input type="checkbox" checked disabled />  | Checkbox Component        |
+| `Confirm`         | <input type="checkbox" disabled />          | Confirm Component         |
 | `Dialog`          | <input type="checkbox"  disabled />         | Dialog Component          |
 | `Icon`            | <input type="checkbox"  checked disabled /> | Icon Component            |
 | `showDialog`      | <input type="checkbox"  disabled />         | showDialog Function       |

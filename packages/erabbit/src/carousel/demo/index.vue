@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import '../index.scss'
-import { Carousel as ErCarousel, CarouselItem as ErCarouselItem } from '..'
+import '@erabbit/icons/src/index.scss'
+import { Carousel as ErCarousel, CarouselItem as ErCarouselItem } from 'erabbit'
 </script>
 <template>
-  <er-carousel height="auto">
+  <er-carousel>
     <er-carousel-item>
       <img
         src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/6d202d8e-bb47-4f92-9523-f32ab65754f4.jpg"
@@ -28,8 +29,13 @@ import { Carousel as ErCarousel, CarouselItem as ErCarouselItem } from '..'
 </template>
 
 <style>
+.er-carousel {
+  width: 600px;
+  height: 260px;
+}
 img {
-  min-width: 100%;
+  width: 600px;
+  height: 260px;
   display: block;
 }
 </style>

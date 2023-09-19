@@ -19,7 +19,7 @@ const iconProps = {
   },
   color: {
     type: String,
-    default: '#333333'
+    default: ''
   }
 }
 
@@ -35,7 +35,7 @@ export default defineComponent({
       const style = computed(() => {
         return {
           fontSize: isNumeric(props.size) ? `${props.size}px` : props.size,
-          color: props.color
+          color: props.color || undefined
         }
       })
 

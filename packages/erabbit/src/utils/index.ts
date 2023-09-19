@@ -1,3 +1,6 @@
+import type { Component } from 'vue'
+import { createApp } from 'vue'
+
 export function createNamespace(
   name: string
 ): [string, (...mods: string[]) => string] {
@@ -21,4 +24,19 @@ export function createNamespace(
 
 export function isNumeric(val: number | string): val is string {
   return typeof val === 'number' || /^\d+(\.\d+)?$/.test(val)
+}
+
+export function mountComponent<T>(RootComponent: Component) {
+  const app = createApp(RootComponent)
+  const root = document.createElement('div')
+
+  document.body.appendChild(root)
+
+  return {
+    instance: app.mount(root) as T,
+    unmount() {
+      app.unmount()
+      document.body.removeChild(root)
+    }
+  }
 }

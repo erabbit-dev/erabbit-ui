@@ -18,9 +18,6 @@
   "keywords": [],
   "author": "zhoushugang",
   "license": "MIT",
-  "peerDependencies": {
-    "vue": "^3.3.4"
-  },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",

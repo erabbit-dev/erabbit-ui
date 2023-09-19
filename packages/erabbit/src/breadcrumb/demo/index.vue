@@ -20,6 +20,8 @@ const show = ref(false)
       </transition>
     </er-breadcrumb>
 
+    <hr />
+
     <er-breadcrumb separator="&gt;">
       <er-breadcrumb-item to="/">首页</er-breadcrumb-item>
       <er-breadcrumb-item to="/">活动管理</er-breadcrumb-item>
