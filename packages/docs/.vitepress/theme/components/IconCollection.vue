@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import config from '@erabbit/icons';
+import { useClipboard } from '@vueuse/core';
+import { ref } from 'vue';
 
 defineOptions({
   name: 'IconCollection',
@@ -8,13 +10,28 @@ defineOptions({
 defineProps<{
   type: 'basic' | 'outlined' | 'filled';
 }>();
+
+const source = ref('');
+const { copy, copied, isSupported } = useClipboard({ source });
+const onCopy = (val: string) => {
+  if (isSupported.value) {
+    source.value = val
+    copy(val);
+  }
+};
 </script>
 
 <template>
   <div class="demo">
-    <div class="icon-box" v-for="name in config[type]" :key="name">
+    <div
+      class="icon-box"
+      v-for="name in config[type]"
+      :key="name"
+      @click="onCopy(name)"
+    >
       <er-icon :name="name"></er-icon>
       <p>{{ name }}</p>
+      <p class="tip" v-if="copied && source === name">copied</p>
     </div>
   </div>
 </template>
@@ -22,27 +39,5 @@ defineProps<{
 <style lang="scss" scoped>
 .demo {
   margin-top: 40px;
-}
-.icon-box {
-  border: 1px solid #e4e4e4;
-  display: inline-flex;
-  width: 100px;
-  height: 100px;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  margin-right: 14px;
-  margin-bottom: 14px;
-  box-sizing: border-box;
-  padding-top: 20px;
-}
-.icon-box p {
-  font-size: 14px;
-  color: #666;
-}
-.icon-box p:hover {
-  cursor: pointer;
 }
 </style>

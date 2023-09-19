@@ -5,6 +5,8 @@ Erabbit UI provides a set of common icons.
 
 ## Icon Collection
 
+Click the icon to copy the name to the clipboard.
+
 ### Basic
 
 <IconCollection type="basic" />
@@ -44,28 +46,6 @@ Specify the icon by `name`, control the size by `size`, and set the color by `co
 .demo {
   display: flex;
   align-items: center;
-}
-.icon-box {
-  border: 1px solid #e4e4e4;
-  display: inline-flex;
-  width: 100px;
-  height: 100px;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  margin-right: 8px;
-  margin-bottom: 8px;
-  box-sizing: border-box;
-  padding-top: 20px;
-}
-.icon-box p {
-  font-size: 14px;
-  color: #666;
-}
-.icon-box p:hover {
-  cursor: pointer;
 }
 </style>
 ```
