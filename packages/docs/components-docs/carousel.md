@@ -9,12 +9,15 @@ Combine `el-carousel` with `el-carousel-item`, and you'll get a carousel. The pr
 
 ```vue preview
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const height = ref('')
-
-const onLoad = (e: Event) => {
-  height.value = e.target.offsetHeight + 'px'
+const imgRef = ref()
+onMounted(() => {
+  height.value = imgRef.value.offsetHeight + 'px'
+})
+const onLoad = () => {
+  height.value = imgRef.value.offsetHeight + 'px'
 }
 </script>
 
@@ -24,6 +27,7 @@ const onLoad = (e: Event) => {
       <img
         src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/6d202d8e-bb47-4f92-9523-f32ab65754f4.jpg"
         @load="onLoad"
+        ref="imgRef"
       />
     </er-carousel-item>
     <er-carousel-item>
