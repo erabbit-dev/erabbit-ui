@@ -8,11 +8,22 @@ Loop a series of images or texts in a limited space.
 Combine `el-carousel` with `el-carousel-item`, and you'll get a carousel. The prev next button can be displayed when the mouse enters, Click to switch。The indicator is displayed by default, allowing click toggle。
 
 ```vue preview
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const height = ref('')
+
+const onLoad = (e: Event) => {
+  height.value = e.target.offsetHeight + 'px'
+}
+</script>
+
 <template>
-  <er-carousel>
+  <er-carousel :height="height" >
     <er-carousel-item>
       <img
         src="http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-15/6d202d8e-bb47-4f92-9523-f32ab65754f4.jpg"
+        @load="onLoad"
       />
     </er-carousel-item>
     <er-carousel-item>
@@ -63,11 +74,11 @@ Content of each slide is completely customizable, and you just need to place it 
   flex-wrap: wrap;
 }
 .product-item {
-  width: 150px;
+  width: 140px;
   height: 200px;
   background: #ccc;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px #ddd;
+  box-shadow: 0px 0px 5px #ddd;
 }
 </style>
 ```
