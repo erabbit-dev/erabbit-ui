@@ -1,6 +1,6 @@
 {
   "name": "erabbit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Erabbit UI Components built with Vue3",
   "scripts": {
     "build": "vite build && erabbit-cli build-sass",
