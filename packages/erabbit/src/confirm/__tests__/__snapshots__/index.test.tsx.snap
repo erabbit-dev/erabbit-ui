@@ -1,0 +1,143 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default Confirm 1`] = `
+"<transition-stub name=\\"popper\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+  <div class=\\"er-popper er-confirm\\">
+    <div class=\\"er-confirm__wrapper active\\">
+      <div class=\\"er-confirm__header\\">
+        <h3>Title</h3><i class=\\"er-icon er-icon--close\\" style=\\"font-size: 1em; color: rgb(102, 102, 102);\\"></i>
+      </div>
+      <div class=\\"er-confirm__body\\"><i class=\\"er-icon er-icon--warn\\" style=\\"font-size: 1em;\\"></i>
+        <p>This is message</p>
+      </div>
+      <div class=\\"er-confirm__footer\\"><button class=\\"er-button ellipsis er-button--mini er-button--default\\">Cancel</button><button class=\\"er-button ellipsis er-button--mini er-button--primary\\">OK</button></div>
+    </div>
+  </div>
+</transition-stub>"
+`;
+
+exports[`should use showConfirm function control confirmation box 1`] = `
+<div
+  id="confirm"
+>
+  
+  <transition-stub
+    appear="false"
+    css="true"
+    name="popper"
+    persisted="false"
+  >
+    <div
+      class="er-popper er-confirm"
+    >
+      <div
+        class="er-confirm__wrapper"
+      >
+        <div
+          class="er-confirm__header"
+        >
+          <h3>
+            Title
+          </h3>
+          <i
+            class="er-icon er-icon--close"
+            style="font-size: 1em; color: rgb(102, 102, 102);"
+          />
+        </div>
+        <div
+          class="er-confirm__body"
+        >
+          <i
+            class="er-icon er-icon--warn"
+            style="font-size: 1em;"
+          />
+          <p>
+            This is message
+          </p>
+        </div>
+        <div
+          class="er-confirm__footer"
+        >
+          <button
+            class="er-button ellipsis er-button--mini er-button--default"
+          >
+            
+            Cancel
+            
+          </button>
+          <button
+            class="er-button ellipsis er-button--mini er-button--primary"
+          >
+            
+            OK
+            
+          </button>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;
+
+exports[`should use showConfirm function control confirmation box 2`] = `
+<div
+  id="confirm"
+>
+  
+  <transition-stub
+    appear="false"
+    css="true"
+    name="popper"
+    persisted="false"
+  >
+    <div
+      class="er-popper er-confirm"
+    >
+      <div
+        class="er-confirm__wrapper active"
+      >
+        <div
+          class="er-confirm__header"
+        >
+          <h3>
+            温馨提示
+          </h3>
+          <i
+            class="er-icon er-icon--close"
+            style="font-size: 1em; color: rgb(102, 102, 102);"
+          />
+        </div>
+        <div
+          class="er-confirm__body"
+        >
+          <i
+            class="er-icon er-icon--warn"
+            style="font-size: 1em;"
+          />
+          <p>
+            这里是提示信息
+          </p>
+        </div>
+        <div
+          class="er-confirm__footer"
+        >
+          <button
+            class="er-button ellipsis er-button--mini er-button--default"
+          >
+            
+            Cancel
+            
+          </button>
+          <button
+            class="er-button ellipsis er-button--mini er-button--primary"
+          >
+            
+            OK
+            
+          </button>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</div>
+`;

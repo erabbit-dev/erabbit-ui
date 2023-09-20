@@ -11,6 +11,7 @@ import {
 import { Button } from '../button'
 import { Icon } from '../icon'
 import { createNamespace } from '../utils'
+import { onMounted } from 'vue'
 
 const [className, bem] = createNamespace('confirm')
 
@@ -35,9 +36,7 @@ const confirmProps = {
   teleport: {
     type: String,
     default: 'body'
-  },
-  submit: Function,
-  cancel: Function
+  }
 }
 
 export type ConfirmProps = ExtractPropTypes<typeof confirmProps>
@@ -65,6 +64,12 @@ export default defineComponent({
         }
       }
     )
+
+    onMounted(() => {
+      if (props.visible) {
+        open()
+      }
+    })
 
     const close = () => {
       active.value = false

@@ -1,7 +1,8 @@
 import { ref } from 'vue'
-import { mountComponent } from '../utils'
+import { mountComponent, omit } from '../utils'
 import Confirm, { type ConfirmProps } from './Confirm'
 import type { ComponentPublicInstance } from 'vue'
+import { computed } from 'vue'
 
 type OptionsType = Partial<ConfirmProps> & {
   submit?: () => void
@@ -45,7 +46,11 @@ const initInstance = () => {
       }
       expose(exposeObject)
 
-      return () => <Confirm {...state.value} onUpdate:visible={close} />
+      const confirmProps = computed(() => {
+        return omit(state.value, ['submit', 'cancel'])
+      })
+
+      return () => <Confirm {...confirmProps.value} onUpdate:visible={close} />
     }
   }))
 }

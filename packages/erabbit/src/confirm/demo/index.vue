@@ -10,17 +10,18 @@ const onOpen = () => {
   visible.value = true
 }
 
-const onShowConfirm = () => {
-  showConfirm({
+const onShowConfirm = async () => {
+  await showConfirm({
     title: 'Title',
-    message: 'This is a message'
-  })
-    .then(() => {
+    message: 'This is a message',
+    submit: () => {
       console.log('submit')
-    })
-    .catch(() => {
+    },
+    cancel: () => {
       console.log('cancel')
-    })
+    }
+  })
+  console.log('ok')
 }
 </script>
 
