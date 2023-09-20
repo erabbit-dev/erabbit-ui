@@ -38,4 +38,5 @@ const onShowConfirm = () => {
 | submit | MessageBox closing callback if you don't prefer Promise | `Function` | `''` |
 | cancel | MessageBox closing callback if you don't prefer Promise | `Function` | `''` |
 | teleport | set the root element for the message box | `string \| HTMLElement` | `body` |
+| lockScroll | whether to lock body scroll when MessageBox prompts | `boolean` | `true` |
 
