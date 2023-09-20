@@ -12,6 +12,7 @@ import { Button } from '../button'
 import { Icon } from '../icon'
 import { createNamespace } from '../utils'
 import { onMounted } from 'vue'
+import type { PropType } from 'vue'
 
 const [className, bem] = createNamespace('confirm')
 
@@ -34,7 +35,7 @@ const confirmProps = {
     default: 'OK'
   },
   teleport: {
-    type: String,
+    type: [String, HTMLElement] as PropType<string | HTMLElement>,
     default: 'body'
   }
 }

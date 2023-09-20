@@ -4,7 +4,7 @@ import Confirm, { type ConfirmProps } from './Confirm'
 import type { ComponentPublicInstance } from 'vue'
 import { computed } from 'vue'
 
-type OptionsType = Partial<ConfirmProps> & {
+type OptionsType = Omit<Partial<ConfirmProps>, 'visible'> & {
   submit?: () => void
   cancel?: () => void
 }

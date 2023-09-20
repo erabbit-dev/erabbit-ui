@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'Breadcrumb', link: '/components-docs/breadcrumb' },
           { text: 'Carousel', link: '/components-docs/carousel' },
           { text: 'Checkbox', link: '/components-docs/checkbox' },
+          { text: 'Confirm', link: '/components-docs/confirm' },
           { text: 'Dialog', link: '/components-docs/dialog' },
           { text: 'Icon', link: '/components-docs/icon' },
           { text: 'ImageView', link: '/components-docs/image-view' },
