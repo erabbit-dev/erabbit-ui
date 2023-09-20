@@ -17,6 +17,7 @@ const onShowConfirm = () => {
   })
 }
 </script>
+
 <template>
   <div class="demo">
     <er-button type="primary" size="small" @click="onShowConfirm">Click Me</er-button>

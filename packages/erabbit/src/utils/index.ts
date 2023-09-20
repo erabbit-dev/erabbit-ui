@@ -46,3 +46,7 @@ export function omit(obj: Record<string, any>, keys: string[]) {
   keys.forEach((key) => delete result[key])
   return result
 }
+
+export function isClient() {
+  return typeof window !== 'undefined'
+}

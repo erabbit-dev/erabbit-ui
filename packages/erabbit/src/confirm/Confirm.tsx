@@ -13,6 +13,8 @@ import { Icon } from '../icon'
 import { createNamespace } from '../utils'
 import { onMounted } from 'vue'
 import type { PropType } from 'vue'
+import type { TeleportProps } from 'vue'
+import { useLockScroll } from '../composables/use-lock-scroll'
 
 const [className, bem] = createNamespace('confirm')
 
@@ -35,8 +37,12 @@ const confirmProps = {
     default: 'OK'
   },
   teleport: {
-    type: [String, HTMLElement] as PropType<string | HTMLElement>,
+    type: [String, Object] as PropType<TeleportProps['to']>,
     default: 'body'
+  },
+  lockScroll: {
+    type: Boolean,
+    default: true
   }
 }
 
@@ -96,6 +102,10 @@ export default defineComponent({
 
     const onSubmit = () => {
       emit('update:visible', false, 'submit')
+    }
+
+    if (props.lockScroll) {
+      useLockScroll(active)
     }
 
     const renderConfirm = () => {

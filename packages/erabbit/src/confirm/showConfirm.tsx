@@ -13,7 +13,8 @@ const defaultProps: OptionsType = {
   message: '',
   cancelText: 'Cancel',
   submitText: 'OK',
-  teleport: 'body'
+  teleport: 'body',
+  lockScroll: true
 }
 
 type InstanceExpose = {
