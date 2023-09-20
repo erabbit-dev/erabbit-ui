@@ -3,10 +3,10 @@ import { isRef, onScopeDispose, watch } from 'vue'
 
 let scrollBarWidth: number
 
-const isClient = () => typeof window !== 'undefined'
+const isBrowser = () => typeof window !== 'undefined'
 
 function getScrollBarWidth(): number {
-  if (!isClient) return 0
+  if (!isBrowser()) return 0
   if (scrollBarWidth !== undefined) return scrollBarWidth
 
   const outer = document.createElement('div')
@@ -38,7 +38,7 @@ export const useLockScroll = (trigger: Ref<boolean>) => {
     throw new Error('useLockScroll: "trigger" must be a ref')
   }
 
-  if (!isClient() || document.body.classList.contains(className)) {
+  if (!isBrowser() || document.body.classList.contains(className)) {
     return
   }
 
