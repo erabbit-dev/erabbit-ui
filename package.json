@@ -20,7 +20,7 @@
     "commitlint": "commitlint --config commitlint.config.js -e -V"
   },
   "lint-staged": {
-    "*.{md}": [
+    "*.md": [
       "prettier --write"
     ],
     "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}": [
