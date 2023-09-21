@@ -56,7 +56,7 @@ const initInstance = () => {
   }))
 }
 
-export const showConfirm = (options: OptionsType) => {
+export const showConfirm = (options: OptionsType): Promise<string> => {
   return new Promise((resolve, reject) => {
     if (!instance) {
       initInstance()

@@ -28,6 +28,7 @@ export default defineConfig({
           entryFileNames: 'erabbit.min.js',
           dir: 'dist',
           name: 'ErabbitUI',
+          exports: 'named',
           globals: {
             vue: 'Vue',
             '@vueuse/core': 'VueUse'
