@@ -1,5 +1,5 @@
 {
-  "name": "@erabbit/icons",
+  "name": "@erabbit-dev/icons",
   "version": "1.0.0",
   "description": "erabbit icons",
   "main": "./src/index.ts",

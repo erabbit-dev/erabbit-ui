@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import config from '@erabbit/icons';
+import config from '@erabbit-dev/icons';
 import { useClipboard } from '@vueuse/core';
 import { ref } from 'vue';
 
@@ -15,7 +15,7 @@ const source = ref('');
 const { copy, copied, isSupported } = useClipboard({ source });
 const onCopy = (val: string) => {
   if (isSupported.value) {
-    source.value = val
+    source.value = val;
     copy(val);
   }
 };

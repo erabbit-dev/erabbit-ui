@@ -34,9 +34,10 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@erabbit/cli": "workspace:^1.0.0",
-    "@erabbit/eslint-config": "workspace:^1.0.0",
-    "@erabbit/icons": "workspace:^1.0.0",
+    "@erabbit-dev/cli": "workspace:^1.0.0",
+    "@erabbit-dev/eslint-config": "workspace:^1.0.0",
+    "@erabbit-dev/icons": "workspace:^1.0.0",
+    "@erabbit-dev/auto-import": "workspace:*",
     "@tsconfig/node18": "^18.2.1",
     "@vitejs/plugin-vue": "^4.3.1",
     "@vitejs/plugin-vue-jsx": "^3.0.2",

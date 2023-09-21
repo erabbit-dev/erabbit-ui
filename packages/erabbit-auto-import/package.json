@@ -1,12 +1,30 @@
 {
-  "name": "@erabbit/auto-import",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@erabbit-dev/auto-import",
+  "version": "0.0.1",
+  "description": "erabbit ui auto import component",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepublish": "pnpm build",
+    "publish": "pnpm publish --no-git-checks"
   },
-  "keywords": [],
-  "author": "",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erabbit-dev/erabbit-ui.git",
+    "directory": "packages/erabbit-auto-import"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "erabbit",
+    "auto-import",
+    "vue"
+  ],
+  "author": "zhousg <zhousg1007@qq.com>",
   "license": "ISC"
 }

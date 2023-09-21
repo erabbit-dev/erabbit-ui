@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import config from '@erabbit/icons'
-import '@erabbit/icons/src/index.scss'
+import config from '@erabbit-dev/icons';
+import '@erabbit-dev/icons/src/index.scss';
 
-import { Icon as ErIcon } from '..'
+import { Icon as ErIcon } from '..';
 </script>
 
 <template>

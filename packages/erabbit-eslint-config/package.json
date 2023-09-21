@@ -1,5 +1,5 @@
 {
-  "name": "@erabbit/eslint-config",
+  "name": "@erabbit-dev/eslint-config",
   "version": "1.0.0",
   "description": "eslint config of erabbit",
   "main": "index.js",
