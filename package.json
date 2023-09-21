@@ -13,7 +13,20 @@
     "dev": "pnpm --dir packages/erabbit dev",
     "build-site": "pnpm --dir packages/docs docs:build",
     "dev-site": "pnpm --dir packages/docs docs:dev",
-    "build-cli": "pnpm --dir packages/erabbit-cli build"
+    "build-cli": "pnpm --dir packages/erabbit-cli build",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --config commitlint.config.js -e -V"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "zhoushugang",
@@ -44,6 +57,12 @@
     "vitest": "^0.34.3",
     "vitest-fetch-mock": "^0.2.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
-  }
+    "vue-router": "^4.2.4",
+    "vue-tsc": "^1.8.13"
+  },
+  "engines": {
+    "node": ">=16.19.0",
+    "pnpm": "8.7.6"
+  },
+  "packageManager": "pnpm@8.7.6"
 }
