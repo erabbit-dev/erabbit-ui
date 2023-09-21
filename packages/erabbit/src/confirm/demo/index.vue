@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import '@erabbit-dev/icons/src/index.scss';
-import '../../button/index.scss';
-import '../index.scss';
-import { Confirm as ErConfirm, showConfirm } from '..';
+import { ref } from 'vue'
+import '@erabbit-dev/icons/src/index.scss'
+import '../../button/index.scss'
+import '../index.scss'
+import { Confirm as ErConfirm, showConfirm } from '..'
 
-const visible = ref(false);
+const visible = ref(false)
 const onOpen = () => {
-  visible.value = true;
-};
+  visible.value = true
+}
 
 const onShowConfirm = async () => {
   await showConfirm({
     title: 'Title',
     message: 'This is a message',
     submit: () => {
-      console.log('submit');
+      console.log('submit')
     },
     cancel: () => {
-      console.log('cancel');
-    },
-  });
-  console.log('ok');
-};
+      console.log('cancel')
+    }
+  })
+  console.log('ok')
+}
 </script>
 
 <template>

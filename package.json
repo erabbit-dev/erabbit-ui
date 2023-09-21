@@ -24,8 +24,7 @@
       "prettier --write"
     ],
     "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts,vue}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ]
   },
   "keywords": [],
