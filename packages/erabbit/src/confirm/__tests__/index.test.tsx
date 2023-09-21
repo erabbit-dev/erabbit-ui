@@ -50,7 +50,6 @@ test('should use Confirm component state control confirmation box', async () => 
 
   await wrapper.setProps({ visible: true })
   await later(0)
-  console.log(wrapper.html())
   await wrapper.find('.er-button--primary').trigger('click')
   expect(wrapper.emitted('update:visible')?.[2]).toEqual([false, 'submit'])
   await wrapper.setProps({ visible: false })
