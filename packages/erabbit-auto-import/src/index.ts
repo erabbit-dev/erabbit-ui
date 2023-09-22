@@ -1,3 +1,5 @@
+import type { ComponentResolver } from 'unplugin-vue-components/types'
+
 export interface ErabbitResolverOptions {
   importStyle?: boolean
   ssr?: boolean
@@ -13,25 +15,29 @@ function getModuleType(ssr: boolean): string {
 }
 
 function getSideEffects(dirName: string, moduleType: string) {
-  return `erabbit/dist/${moduleType}/${dirName}/style/index`
+  return `erabbit/dist/${moduleType}/${dirName}/style`
 }
 
-export function ErabbitUIResolver(options: ErabbitResolverOptions = {}) {
-  const { ssr = false, importStyle } = options
+export function ErabbitUIResolver(
+  options: ErabbitResolverOptions = {}
+): ComponentResolver {
+  const { ssr = false, importStyle = true } = options
 
   const moduleType = getModuleType(ssr)
 
   return {
     type: 'component',
     resolve: (name: string) => {
+      console.log(name)
       if (name.startsWith('Er')) {
         const partialName = name.slice(2)
         return {
           name: partialName,
           from: `erabbit/dist/${moduleType}`,
-          sideEffects: importStyle
-            ? getSideEffects(kebabCase(partialName), moduleType)
-            : ''
+          sideEffects:
+            importStyle && !name.endsWith('Item')
+              ? getSideEffects(kebabCase(partialName), moduleType)
+              : ''
         }
       }
     }

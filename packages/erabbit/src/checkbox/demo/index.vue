@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { Checkbox as ErCheckbox } from '..'
-import '../index.scss'
-import { onMounted } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const check = ref(false)
 

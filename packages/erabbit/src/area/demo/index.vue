@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Area as ErArea } from '..'
-import '../index.scss'
 
 const value = ref('')
 </script>

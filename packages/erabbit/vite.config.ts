@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
+import Components from 'unplugin-vue-components/vite'
+import { ErabbitUIResolver } from '@erabbit-dev/auto-import'
 
 export default defineConfig({
   build: {
@@ -46,6 +48,10 @@ export default defineConfig({
       entryRoot: './src',
       outDir: ['dist/es', 'dist/lib'],
       tsconfigPath: './tsconfig.json'
+    }),
+    Components({
+      dts: false,
+      resolvers: [ErabbitUIResolver()]
     })
   ]
 })

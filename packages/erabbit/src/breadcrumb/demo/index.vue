@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import {
-  Breadcrumb as ErBreadcrumb,
-  BreadcrumbItem as ErBreadcrumbItem
-} from '..'
-import '../index.scss'
 
 const show = ref(false)
 </script>

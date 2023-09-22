@@ -3,6 +3,7 @@ import fse from 'fs-extra'
 import { parse, join } from 'node:path'
 import { compileCss } from './compile-css'
 import { compileSass } from './compile-sass'
+import { genComponentStyleEntry } from './gen-component-style-entry'
 export type Format = 'es' | 'lib'
 
 const { readFileSync, writeFileSync, removeSync } = fse
@@ -40,6 +41,9 @@ export async function compileStyle(filePath: string, format: Format) {
   if (format === 'es') {
     allStyle.push(css)
     writeFileSync(allStyleFile, allStyle.join(''))
+
+    // gen component style entry
+    genComponentStyleEntry(filePath)
   }
 
   writeFileSync(filePath.replace(/\.\w+$/, '.css'), css)

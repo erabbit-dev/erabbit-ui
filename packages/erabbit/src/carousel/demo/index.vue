@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import '../index.scss'
-import '@erabbit-dev/icons/src/index.scss'
-import { Carousel as ErCarousel, CarouselItem as ErCarouselItem } from 'erabbit'
-</script>
+<script setup lang="ts"></script>
 <template>
   <er-carousel>
     <er-carousel-item>

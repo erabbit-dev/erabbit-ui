@@ -1,7 +1,4 @@
-<script setup lang="ts">
-import '../index.scss'
-import { Button as ErButton } from '..'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="demo">
