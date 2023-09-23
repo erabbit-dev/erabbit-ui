@@ -34,3 +34,21 @@ import { Button as ErButton } from 'erabbit';
 ```
 
 ### On-demand Import
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite';
+
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from '@erabbit-dev/auto-import';
+
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    Components({
+      resolvers: [ErabbitUIResolver()],
+    }),
+  ],
+});
+```
