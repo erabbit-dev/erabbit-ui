@@ -1,4 +1,3 @@
-
 <p align="center">
   <img width="300px" src="http://erabbit.itheima.net/img/logo.0940ebb5.png">
 </p>
@@ -23,6 +22,31 @@
 
 A Vue 3 based component library for erabbit web applications
 
+# Components List
+
+| Name              | Completed | Description               |
+| ----------------- | --------- | ------------------------- |
+| `Area`            |           | Area Component            |
+| `Button`          | ✅        | Button Component          |
+| `Breadcrumb`      | ✅        | Breadcrumb Component      |
+| `Carousel`        | ✅        | Carousel Component        |
+| `Checkbox`        | ✅        | Checkbox Component        |
+| `Confirm`         | ✅        | Confirm Component         |
+| `showConfirm`     | ✅        | showConfirm Function      |
+| `Dialog`          | ❎        | Dialog Component          |
+| `showDialog`      | ❎        | showDialog Function       |
+| `Icon`            | ✅        | Icon Component            |
+| `Message`         | ❎        | Message Component         |
+| `showMessage`     | ❎        | showMessage Function      |
+| `ImageView`       | ❎        | ImageView Component       |
+| `InfiniteLoading` | ❎        | InfiniteLoading Component |
+| `More`            | ❎        | More Component            |
+| `NumberBox`       | ❎        | NumberBox Component       |
+| `Pagination`      | ❎        | Pagination Component      |
+| `Skeleton`        | ❎        | Skeleton Component        |
+| `Sku`             | ❎        | Sku Component             |
+| `Step`            | ❎        | Step Component            |
+| `Tab`             | ❎        | Tab Component             |
 
 ## All Contributors
 
