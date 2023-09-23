@@ -1,6 +1,6 @@
 # Quick Start
 
-This section describes how to use Element Plus in your project.
+This section describes how to use Erabbit UI in your project.
 
 ## Usage
 
