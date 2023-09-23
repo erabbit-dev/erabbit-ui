@@ -26,7 +26,7 @@ A Vue 3 based component library for erabbit web applications
 
 | Name              | Completed | Description               |
 | ----------------- | --------- | ------------------------- |
-| `Area`            |           | Area Component            |
+| `Area`            | ✅        | Area Component            |
 | `Button`          | ✅        | Button Component          |
 | `Breadcrumb`      | ✅        | Breadcrumb Component      |
 | `Carousel`        | ✅        | Carousel Component        |
