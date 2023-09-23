@@ -1,6 +1,6 @@
-# Get Start
+# Installation
 
-## Installation
+## Using Package Manager
 
 Erabbit UI you can install it with:
 
@@ -24,6 +24,37 @@ bun add erabbit -S
 
 :::
 
+## Import in Browser
+
+### unpkg
+
+```html
+<head>
+  <!-- Import style -->
+  <link rel="stylesheet" href="//unpkg.com/erabbit/dist/erabbit.min.css" />
+  <!-- Import Vue 3 -->
+  <script src="//unpkg.com/vue@3"></script>
+  <!-- Import component library -->
+  <script src="//unpkg.com/erabbit"></script>
+</head>
+```
+
+### jsDelivr
+
+```html
+<head>
+  <!-- Import style -->
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/erabbit/dist/erabbit.min.css"
+  />
+  <!-- Import Vue 3 -->
+  <script src="//cdn.jsdelivr.net/npm/vue@3"></script>
+  <!-- Import component library -->
+  <script src="//cdn.jsdelivr.net/npm/erabbit"></script>
+</head>
+```
+
 ## What is Erabbit UI ?
 
 Practical & Beautiful component library, A Vue 3 based component library for erabbit web applications.
@@ -38,8 +69,8 @@ Practical & Beautiful component library, A Vue 3 based component library for era
 | `Confirm`         | <input type="checkbox" checked disabled />  | Confirm Component         |
 | `showConfirm`     | <input type="checkbox" checked disabled />  | showConfirm Function      |
 | `Dialog`          | <input type="checkbox"  disabled />         | Dialog Component          |
-| `Icon`            | <input type="checkbox"  checked disabled /> | Icon Component            |
 | `showDialog`      | <input type="checkbox"  disabled />         | showDialog Function       |
+| `Icon`            | <input type="checkbox"  checked disabled /> | Icon Component            |
 | `Message`         | <input type="checkbox"  disabled />         | Message Component         |
 | `showMessage`     | <input type="checkbox"  disabled />         | showMessage Function      |
 | `ImageView`       | <input type="checkbox"  disabled />         | ImageView Component       |

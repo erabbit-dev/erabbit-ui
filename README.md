@@ -1,4 +1,3 @@
-
 <p align="center">
   <img width="300px" src="http://erabbit.itheima.net/img/logo.0940ebb5.png">
 </p>
@@ -22,6 +21,10 @@
 # Erabbit UI
 
 A Vue 3 based component library for erabbit web applications
+
+## Site Home
+
+![](./erabbit.png)
 
 ## All Contributors
 
