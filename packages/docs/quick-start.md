@@ -35,6 +35,14 @@ import { Button as ErButton } from 'erabbit';
 
 ### On-demand Import
 
+First you need to install `unplugin-vue-components` and `@erabbit-dev/auto-import`.
+
+```sh
+pnpm install -D unplugin-vue-components @erabbit-dev/auto-import
+```
+
+Then add the code below into your Vite config file.
+
 ```ts
 // vite.config.ts
 import { defineConfig } from 'vite';
