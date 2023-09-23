@@ -10,6 +10,9 @@ export default defineConfig({
     plugins: [MarkdownPreview()]
   },
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Get Start', link: '/installation' },
