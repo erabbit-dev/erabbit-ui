@@ -32,4 +32,32 @@ import{_ as s,c as a,o as n,Q as p}from"./chunks/framework.678668a3.js";const m=
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;">&lt;</span><span style="color:#22863A;">template</span><span style="color:#24292E;">&gt;</span></span>
 <span class="line"><span style="color:#24292E;">  &lt;</span><span style="color:#22863A;">er-button</span><span style="color:#24292E;">&gt;ErButton&lt;/</span><span style="color:#22863A;">er-button</span><span style="color:#24292E;">&gt;</span></span>
-<span class="line"><span style="color:#24292E;">&lt;/</span><span style="color:#22863A;">template</span><span style="color:#24292E;">&gt;</span></span></code></pre></div><h3 id="on-demand-import" tabindex="-1">On-demand Import <a class="header-anchor" href="#on-demand-import" aria-label="Permalink to &quot;On-demand Import&quot;">​</a></h3>`,8),t=[o];function e(r,c,E,y,i,d){return n(),a("div",null,t)}const b=s(l,[["render",e]]);export{m as __pageData,b as default};
+<span class="line"><span style="color:#24292E;">&lt;/</span><span style="color:#22863A;">template</span><span style="color:#24292E;">&gt;</span></span></code></pre></div><h3 id="on-demand-import" tabindex="-1">On-demand Import <a class="header-anchor" href="#on-demand-import" aria-label="Permalink to &quot;On-demand Import&quot;">​</a></h3><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#6A737D;">// vite.config.ts</span></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { defineConfig } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;vite&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> Components </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;unplugin-vue-components/vite&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { ElementPlusResolver } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583;">export</span><span style="color:#E1E4E8;"> </span><span style="color:#F97583;">default</span><span style="color:#E1E4E8;"> </span><span style="color:#B392F0;">defineConfig</span><span style="color:#E1E4E8;">({</span></span>
+<span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">// ...</span></span>
+<span class="line"><span style="color:#E1E4E8;">  plugins: [</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#6A737D;">// ...</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">Components</span><span style="color:#E1E4E8;">({</span></span>
+<span class="line"><span style="color:#E1E4E8;">      resolvers: [</span><span style="color:#B392F0;">ErabbitUIResolver</span><span style="color:#E1E4E8;">()],</span></span>
+<span class="line"><span style="color:#E1E4E8;">    }),</span></span>
+<span class="line"><span style="color:#E1E4E8;">  ],</span></span>
+<span class="line"><span style="color:#E1E4E8;">});</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#6A737D;">// vite.config.ts</span></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { defineConfig } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;vite&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> Components </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;unplugin-vue-components/vite&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { ElementPlusResolver } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;">export</span><span style="color:#24292E;"> </span><span style="color:#D73A49;">default</span><span style="color:#24292E;"> </span><span style="color:#6F42C1;">defineConfig</span><span style="color:#24292E;">({</span></span>
+<span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">// ...</span></span>
+<span class="line"><span style="color:#24292E;">  plugins: [</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6A737D;">// ...</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">Components</span><span style="color:#24292E;">({</span></span>
+<span class="line"><span style="color:#24292E;">      resolvers: [</span><span style="color:#6F42C1;">ErabbitUIResolver</span><span style="color:#24292E;">()],</span></span>
+<span class="line"><span style="color:#24292E;">    }),</span></span>
+<span class="line"><span style="color:#24292E;">  ],</span></span>
+<span class="line"><span style="color:#24292E;">});</span></span></code></pre></div>`,9),e=[o];function t(r,c,E,y,i,d){return n(),a("div",null,e)}const F=s(l,[["render",t]]);export{m as __pageData,F as default};
