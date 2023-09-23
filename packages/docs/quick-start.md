@@ -40,7 +40,7 @@ import { Button as ErButton } from 'erabbit';
 import { defineConfig } from 'vite';
 
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from '@erabbit-dev/auto-import';
+import { ErabbitUIResolver } from '@erabbit-dev/auto-import';
 
 export default defineConfig({
   // ...
