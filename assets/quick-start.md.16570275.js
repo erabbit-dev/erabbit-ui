@@ -36,7 +36,7 @@ import{_ as s,c as a,o as n,Q as p}from"./chunks/framework.678668a3.js";const m=
 <span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { defineConfig } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;vite&#39;</span><span style="color:#E1E4E8;">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> Components </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;unplugin-vue-components/vite&#39;</span><span style="color:#E1E4E8;">;</span></span>
-<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { ElementPlusResolver } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { ErabbitUIResolver } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#E1E4E8;">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#F97583;">export</span><span style="color:#E1E4E8;"> </span><span style="color:#F97583;">default</span><span style="color:#E1E4E8;"> </span><span style="color:#B392F0;">defineConfig</span><span style="color:#E1E4E8;">({</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">// ...</span></span>
@@ -50,7 +50,7 @@ import{_ as s,c as a,o as n,Q as p}from"./chunks/framework.678668a3.js";const m=
 <span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { defineConfig } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;vite&#39;</span><span style="color:#24292E;">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> Components </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;unplugin-vue-components/vite&#39;</span><span style="color:#24292E;">;</span></span>
-<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { ElementPlusResolver } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { ErabbitUIResolver } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@erabbit-dev/auto-import&#39;</span><span style="color:#24292E;">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#D73A49;">export</span><span style="color:#24292E;"> </span><span style="color:#D73A49;">default</span><span style="color:#24292E;"> </span><span style="color:#6F42C1;">defineConfig</span><span style="color:#24292E;">({</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">// ...</span></span>
