@@ -22,11 +22,15 @@ app.mount('#app');
 
 ### Manual on demand
 
-```ts
-import 'erabbit/dist/es/index.css';
+```vue
+<script setup lang="ts">
+import 'erabbit/dist/es/area/style';
+import { Button as ErButton } from 'erabbit';
+</script>
 
-import 'erabbit/dist/es/area/index.css';
-import { Area as ErArea } from 'erabbit';
+<template>
+  <er-button>ErButton</er-button>
+</template>
 ```
 
 ### On-demand Import
