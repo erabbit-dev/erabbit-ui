@@ -34,6 +34,8 @@ bun add erabbit -S
   <link rel="stylesheet" href="//unpkg.com/erabbit/dist/erabbit.min.css" />
   <!-- Import Vue 3 -->
   <script src="//unpkg.com/vue@3"></script>
+  <script src="//unpkg.com/@vueuse/shared"></script>
+  <script src="//unpkg.com/@vueuse/core"></script>
   <!-- Import component library -->
   <script src="//unpkg.com/erabbit"></script>
 </head>
@@ -50,6 +52,8 @@ bun add erabbit -S
   />
   <!-- Import Vue 3 -->
   <script src="//cdn.jsdelivr.net/npm/vue@3"></script>
+  <script src="//cdn.jsdelivr.net/npm/@vueuse/shared"></script>
+  <script src="//cdn.jsdelivr.net/npm/@vueuse/core"></script>
   <!-- Import component library -->
   <script src="//cdn.jsdelivr.net/npm/erabbit"></script>
 </head>
