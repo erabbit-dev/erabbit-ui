@@ -28,7 +28,6 @@ export function ErabbitUIResolver(
   return {
     type: 'component',
     resolve: (name: string) => {
-      console.log(name)
       if (name.startsWith('Er')) {
         const partialName = name.slice(2)
         return {

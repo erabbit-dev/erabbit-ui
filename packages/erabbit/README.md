@@ -18,11 +18,11 @@
   <br>
 </p>
 
-# Erabbit UI
+## Erabbit UI
 
 A Vue 3 based component library for erabbit web applications
 
-# Components List
+## Components List
 
 | Name              | Completed | Description               |
 | ----------------- | --------- | ------------------------- |
