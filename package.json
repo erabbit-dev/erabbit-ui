@@ -7,6 +7,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write packages/",
     "test": "pnpm --dir packages/erabbit test",
+    "test:update": "pnpm --dir packages/erabbit test:update",
     "coverage": "pnpm --dir packages/erabbit coverage",
     "build": "pnpm --dir packages/erabbit build",
     "release": "pnpm --dir packages/erabbit release",
