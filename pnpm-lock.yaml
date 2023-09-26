@@ -15,7 +15,7 @@ importers:
         specifier: ^17.7.0
         version: 17.7.0
       '@erabbit-dev/auto-import':
-        specifier: workspace:^0.0.2
+        specifier: workspace:*
         version: link:packages/erabbit-auto-import
       '@erabbit-dev/cli':
         specifier: workspace:^1.0.0
