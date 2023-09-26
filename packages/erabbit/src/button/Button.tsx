@@ -1,7 +1,15 @@
 import { type ExtractPropTypes, type PropType, defineComponent } from 'vue'
 import { createNamespace } from '../utils'
 
-export type ErButtonType = 'default' | 'primary' | 'plain' | 'gray'
+export type ErButtonType =
+  | 'default'
+  | 'primary'
+  | 'plain'
+  | 'info'
+  | 'danger'
+  | 'warning'
+  | 'success'
+
 export type ErButtonSize = 'large' | 'middle' | 'small' | 'mini'
 
 const props = {

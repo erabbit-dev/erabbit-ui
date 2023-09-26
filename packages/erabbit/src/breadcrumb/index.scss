@@ -8,14 +8,14 @@
     margin-right: 5px;
     display: flex;
     align-items: center;
-    color: #222;
+    color: var(--er-black);
     a {
-      color: #666;
+      color: var(--er-text);
       font-weight: normal;
       transition: all 0.4s;
       text-decoration: none;
       &:hover {
-        color: var(--xtx-color);
+        color: var(--er-primary);
       }
     }
     &__separator {

@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@erabbit-dev/auto-import": "workspace:^0.0.2",
+    "@erabbit-dev/auto-import": "workspace:*",
     "@erabbit-dev/cli": "workspace:^1.0.0",
     "@erabbit-dev/eslint-config": "workspace:^1.0.0",
     "@erabbit-dev/icons": "workspace:^1.0.0",

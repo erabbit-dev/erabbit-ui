@@ -2,52 +2,76 @@
   appearance: none;
   border: none;
   outline: none;
-  background: #fff;
+  background: var(--er-white);
   text-align: center;
   border: 1px solid transparent;
   border-radius: 4px;
   cursor: pointer;
+  box-sizing: border-box;
+  line-height: 1;
   &--large {
     width: 240px;
     height: 50px;
     font-size: 16px;
-    line-height: 48px;
   }
   &--middle {
     width: 180px;
     height: 50px;
     font-size: 16px;
-    line-height: 48px;
   }
   &--small {
     width: 100px;
     height: 32px;
     font-size: 14px;
-    line-height: 30px;
   }
   &--mini {
     width: 60px;
     height: 32px;
     font-size: 14px;
-    line-height: 30px;
   }
   &--default {
-    border-color: #e4e4e4;
-    color: #666;
+    border-color: var(--er-border);
+    color: var(--er-text);
   }
   &--primary {
-    border-color: var(--xtx-color);
-    background: var(--xtx-color);
-    color: #fff;
+    border-color: var(--er-primary);
+    background: var(--er-primary);
+    color: var(--er-white)
   }
   &--plain {
-    border-color: var(--xtx-color);
-    color: var(--xtx-color);
-    background: lighten(#27ba9b, 50%);
+    border-color: var(--er-primary);
+    color: var(--er-primary);
+    background: var(--er-plain);
   }
-  &--gray {
-    border-color: #ccc;
-    background: #ccc;
-    color: #fff;
+  &--info {
+    border-color: var(--er-border);
+    background: var(--er-info);
+    color: var(--er-white);
+  }
+  &--danger {
+    border-color: var(--er-danger);
+    background: var(--er-danger);
+    color: var(--er-white);
+  }
+  &--warning {
+    border-color: var(--er-warning);
+    background: var(--er-warning);
+    color: var(--er-white);
+  }
+  &--warning {
+    border-color: var(--er-warning);
+    background: var(--er-warning);
+    color: var(--er-white);
+  }
+  &--success {
+    border-color: var(--er-success);
+    background: var(--er-success);
+    color: var(--er-white);
+  }
+  &:active {
+    opacity: 0.8;
+  }
+  &:hover {
+    opacity: 0.9;
   }
 }

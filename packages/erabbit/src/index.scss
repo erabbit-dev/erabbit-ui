@@ -1,9 +1,18 @@
 :root {
-  --xtx-color: #27ba9b;
-  --help-color: #e26237;
-  --suc-color: #1dc779;
-  --warn-color: #ffb302;
-  --price-color: #cf4444;
+  --er-primary: #27ba9b;
+  --er-plain: #e6faf6;
+  --er-info: #e0e0e0;
+  --er-warning: #ffb302;
+  --er-success: #1dc779;
+  --er-danger: #cf4444;
+  --er-help: #e26237;
+
+  --er-white: #fff;
+  --er-black: #333;
+  --er-gray: #ccc;
+  --er-border: #e4e4e4;
+  --er-text: #666;
+  --er-bg: #f5f5f5;
 }
 
 .ellipsis {

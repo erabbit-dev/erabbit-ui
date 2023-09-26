@@ -3,9 +3,12 @@
 <template>
   <div class="demo">
     <er-button type="default">default</er-button>
+    <er-button type="info">info</er-button>
     <er-button type="primary">primary</er-button>
     <er-button type="plain">plain</er-button>
-    <er-button type="gray">gray</er-button>
+    <er-button type="success">success</er-button>
+    <er-button type="warning">warning</er-button>
+    <er-button type="danger">danger</er-button>
   </div>
   <hr />
   <div class="demo">
