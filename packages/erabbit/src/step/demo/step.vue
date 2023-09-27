@@ -1,25 +1,19 @@
 <script setup>
-import { ref } from 'vue'
 defineOptions({
   name: 'StepDemo'
 })
 import Step from '../Step'
 import StepItem from '../StepItem'
 import '../index.scss'
-const index = ref(-1)
-const changeIndex = () => {
-  index.value++
-}
 </script>
 <template>
   <div>
-    <button @click="changeIndex">+1</button>
     <step :active-index="1" size="small">
       <step-item title="开始" desc="下单"></step-item>
       <step-item title="过程" desc="支付"> </step-item>
       <step-item title="结束" desc="送达"> </step-item>
     </step>
-    <!-- <step size="medium">
+    <step size="medium">
       <step-item title="开始" desc="下单"></step-item>
       <step-item title="过程" desc="支付"> </step-item>
       <step-item title="结束" desc="送达"> </step-item>
@@ -53,8 +47,8 @@ const changeIndex = () => {
       <step-item title="开始" desc="下单"></step-item>
       <step-item title="过程" desc="支付"> </step-item>
       <step-item title="结束" desc="送达"> </step-item>
-    </step> -->
-    <step mode="vertical" :active-index="index">
+    </step>
+    <step mode="vertical" :active-index="8">
       <step-item title="开始" desc="下单"></step-item>
       <step-item title="开始" desc="下单"></step-item>
       <step-item title="开始" desc="下单"></step-item>
