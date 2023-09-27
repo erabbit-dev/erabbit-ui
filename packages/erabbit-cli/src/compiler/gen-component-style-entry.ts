@@ -17,12 +17,12 @@ function getDependencies(filePath: string, visitedFiles = new Set()) {
   const fileContent = fse.readFileSync(filePath, 'utf8')
   const dependencies = []
 
-  const importRegex =
-    /import\s+(?:\{[^}]+\}|\S+)\s+from\s+['"](\.{1,2}\/[^'"]+)['"]/g
+  const importRegexp =
+    /import\s+(?:\{[^}]+\}|\S+)\s+from\s+['"](\.{1,2}[\\/][^'"]+)['"]/g
 
   let match
 
-  while ((match = importRegex.exec(fileContent)) !== null) {
+  while ((match = importRegexp.exec(fileContent)) !== null) {
     dependencies.push(match[1])
   }
 
@@ -34,7 +34,7 @@ function getDependencies(filePath: string, visitedFiles = new Set()) {
 
   // 过滤掉其他依赖
   const filteredDependencies = resolvedDependencies.filter((dep) => {
-    return !EXCLUDE_DIRS.some((dir) => dep.includes(dir))
+    return !EXCLUDE_DIRS.some((dir) => dep.includes(path.normalize(dir)))
   })
 
   // 递归获取依赖的依赖
