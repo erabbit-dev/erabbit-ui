@@ -1,5 +1,6 @@
 import { type ExtractPropTypes, type PropType, defineComponent } from 'vue'
 import { createNamespace } from '../utils'
+import { type IconProps, Icon } from '../icon'
 
 export type ErButtonType =
   | 'default'
@@ -20,7 +21,11 @@ const props = {
   size: {
     type: String as PropType<ErButtonSize>,
     default: 'middle'
-  }
+  },
+  round: Boolean,
+  disabled: Boolean,
+  icon: String as PropType<IconProps['name']>,
+  circle: Boolean
 }
 
 export type ErButtonProps = ExtractPropTypes<typeof props>
@@ -34,7 +39,17 @@ export default defineComponent({
 
   setup(props, { slots }) {
     return () => (
-      <button class={[className, 'ellipsis', bem(props.size, props.type)]}>
+      <button
+        class={[
+          className,
+          'ellipsis',
+          bem(props.size, props.type),
+          props.round ? 'is-round' : undefined,
+          props.circle ? 'is-circle' : undefined,
+          props.disabled ? bem('disabled') : undefined
+        ]}
+      >
+        {props.icon && <Icon name={props.icon} class={bem('icon')} />}
         {slots.default?.()}
       </button>
     )

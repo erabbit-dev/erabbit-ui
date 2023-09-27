@@ -9,25 +9,53 @@
   cursor: pointer;
   box-sizing: border-box;
   line-height: 1;
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &.is-circle {
+    padding: 0 !important;
+    border-radius: 25px !important;
+  }
   &--large {
-    width: 240px;
+    max-width: 240px;
+    min-width: 50px;
     height: 50px;
     font-size: 16px;
+    padding: 0 20px;
+    &.is-round {
+      border-radius: 25px;
+    }
   }
   &--middle {
-    width: 180px;
+    max-width: 180px;
+    min-width: 50px;
     height: 50px;
     font-size: 16px;
+    padding: 0 20px;
+    &.is-round {
+      border-radius: 25px;
+    }
   }
   &--small {
-    width: 100px;
+    max-width: 100px;
+    min-width: 32px;
     height: 32px;
     font-size: 14px;
+    padding: 0 12px;
+    &.is-round {
+      border-radius: 16px;
+    }
   }
   &--mini {
-    width: 60px;
+    max-width: 60px;
+    min-height: 32px;
     height: 32px;
     font-size: 14px;
+    padding: 0 12px;
+    &.is-round {
+      border-radius: 16px;
+    }
   }
   &--default {
     border-color: var(--er-border);
