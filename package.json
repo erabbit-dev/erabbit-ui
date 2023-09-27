@@ -7,6 +7,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write packages/",
     "test": "pnpm --dir packages/erabbit test",
+    "test:update": "pnpm --dir packages/erabbit test:update",
     "coverage": "pnpm --dir packages/erabbit coverage",
     "build": "pnpm --dir packages/erabbit build",
     "release": "pnpm --dir packages/erabbit release",
@@ -34,7 +35,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@erabbit-dev/auto-import": "workspace:^0.0.3",
+    "@erabbit-dev/auto-import": "workspace:*",
     "@erabbit-dev/cli": "workspace:^1.0.0",
     "@erabbit-dev/eslint-config": "workspace:^1.0.0",
     "@erabbit-dev/icons": "workspace:^1.0.0",
@@ -65,7 +66,7 @@
   },
   "engines": {
     "node": ">=16.19.0",
-    "pnpm": "8.7.6"
+    "pnpm": ">=8.7.6"
   },
   "packageManager": "pnpm@8.7.6"
 }
