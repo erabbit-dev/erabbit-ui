@@ -129,13 +129,13 @@
       &.active {
         .step {
           > span {
-            border-color: var(--xtx-color);
-            background: var(--xtx-color);
+            border-color: var(--xtx-color) !important;
+            background: var(--xtx-color) !important;
             color: #fff;
           }
           &::before,
           &::after {
-            background: var(--xtx-color);
+            background: var(--xtx-color) !important;
           }
         }
         .title {
