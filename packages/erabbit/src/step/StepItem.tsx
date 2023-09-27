@@ -27,7 +27,7 @@ export default defineComponent({
   name: 'ErStepItem',
   props: stepProps,
   setup(props) {
-    const { children, addChild, removeChild, activeIndex, mode } =
+    const { children, addChild, removeChild, parentProps } =
       inject<StepContext>(StepContextKey)
     const uid = getCurrentInstance()?.uid
     const currentIndex = computed(() => {
@@ -45,13 +45,13 @@ export default defineComponent({
       <div
         class={{
           'er-steps-item': true,
-          active: currentIndex.value <= activeIndex
+          active: currentIndex.value <= parentProps.activeIndex
         }}
       >
         <div class="step">
           <span>{currentIndex.value + 1}</span>
         </div>
-        {mode === 'vertical' ? (
+        {parentProps.mode === 'vertical' ? (
           <div class="vertical-main">
             <div class="title">{props.title}</div>
             <div class="desc">{props.desc}</div>

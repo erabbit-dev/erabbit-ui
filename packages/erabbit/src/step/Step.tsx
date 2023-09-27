@@ -43,8 +43,7 @@ export type StepContext = {
   children: Ref<Array<{ uid: number }>>
   addChild: (item: { uid: number }) => void
   removeChild: (uid: number) => void
-  mode: ModeType
-  size: number
+  parentProps: StepProps
 }
 
 export type StepProps = ExtractPropTypes<typeof stepProps>
@@ -62,9 +61,7 @@ export default defineComponent({
       children,
       addChild,
       removeChild,
-      activeIndex: props.activeIndex,
-      mode: props.mode,
-      size: props.size
+      parentProps: props
     })
     return () => (
       <div
