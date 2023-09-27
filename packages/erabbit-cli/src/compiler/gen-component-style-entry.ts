@@ -51,7 +51,7 @@ export function getStyleDeps(filePath: string): string[] {
   const dependencies = getDependencies(filePath.replace('.scss', ES_EXT))
   const deps = dependencies
     .map((dep) => {
-      const match = dep.match(/\/(\w+)\/index.mjs$/)
+      const match = dep.match(/[\\/](\w+)[\\/]index.mjs$/)
       return match ? match[1] : ''
     })
     .filter((dep) => dep)
@@ -59,18 +59,20 @@ export function getStyleDeps(filePath: string): string[] {
 }
 
 export function genComponentStyleEntry(filePath: string): void {
-  const componentName = filePath.match(/dist\/es\/(\w+)\/index.scss/)?.[1]
+  const componentName = filePath.match(
+    /dist[\\/]es[\\/](\w+)[\\/]index.scss/
+  )?.[1]
   if (componentName) {
     const deps = getStyleDeps(filePath)
 
     const esStyleEntryFile = filePath.replace(/index.scss/, 'style' + ES_EXT)
     const libStyleEntryFile = filePath
       .replace(/index.scss/, 'style' + LIB_EXT)
-      .replace(/dist\/es/, 'dist/lib')
+      .replace(/dist[\\/]es/, 'dist/lib')
     const esStyleEntryDts = filePath.replace(/index.scss/, 'style' + DTS_EXT)
     const libStyleEntryDts = filePath
       .replace(/index.scss/, 'style' + DTS_EXT)
-      .replace(/dist\/es/, 'dist/lib')
+      .replace(/dist[\\/]es/, 'dist/lib')
 
     fse.writeFileSync(
       esStyleEntryFile,
