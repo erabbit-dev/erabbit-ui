@@ -1,0 +1,186 @@
+:root {
+  --step--vertical-width: 48px;
+  --step--medium-width: 48px;
+  --step--small-width: 36px;
+  --step--mini-width: 30px;
+  --step--vertical-lineHeight: 50px;
+
+}
+.er-steps {
+    display: flex;
+    text-align: center;
+    &.small {
+      .step {
+        > span {
+          width: var(--step--small-width);
+          height: var(--step--small-width);
+          line-height: var(--step--small-width);
+          font-size: 20px;
+        }
+      }
+    }
+    &.mini {
+      .step {
+        > span {
+          width: var(--step--mini-width);
+          height: var(--step--mini-width);
+          line-height: var(--step--mini-width);
+          font-size: 14px
+        }
+        &::after,
+        &::before {
+          top: 12px;
+        }
+      }
+    }
+  
+    &.vertical.medium, &.vertical.mini, &.vertical.small {
+      .er-steps-item {
+        margin-bottom: calc(var(--step--vertical-lineHeight) * 2) ;
+        display: flex;
+        justify-content: center;
+      }
+      flex-direction: column;
+      .title, .desc {
+        margin-left: 10px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0;
+      }
+      .desc {
+        padding: 0
+      }
+      .step {
+        &::after,
+        &::before {
+          content: "";
+          width: var(--step--vertical-lineHeight);
+          height: 2px;
+          background: #e4e4e4;
+          transform: rotate(90deg) translate(53px, 0px);
+        }
+        &::before {
+          transform: rotate(90deg) translate(-50px, -2px);
+        }
+      }
+    }
+    &.vertical.small {
+      .step {
+        &::after,
+        &::before {
+          content: "";
+          width: var(--step--vertical-lineHeight);
+          height: 2px;
+          background: #e4e4e4;
+          transform: rotate(90deg) translate(41px, -6px);
+        }
+        &::before {
+          transform: rotate(90deg) translate(-49px, 4px);
+        }
+      }
+      .title, .desc {
+        height: 18px;
+        line-height: 18px;
+        font-size: 14px;
+      }
+      .desc {
+        font-size: 12px
+      }
+    }
+    &.vertical.mini {
+      .step {
+        &::after,
+        &::before {
+          content: "";
+          width: var(--step--vertical-lineHeight);
+          height: 2px;
+          background: #e4e4e4;
+          transform: rotate(90deg) translate(46px, -9px);
+        }
+        &::before {
+          transform: rotate(90deg) translate(-38px,7px);
+        }
+      }
+      .title, .desc {
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+      }
+      .desc {
+        transform: scale(0.8);
+      }
+    }
+    &-item {
+      flex: 1;
+      &:first-child {
+        .step {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      &:last-child {
+        .step {
+          &::after {
+            display: none;
+          }
+        }
+      }
+      &.active {
+        .step {
+          > span {
+            border-color: var(--xtx-color);
+            background: var(--xtx-color);
+            color: #fff;
+          }
+          &::before,
+          &::after {
+            background: var(--xtx-color);
+          }
+        }
+        .title {
+          color: var(--xtx-color);
+        }
+      }
+      .step {
+        position: relative;
+        > span {
+          width: var(--step--medium-width);
+          height: var(--step--medium-width);
+          font-size: 28px;
+          border: 2px solid #e4e4e4;
+          background: #fff;
+          border-radius: 50%;
+          line-height: 44px;
+          color: #ccc;
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+        }
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          top: 23px;
+          width: 50%;
+          height: 2px;
+          background: #e4e4e4;
+        }
+        &::before {
+          left: 0;
+        }
+        &::after {
+          right: 0;
+        }
+      }
+      .title {
+        color: #999;
+        padding-top: 12px;
+      }
+      .desc {
+        font-size: 12px;
+        color: #999;
+        padding-top: 6px;
+      }
+    }
+  }
