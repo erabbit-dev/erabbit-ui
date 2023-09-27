@@ -40,6 +40,9 @@ Use `type` and `size` to define Button's style.
 </template>
 
 <style scoped>
+.demo {
+  padding-top: 20px;
+}
 .demo .er-button {
   margin-right: 20px;
   margin-bottom: 20px;
@@ -95,7 +98,10 @@ Use attribute `size` to set additional sizes with `large`, `small`, `mini`, defa
 
 ### Button Attributes
 
-| Name | Description | Type                                                                    | Default   |
-| ---- | ----------- | ----------------------------------------------------------------------- | --------- |
-| type | button type | `'default' \| 'primary' \| 'plain' \| 'danger'\| 'warning'\| 'success'` | `default` |
-| size | button size | `'large' \| 'middle' \| 'small' \| 'mini'`                              | `middle`  |
+| Name     | Description                            | Type                                                                    | Default   |
+| -------- | -------------------------------------- | ----------------------------------------------------------------------- | --------- |
+| type     | button type                            | `'default' \| 'primary' \| 'plain' \| 'danger'\| 'warning'\| 'success'` | `default` |
+| size     | button size                            | `'large' \| 'middle' \| 'small' \| 'mini'`                              | `middle`  |
+| round    | determine whether it's a round button  | `boolean`                                                               | `false`   |
+| circle   | determine whether it's a circle button | `boolean`                                                               | `false`   |
+| disabled | disable the button                     | `boolean`                                                               | `false`   |
