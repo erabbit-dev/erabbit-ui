@@ -11,7 +11,7 @@ const onShowConfirm = async () => {
     },
     cancel: () => {
       console.log('cancel')
-    }
+    },
   })
   console.log('ok')
 }

@@ -20,14 +20,14 @@ const router = createRouter({
     { path: '/area', component: () => import('./area/demo/index.vue') },
     {
       path: '/breadcrumb',
-      component: () => import('./breadcrumb/demo/index.vue')
+      component: () => import('./breadcrumb/demo/index.vue'),
     },
     { path: '/button', component: () => import('./button/demo/index.vue') },
     { path: '/carousel', component: () => import('./carousel/demo/index.vue') },
     { path: '/checkbox', component: () => import('./checkbox/demo/index.vue') },
     { path: '/confirm', component: () => import('./confirm/demo/index.vue') },
-    { path: '/icon', component: () => import('./icon/demo/index.vue') }
-  ]
+    { path: '/icon', component: () => import('./icon/demo/index.vue') },
+  ],
 })
 
 const app = createApp(App)

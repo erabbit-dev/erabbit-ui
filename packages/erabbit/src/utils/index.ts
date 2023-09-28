@@ -2,7 +2,7 @@ import type { Component } from 'vue'
 import { createApp } from 'vue'
 
 export function createNamespace(
-  name: string
+  name: string,
 ): [string, (...mods: string[]) => string] {
   const prefixedName = `er-${name}`
 
@@ -37,7 +37,7 @@ export function mountComponent<T>(RootComponent: Component) {
     unmount() {
       app.unmount()
       document.body.removeChild(root)
-    }
+    },
   }
 }
 

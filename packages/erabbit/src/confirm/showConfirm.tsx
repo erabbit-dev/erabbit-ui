@@ -14,7 +14,7 @@ const defaultProps: OptionsType = {
   cancelText: 'Cancel',
   submitText: 'OK',
   teleport: 'body',
-  lockScroll: true
+  lockScroll: true,
 }
 
 type InstanceExpose = {
@@ -43,7 +43,7 @@ const initInstance = () => {
       }
 
       const exposeObject: InstanceExpose = {
-        open
+        open,
       }
       expose(exposeObject)
 
@@ -52,7 +52,7 @@ const initInstance = () => {
       })
 
       return () => <Confirm {...confirmProps.value} onUpdate:visible={close} />
-    }
+    },
   }))
 }
 
@@ -70,7 +70,7 @@ export const showConfirm = (options: OptionsType): Promise<string> => {
       cancel: () => {
         options.cancel && options.cancel()
         reject('cancel')
-      }
+      },
     })
   })
 }

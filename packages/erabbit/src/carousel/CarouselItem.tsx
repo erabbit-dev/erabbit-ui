@@ -16,14 +16,14 @@ export default defineComponent({
 
     const instance = getCurrentInstance()
     const selfIndex = computed(() =>
-      items.value.findIndex((item) => item.uid === instance?.uid)
+      items.value.findIndex((item) => item.uid === instance?.uid),
     )
 
     const rootRef = ref<HTMLDivElement>()
     onMounted(() => {
       addItem({
         uid: instance!.uid,
-        height: rootRef.value?.offsetHeight
+        height: rootRef.value?.offsetHeight,
       })
     })
 
@@ -35,12 +35,12 @@ export default defineComponent({
       <div
         class={{
           'carousel-item': true,
-          fade: index.value === selfIndex.value
+          fade: index.value === selfIndex.value,
         }}
         ref={rootRef}
       >
         {slots.default?.()}
       </div>
     )
-  }
+  },
 })

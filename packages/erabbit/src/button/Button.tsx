@@ -11,21 +11,21 @@ export type ErButtonType =
   | 'warning'
   | 'success'
 
-export type ErButtonSize = 'large' | 'middle' | 'small' | 'mini'
+export type ErButtonSize = 'large' | 'small' | 'middle'
 
 const props = {
   type: {
     type: String as PropType<ErButtonType>,
-    default: 'default'
+    default: 'default',
   },
   size: {
     type: String as PropType<ErButtonSize>,
-    default: 'middle'
+    default: 'default',
   },
   round: Boolean,
   disabled: Boolean,
   icon: String as PropType<IconProps['name']>,
-  circle: Boolean
+  circle: Boolean,
 }
 
 export type ErButtonProps = ExtractPropTypes<typeof props>
@@ -46,12 +46,12 @@ export default defineComponent({
           bem(props.size, props.type),
           props.round ? 'is-round' : undefined,
           props.circle ? 'is-circle' : undefined,
-          props.disabled ? bem('disabled') : undefined
+          props.disabled ? bem('disabled') : undefined,
         ]}
       >
         {props.icon && <Icon name={props.icon} class={bem('icon')} />}
         {slots.default?.()}
       </button>
     )
-  }
+  },
 })

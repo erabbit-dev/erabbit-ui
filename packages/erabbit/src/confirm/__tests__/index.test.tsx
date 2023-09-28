@@ -11,7 +11,7 @@ test('should render default Confirm', async () => {
       message="This is message"
       visible={true}
       teleport=""
-    />
+    />,
   )
 
   await later(0)
@@ -21,7 +21,7 @@ test('should render default Confirm', async () => {
 
 test('should use Confirm component state control confirmation box', async () => {
   const wrapper = mount(
-    <Confirm title="Title" message="This is message" teleport="" />
+    <Confirm title="Title" message="This is message" teleport="" />,
   )
 
   await wrapper.setProps({ visible: true })
@@ -73,7 +73,7 @@ test('should use showConfirm function control confirmation box', async () => {
     message: 'This is message',
     teleport: '#confirm',
     submit,
-    cancel
+    cancel,
   }).catch(() => {})
 
   await later(0)
@@ -89,7 +89,7 @@ test('should use showConfirm function control confirmation box', async () => {
     message: '这里是提示信息',
     teleport: '#confirm',
     submit,
-    cancel
+    cancel,
   }).catch(() => {})
 
   await later(0)
