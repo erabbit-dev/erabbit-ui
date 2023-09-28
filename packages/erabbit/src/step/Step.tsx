@@ -4,7 +4,7 @@ import type {
   ComponentPublicInstance,
   ExtractPropTypes,
   PropType,
-  Ref
+  Ref,
 } from 'vue'
 import { StepContextKey } from './constants'
 import { createNamespace } from '../utils'
@@ -13,16 +13,16 @@ export type SizeType = 'mini' | 'small' | 'default'
 const stepProps = {
   mode: {
     type: String as PropType<ModeType>,
-    default: 'horizontal'
+    default: 'horizontal',
   },
   activeIndex: {
     type: Number,
-    default: -1
+    default: -1,
   },
   size: {
     type: String as PropType<SizeType>,
-    default: 'default'
-  }
+    default: 'default',
+  },
 }
 export type StepExpose = {
   getActiveIndex: () => number
@@ -43,21 +43,21 @@ export default defineComponent({
   setup(props, { slots, expose }) {
     const { children, addChild, removeChild } = useChildren(
       getCurrentInstance()!,
-      'ErStepItem'
+      'ErStepItem',
     )
     provide(StepContextKey, {
       children,
       addChild,
       removeChild,
-      parentProps: props
+      parentProps: props,
     })
     expose({
-      getActiveIndex: () => props.activeIndex
+      getActiveIndex: () => props.activeIndex,
     })
     return () => (
       <div class={[stepClassName, props.size, props.mode]}>
         {slots.default?.()}
       </div>
     )
-  }
+  },
 })
