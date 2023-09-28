@@ -86,12 +86,12 @@ test('should the change event is triggered after the selection is complete', asy
 
   expect(wrapper.emitted('change')?.[0][0]).toEqual(
     expect.objectContaining({
-      fullLocation: '北京 北京市 东城区'
-    })
+      fullLocation: '北京 北京市 东城区',
+    }),
   )
 
   await wrapper.setProps({
-    fullLocation: '北京 北京市 东城区'
+    fullLocation: '北京 北京市 东城区',
   })
 
   expect(wrapper.html()).toContain('<span>北京 北京市 东城区</span>')

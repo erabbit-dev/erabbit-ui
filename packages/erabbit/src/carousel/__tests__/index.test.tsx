@@ -11,7 +11,7 @@ test('should render default Carousel', () => {
       <CarouselItem>2</CarouselItem>
       <CarouselItem>3</CarouselItem>
       <CarouselItem>4</CarouselItem>
-    </Carousel>
+    </Carousel>,
   )
   expect(wrapper.html()).toMatchSnapshot()
 })
@@ -23,7 +23,7 @@ test('should trigger prev next and indicators change active item', async () => {
       <CarouselItem>2</CarouselItem>
       <CarouselItem>3</CarouselItem>
       <CarouselItem>4</CarouselItem>
-    </Carousel>
+    </Carousel>,
   )
 
   await later()
@@ -54,7 +54,7 @@ test('should use component instance methods to toggle active item', async () => 
           <CarouselItem>4</CarouselItem>
         </Carousel>
       )
-    }
+    },
   })
 
   const { carousel } = wrapper.vm.$refs as {
@@ -85,7 +85,7 @@ test('should trigger mouseenter mouseleave and auto-play toggle active item', as
       <CarouselItem>2</CarouselItem>
       <CarouselItem>3</CarouselItem>
       <CarouselItem>4</CarouselItem>
-    </Carousel>
+    </Carousel>,
   )
 
   await later(210)

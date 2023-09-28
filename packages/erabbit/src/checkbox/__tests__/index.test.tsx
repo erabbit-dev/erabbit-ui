@@ -4,8 +4,8 @@ import { mount } from '@vue/test-utils'
 test('should render default Checkbox', () => {
   const wrapper = mount(Checkbox, {
     slots: {
-      default: 'Checkbox'
-    }
+      default: 'Checkbox',
+    },
   })
   expect(wrapper.html()).toMatchSnapshot()
 })
@@ -16,7 +16,7 @@ test('should use v-model', async () => {
   const wrapper = mount<any>({
     props: {
       modelValue: false,
-      indeterminate: false
+      indeterminate: false,
     },
     render() {
       return (
@@ -28,7 +28,7 @@ test('should use v-model', async () => {
           Checkbox
         </Checkbox>
       )
-    }
+    },
   })
   expect(wrapper.html()).toMatchSnapshot()
 

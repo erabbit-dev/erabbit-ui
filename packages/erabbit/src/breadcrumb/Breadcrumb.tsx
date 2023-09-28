@@ -6,8 +6,8 @@ import { BreadcrumbContextKey } from './constants'
 const breadcrumbProps = {
   separator: {
     type: String,
-    default: '/'
-  }
+    default: '/',
+  },
 }
 
 export type BreadcrumbProps = ExtractPropTypes<typeof breadcrumbProps>
@@ -26,16 +26,16 @@ export default defineComponent({
     const {
       children: items,
       addChild: addItem,
-      removeChild: removeItem
+      removeChild: removeItem,
     } = useChildren(getCurrentInstance()!, 'ErBreadcrumbItem')
 
     provide(BreadcrumbContextKey, {
       items,
       addItem,
       removeItem,
-      props
+      props,
     })
 
     return () => <div class="er-breadcrumb">{slots.default?.()}</div>
-  }
+  },
 })

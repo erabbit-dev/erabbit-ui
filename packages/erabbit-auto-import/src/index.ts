@@ -19,7 +19,7 @@ function getSideEffects(dirName: string, moduleType: string) {
 }
 
 export function ErabbitUIResolver(
-  options: ErabbitResolverOptions = {}
+  options: ErabbitResolverOptions = {},
 ): ComponentResolver {
   const { ssr = false, importStyle = true } = options
 
@@ -36,9 +36,9 @@ export function ErabbitUIResolver(
           sideEffects:
             importStyle && !name.endsWith('Item')
               ? getSideEffects(kebabCase(partialName), moduleType)
-              : ''
+              : '',
         }
       }
-    }
+    },
   }
 }

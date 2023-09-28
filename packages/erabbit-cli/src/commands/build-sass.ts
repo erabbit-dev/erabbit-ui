@@ -20,11 +20,11 @@ async function copySourceCode() {
       const isDir =
         lstatSync(filePath).isDirectory() && !/__tests__|demo/.test(filePath)
       return isDir || REG.test(filePath)
-    }
+    },
   }
   return Promise.all([
     copy(SRC_DIR, ES_DIR, options),
-    copy(SRC_DIR, LIB_DIR, options)
+    copy(SRC_DIR, LIB_DIR, options),
   ])
 }
 
@@ -44,7 +44,7 @@ async function compileDir(dir: string, format: Format) {
       return isDir
         ? compileDir(filePath, format)
         : compileFile(filePath, format)
-    })
+    }),
   )
 }
 

@@ -7,7 +7,7 @@ test('should render default Carousel', () => {
       <BreadcrumbItem to="/">首页</BreadcrumbItem>
       <BreadcrumbItem to="/">活动管理</BreadcrumbItem>
       <BreadcrumbItem>活动编辑</BreadcrumbItem>
-    </Breadcrumb>
+    </Breadcrumb>,
   )
   expect(wrapper.html()).toMatchSnapshot()
 })
@@ -27,9 +27,9 @@ test('should add Transition component use animate', async () => {
     },
     data() {
       return {
-        show: true
+        show: true,
       }
-    }
+    },
   })
 
   await wrapper.find('.er-breadcrumb-item:nth-child(2)').trigger('click')

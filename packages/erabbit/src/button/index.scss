@@ -18,7 +18,6 @@
     border-radius: 25px !important;
   }
   &--large {
-    max-width: 240px;
     min-width: 50px;
     height: 50px;
     font-size: 16px;
@@ -28,17 +27,6 @@
     }
   }
   &--middle {
-    max-width: 180px;
-    min-width: 50px;
-    height: 50px;
-    font-size: 16px;
-    padding: 0 20px;
-    &.is-round {
-      border-radius: 25px;
-    }
-  }
-  &--small {
-    max-width: 100px;
     min-width: 32px;
     height: 32px;
     font-size: 14px;
@@ -47,14 +35,13 @@
       border-radius: 16px;
     }
   }
-  &--mini {
-    max-width: 60px;
-    min-height: 32px;
-    height: 32px;
-    font-size: 14px;
-    padding: 0 12px;
+  &--small {
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+    padding: 0 8px;
     &.is-round {
-      border-radius: 16px;
+      border-radius: 12px;
     }
   }
   &--default {

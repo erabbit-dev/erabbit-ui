@@ -16,7 +16,7 @@ const components = [
   CarouselItem,
   Checkbox,
   Confirm,
-  Icon
+  Icon,
 ]
 
 export function installer(app: App) {
