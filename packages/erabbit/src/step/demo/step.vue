@@ -1,6 +1,6 @@
 <script setup>
 defineOptions({
-  name: 'StepDemo'
+  name: 'StepDemo',
 })
 import Step from '../Step'
 import StepItem from '../StepItem'
@@ -29,7 +29,7 @@ import '../index.scss'
       <step-item title="结束" desc="送达"> </step-item>
     </step>
     <step mode="vertical" :active-index="0">
-      <step-item title="开始" desc="下单"></step-item>
+      <step-item title="开始" desc="下单sdsdsd"></step-item>
       <step-item title="过程" desc="支付"> </step-item>
       <step-item title="结束" desc="送达"> </step-item>
     </step>
