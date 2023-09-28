@@ -42,14 +42,16 @@
       font-size: 12px;
     }
   }
-
+  
   &.vertical.default,
   &.vertical.mini,
   &.vertical.small {
+    width: 300px;
     .er-steps-item {
       margin-bottom: calc(var(--er--step--vertical-lineHeight) * 2);
       display: flex;
       justify-content: center;
+    
     }
     flex-direction: column;
     .title,
@@ -73,13 +75,13 @@
       &::after,
       &::before {
         content: '';
-        width: var(--er--step--vertical-lineHeight);
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
         height: 2px;
         background: #e4e4e4;
-        transform: rotate(90deg) translate(53px, 0px);
+        transform: rotate(90deg) translate(47px, -3px);
       }
       &::before {
-        transform: rotate(90deg) translate(-50px, -2px);
+        transform: rotate(90deg) translate(-53px, 1px);
       }
     }
   }
@@ -88,13 +90,13 @@
       &::after,
       &::before {
         content: '';
-        width: var(--er--step--vertical-lineHeight);
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
         height: 2px;
         background: #e4e4e4;
-        transform: rotate(90deg) translate(41px, -6px);
+        transform: rotate(90deg) translate(43px, -8px);
       }
       &::before {
-        transform: rotate(90deg) translate(-49px, 4px);
+        transform: rotate(90deg) translate(-43px, 8px);
       }
     }
     .title,
@@ -112,13 +114,13 @@
       &::after,
       &::before {
         content: '';
-        width: var(--er--step--vertical-lineHeight);
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
         height: 2px;
         background: #e4e4e4;
-        transform: rotate(90deg) translate(46px, -9px);
+        transform: rotate(90deg) translate(40px, -11px);
       }
       &::before {
-        transform: rotate(90deg) translate(-38px, 7px);
+        transform: rotate(90deg) translate(-40px, 11px);
       }
     }
     .title,
@@ -177,12 +179,13 @@
         display: inline-block;
         position: relative;
         z-index: 1;
+        box-sizing: border-box;
       }
       &::after,
       &::before {
         content: '';
         position: absolute;
-        top: 23px;
+        top: 50%;
         width: 50%;
         height: 2px;
         background: #e4e4e4;

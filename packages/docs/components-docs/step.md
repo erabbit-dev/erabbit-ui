@@ -18,7 +18,7 @@ set the property.
 </template>
 ```
 
-## Content Custom
+## Different Mode
 
 To change the display mode to `vertical` or `horizontal`, you can set the mode property. The default mode is horizontal.
 
