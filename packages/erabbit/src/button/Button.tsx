@@ -48,6 +48,7 @@ export default defineComponent({
           props.circle ? 'is-circle' : undefined,
           props.disabled ? bem('disabled') : undefined,
         ]}
+        disabled={props.disabled}
       >
         {props.icon && <Icon name={props.icon} class={bem('icon')} />}
         {slots.default?.()}

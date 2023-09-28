@@ -86,7 +86,7 @@ Use attribute `size` to set additional sizes with `large`, `small`, `mini`, defa
 <template>
   <div class="demo">
     <er-button type="primary" size="large">large</er-button>
-    <er-button type="primary">middle</er-button>
+    <er-button type="primary">default</er-button>
     <er-button type="primary" size="small">small</er-button>
   </div>
 </template>
@@ -109,7 +109,7 @@ Use attribute `size` to set additional sizes with `large`, `small`, `mini`, defa
 | Name     | Description                            | Type                                                                    | Default   |
 | -------- | -------------------------------------- | ----------------------------------------------------------------------- | --------- |
 | type     | button type                            | `'default' \| 'primary' \| 'plain' \| 'danger'\| 'warning'\| 'success'` | `default` |
-| size     | button size                            | `'large' \| 'middle' \| 'small'`                                        | `middle`  |
+| size     | button size                            | `'large' \| 'default' \| 'small'`                                       | `default` |
 | round    | determine whether it's a round button  | `boolean`                                                               | `false`   |
 | circle   | determine whether it's a circle button | `boolean`                                                               | `false`   |
 | disabled | disable the button                     | `boolean`                                                               | `false`   |
