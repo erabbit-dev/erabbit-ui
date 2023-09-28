@@ -1,5 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`should add or remove a step by button event 1`] = `
+"<div><button class=\\"addStep\\">添加步骤</button><button class=\\"removeStep\\">移除步骤</button>
+  <div class=\\"er-steps default horizontal\\"></div>
+</div>"
+`;
+
 exports[`should change acitve item by btn click trigger 1`] = `
 "<div><button></button>
   <div class=\\"er-steps default vertical\\">
