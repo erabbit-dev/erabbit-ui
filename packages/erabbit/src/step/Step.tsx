@@ -1,11 +1,4 @@
-import {
-  defineComponent,
-  getCurrentInstance,
-  onUnmounted,
-  provide,
-  ref,
-  watch
-} from 'vue'
+import { defineComponent, getCurrentInstance, provide } from 'vue'
 import { useChildren } from '../composables'
 import type {
   ComponentPublicInstance,
@@ -36,7 +29,6 @@ const stepProps = {
   }
 }
 export type StepExpose = {
-  click: (index: number) => void
   getActiveIndex: () => number
 }
 export type StepContext = {
@@ -52,7 +44,7 @@ export type StepInstance = ComponentPublicInstance<StepProps, StepExpose>
 export default defineComponent({
   name: 'ErStep',
   props: stepProps,
-  setup(props, { slots }) {
+  setup(props, { slots, expose }) {
     const { children, addChild, removeChild } = useChildren(
       getCurrentInstance()!,
       'ErStepItem'
@@ -62,6 +54,9 @@ export default defineComponent({
       addChild,
       removeChild,
       parentProps: props
+    })
+    expose({
+      getActiveIndex: () => props.activeIndex
     })
     return () => (
       <div
