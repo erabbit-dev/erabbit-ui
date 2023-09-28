@@ -5,7 +5,7 @@ import {
   onUnmounted,
   provide,
   ref,
-  watch
+  watch,
 } from 'vue'
 import { useChildren } from '../composables'
 
@@ -26,16 +26,16 @@ export type CarouselContext = {
 const carouselProps = {
   duration: {
     type: Number,
-    default: 3000
+    default: 3000,
   },
   autoPlay: {
     type: Boolean,
-    default: true
+    default: true,
   },
   height: {
     type: String,
-    default: 'auto'
-  }
+    default: 'auto',
+  },
 }
 
 export type CarouselProps = ExtractPropTypes<typeof carouselProps>
@@ -62,7 +62,7 @@ export default defineComponent({
     const {
       children: items,
       addChild: addItem,
-      removeChild: removeItem
+      removeChild: removeItem,
     } = useChildren(getCurrentInstance()!, 'ErCarouselItem')
 
     const index = ref(0)
@@ -71,7 +71,7 @@ export default defineComponent({
       items,
       addItem,
       removeItem,
-      index
+      index,
     })
 
     let timer: ReturnType<typeof setInterval>
@@ -126,7 +126,7 @@ export default defineComponent({
       },
       setActiveItem: (index: number) => {
         onToggle(index)
-      }
+      },
     }
 
     const height = computed(() => {
@@ -141,7 +141,8 @@ export default defineComponent({
         <div
           class="carousel-body"
           style={{
-            height: props.height === 'auto' ? height.value + 'px' : props.height
+            height:
+              props.height === 'auto' ? height.value + 'px' : props.height,
           }}
         >
           {slots.default?.()}
@@ -171,5 +172,5 @@ export default defineComponent({
         </div>
       </div>
     )
-  }
+  },
 })

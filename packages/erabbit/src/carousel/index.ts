@@ -7,7 +7,7 @@ export const CarouselItem = _CarouselItem
 export type {
   CarouselProps,
   CarouselExpose,
-  CarouselInstance
+  CarouselInstance,
 } from './Carousel'
 
 declare module 'vue' {

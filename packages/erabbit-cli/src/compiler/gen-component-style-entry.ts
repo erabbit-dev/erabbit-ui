@@ -60,7 +60,7 @@ export function getStyleDeps(filePath: string): string[] {
 
 export function genComponentStyleEntry(filePath: string): void {
   const componentName = filePath.match(
-    /dist[\\/]es[\\/](\w+)[\\/]index.scss/
+    /dist[\\/]es[\\/](\w+)[\\/]index.scss/,
   )?.[1]
   if (componentName) {
     const deps = getStyleDeps(filePath)
@@ -76,11 +76,11 @@ export function genComponentStyleEntry(filePath: string): void {
 
     fse.writeFileSync(
       esStyleEntryFile,
-      `import '../index.css';\nimport './index.css';\n`
+      `import '../index.css';\nimport './index.css';\n`,
     )
     fse.writeFileSync(
       libStyleEntryFile,
-      `require('../index.css');\nrequire('./index.css');\n`
+      `require('../index.css');\nrequire('./index.css');\n`,
     )
     fse.writeFileSync(esStyleEntryDts, `export {};`)
     fse.writeFileSync(libStyleEntryDts, `export {};`)

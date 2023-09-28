@@ -10,12 +10,12 @@ const [className, bem] = createNamespace('area')
 const areaProps = {
   fullLocation: {
     type: String,
-    default: ''
+    default: '',
   },
   placeholder: {
     type: String,
-    default: '请选择地区'
-  }
+    default: '请选择地区',
+  },
 }
 
 export type AreaProps = ExtractPropTypes<typeof areaProps>
@@ -34,7 +34,7 @@ const defaultResult = {
   cityName: '',
   countyCode: '',
   countyName: '',
-  fullLocation: ''
+  fullLocation: '',
 }
 
 export type AreaResult = typeof defaultResult
@@ -48,7 +48,7 @@ export default defineComponent({
   props: areaProps,
 
   emits: {
-    change: (val: AreaResult) => true
+    change: (val: AreaResult) => true,
   },
 
   setup(props, { emit }) {
@@ -152,5 +152,5 @@ export default defineComponent({
         ) : null}
       </div>
     )
-  }
+  },
 })

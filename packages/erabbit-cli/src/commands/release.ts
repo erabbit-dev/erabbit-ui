@@ -10,11 +10,11 @@ function logCurrentVersion(cwd: string) {
   const pkg = fse.readJSONSync(pkgJson)
   consola.success(`${color.bold('Current package:')} ${color.green(pkg.name)}`)
   consola.success(
-    `${color.bold('Current version:')} ${color.green(pkg.version)}`
+    `${color.bold('Current version:')} ${color.green(pkg.version)}`,
   )
   return {
     pkgName: pkg.name,
-    currentVersion: pkg.version
+    currentVersion: pkg.version,
   }
 }
 
@@ -22,7 +22,7 @@ async function getNewVersion() {
   const { version } = await enquirer.prompt<{ version: string }>({
     type: 'input',
     name: 'version',
-    message: 'Version to release:'
+    message: 'Version to release:',
   })
   return version
 }

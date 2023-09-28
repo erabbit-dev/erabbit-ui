@@ -20,7 +20,7 @@ const router = createRouter({
     { path: '/area', component: () => import('./area/demo/index.vue') },
     {
       path: '/breadcrumb',
-      component: () => import('./breadcrumb/demo/index.vue')
+      component: () => import('./breadcrumb/demo/index.vue'),
     },
     { path: '/button', component: () => import('./button/demo/index.vue') },
     { path: '/carousel', component: () => import('./carousel/demo/index.vue') },
@@ -29,9 +29,9 @@ const router = createRouter({
     { path: '/icon', component: () => import('./icon/demo/index.vue') },
     {
       path: '/step',
-      component: () => import('./step/demo/step.vue')
-    }
-  ]
+      component: () => import('./step/demo/step.vue'),
+    },
+  ],
 })
 
 const app = createApp(App)

@@ -20,8 +20,8 @@ module.exports = {
         'release',
         'style',
         'test',
-        'improvement'
-      ]
-    ]
-  }
+        'improvement',
+      ],
+    ],
+  },
 }

@@ -4,7 +4,7 @@ import {
   getCurrentInstance,
   inject,
   onMounted,
-  onUnmounted
+  onUnmounted,
 } from 'vue'
 import type { Router } from 'vue-router'
 import type { CarouselContext } from './Breadcrumb'
@@ -15,12 +15,12 @@ import { createNamespace } from '../utils'
 const breadcrumbItemProps = {
   to: {
     type: [String, Object],
-    default: ''
+    default: '',
   },
   replace: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 }
 
 export type BreadcrumbItemProps = ExtractPropTypes<typeof breadcrumbItemProps>
@@ -35,18 +35,18 @@ export default defineComponent({
       items,
       addItem,
       removeItem,
-      props: parentProps
+      props: parentProps,
     } = inject<CarouselContext>(BreadcrumbContextKey)!
 
     const instance = getCurrentInstance()!
 
     const selfIndex = computed(() =>
-      items.value.findIndex((item) => item.uid === instance?.uid)
+      items.value.findIndex((item) => item.uid === instance?.uid),
     )
 
     onMounted(() => {
       addItem({
-        uid: instance.uid
+        uid: instance.uid,
       })
     })
 
@@ -84,5 +84,5 @@ export default defineComponent({
         {renderItemSeparator()}
       </div>
     )
-  }
+  },
 })

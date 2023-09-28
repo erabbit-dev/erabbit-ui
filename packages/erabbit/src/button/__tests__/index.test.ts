@@ -4,8 +4,8 @@ import { mount } from '@vue/test-utils'
 test('should render default button', () => {
   const wrapper = mount(Button, {
     slots: {
-      default: 'Submit'
-    }
+      default: 'Submit',
+    },
   })
   expect(wrapper.html()).toMatchSnapshot()
 })
@@ -13,12 +13,12 @@ test('should render default button', () => {
 test('should trigger click event', () => {
   const wrapper = mount(Button, {
     slots: {
-      default: 'Submit'
+      default: 'Submit',
     },
     props: {
       size: 'large',
-      type: 'primary'
-    }
+      type: 'primary',
+    },
   })
 
   expect(wrapper.html()).toMatchSnapshot()

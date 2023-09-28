@@ -17,13 +17,13 @@ export default defineConfig({
           format: 'es',
           entryFileNames: '[name].mjs',
           preserveModules: true,
-          dir: 'dist/es'
+          dir: 'dist/es',
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
           preserveModules: true,
-          dir: 'dist/lib'
+          dir: 'dist/lib',
         },
         {
           format: 'iife',
@@ -32,14 +32,14 @@ export default defineConfig({
           name: 'ErabbitUI',
           globals: {
             vue: 'Vue',
-            '@vueuse/core': 'VueUse'
-          }
-        }
-      ]
+            '@vueuse/core': 'VueUse',
+          },
+        },
+      ],
     },
     lib: {
-      entry: 'src/index.ts'
-    }
+      entry: 'src/index.ts',
+    },
   },
   plugins: [
     vue(),
@@ -47,11 +47,11 @@ export default defineConfig({
     dts({
       entryRoot: './src',
       outDir: ['dist/es', 'dist/lib'],
-      tsconfigPath: './tsconfig.json'
+      tsconfigPath: './tsconfig.json',
     }),
     Components({
       dts: false,
-      resolvers: [ErabbitUIResolver()]
-    })
-  ]
+      resolvers: [ErabbitUIResolver()],
+    }),
+  ],
 })

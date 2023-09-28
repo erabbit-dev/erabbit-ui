@@ -19,7 +19,7 @@ const components = [
   Confirm,
   Icon,
   Step,
-  StepItem
+  StepItem,
 ]
 
 export function installer(app: App) {
