@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
-import Components from 'unplugin-vue-components/vite'
-import { ErabbitUIResolver } from '@erabbit-dev/auto-import'
+// import Components from 'unplugin-vue-components/vite'
+// import { ErabbitUIResolver } from '@erabbit-dev/auto-import'
 import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
@@ -19,12 +19,14 @@ export default defineConfig({
           entryFileNames: '[name].mjs',
           preserveModules: true,
           dir: 'dist/es',
+          inlineDynamicImports: false,
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
           preserveModules: true,
           dir: 'dist/lib',
+          inlineDynamicImports: false,
         },
         {
           format: 'iife',
@@ -35,6 +37,7 @@ export default defineConfig({
             vue: 'Vue',
             '@vueuse/core': 'VueUse',
           },
+          inlineDynamicImports: false,
         },
       ],
     },
@@ -50,10 +53,10 @@ export default defineConfig({
       outDir: ['dist/es', 'dist/lib'],
       tsconfigPath: './tsconfig.json',
     }),
-    Components({
-      dts: false,
-      resolvers: [ErabbitUIResolver()],
-    }),
+    // Components({
+    //   dts: false,
+    //   resolvers: [ErabbitUIResolver()],
+    // }),
     Pages({
       dirs: ['src'],
       extensions: ['vue'],

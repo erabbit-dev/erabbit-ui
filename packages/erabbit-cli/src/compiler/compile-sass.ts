@@ -14,6 +14,11 @@ const tildeImporter = (url: string) => {
 
     url = require.resolve(url)
   }
+
+  if (url.includes('@erabbit-dev')) {
+    url = require.resolve(url)
+  }
+
   return { file: url }
 }
 
