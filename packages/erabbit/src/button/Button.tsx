@@ -20,7 +20,7 @@ const props = {
   },
   size: {
     type: String as PropType<ErButtonSize>,
-    default: 'default',
+    default: 'middle',
   },
   round: Boolean,
   disabled: Boolean,
