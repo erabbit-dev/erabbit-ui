@@ -10,7 +10,11 @@ exports[`should render default Confirm 1`] = `
       <div class=\\"er-confirm__body\\"><i class=\\"er-icon er-icon--warn\\" style=\\"font-size: 1em;\\"></i>
         <p>This is message</p>
       </div>
-      <div class=\\"er-confirm__footer\\"><button class=\\"er-button ellipsis er-button--mini er-button--default\\">Cancel</button><button class=\\"er-button ellipsis er-button--mini er-button--primary\\">OK</button></div>
+      <div class=\\"er-confirm__footer\\"><button class=\\"er-button ellipsis er-button--mini er-button--default\\">
+          <!---->Cancel
+        </button><button class=\\"er-button ellipsis er-button--mini er-button--primary\\">
+          <!---->OK
+        </button></div>
     </div>
   </div>
 </transition-stub>"
@@ -61,6 +65,7 @@ exports[`should use showConfirm function control confirmation box 1`] = `
           <button
             class="er-button ellipsis er-button--mini er-button--default"
           >
+            <!---->
             
             Cancel
             
@@ -68,6 +73,7 @@ exports[`should use showConfirm function control confirmation box 1`] = `
           <button
             class="er-button ellipsis er-button--mini er-button--primary"
           >
+            <!---->
             
             OK
             
@@ -124,6 +130,7 @@ exports[`should use showConfirm function control confirmation box 2`] = `
           <button
             class="er-button ellipsis er-button--mini er-button--default"
           >
+            <!---->
             
             Cancel
             
@@ -131,6 +138,7 @@ exports[`should use showConfirm function control confirmation box 2`] = `
           <button
             class="er-button ellipsis er-button--mini er-button--primary"
           >
+            <!---->
             
             OK
             

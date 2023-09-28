@@ -3,6 +3,7 @@ import { onClickOutside } from '@vueuse/core'
 import type { ExtractPropTypes } from 'vue'
 import { computed, defineComponent, ref } from 'vue'
 import { createNamespace } from '../utils'
+import { Icon } from '../icon'
 
 const [className, bem] = createNamespace('area')
 
@@ -133,7 +134,7 @@ export default defineComponent({
         <div class={bem('__input')} onClick={onToggle}>
           {props.fullLocation ? <span>{props.fullLocation}</span> : null}
           {!props.fullLocation ? <span>{props.placeholder}</span> : null}
-          <span class={bem('__arrow')}> ▼</span>
+          <Icon name="arrow-down" size={18} class={bem('__arrow')} />
         </div>
         {visible.value ? (
           <div class={bem('__popper')}>

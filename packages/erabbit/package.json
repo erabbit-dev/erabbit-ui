@@ -5,6 +5,7 @@
   "scripts": {
     "build": "vite build && erabbit-cli build-sass",
     "test": "vitest",
+    "test:update": "vitest -u",
     "coverage": "vitest run --coverage",
     "dev": "vite dev",
     "release": "erabbit-cli release",
