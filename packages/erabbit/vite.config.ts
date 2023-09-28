@@ -4,6 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
 import Components from 'unplugin-vue-components/vite'
 import { ErabbitUIResolver } from '@erabbit-dev/auto-import'
+import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
   build: {
@@ -52,6 +53,11 @@ export default defineConfig({
     Components({
       dts: false,
       resolvers: [ErabbitUIResolver()],
+    }),
+    Pages({
+      dirs: ['src'],
+      extensions: ['vue'],
+      exclude: ['App.vue'],
     }),
   ],
 })

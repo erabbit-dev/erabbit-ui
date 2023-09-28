@@ -4,10 +4,11 @@
   "description": "Erabbit UI Components built with Vue3",
   "scripts": {
     "build": "vite build && erabbit-cli build-sass",
+    "optimize": "vite optimize && erabbit-cli build-sass",
     "test": "vitest",
     "test:update": "vitest -u",
     "coverage": "vitest run --coverage",
-    "dev": "vite dev",
+    "dev": "pnpm build && vite dev",
     "release": "erabbit-cli release",
     "tsc": "tsc"
   },
@@ -38,10 +39,13 @@
     "directory": "packages/erabbit"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "@vueuse/core": "^10.4.1"
+    "@vueuse/core": "^10.4.1",
+    "vue": "^3.3.4"
   },
   "sideEffects": [
     "dist/*"
-  ]
+  ],
+  "devDependencies": {
+    "vite-plugin-pages": "^0.31.0"
+  }
 }
