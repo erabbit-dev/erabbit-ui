@@ -2,7 +2,7 @@
 
 exports[`should change acitve item by btn click trigger 1`] = `
 "<div><button></button>
-  <div class=\\"er-steps vertical medium\\">
+  <div class=\\"er-steps default vertical\\">
     <div class=\\"er-steps-item active\\">
       <div class=\\"step\\"><span>0</span></div>
       <div class=\\"vertical-main\\">
@@ -72,7 +72,7 @@ exports[`should change acitve item by btn click trigger 1`] = `
 
 exports[`should render  Step with different size 1`] = `
 "<div>
-  <div class=\\"er-steps medium\\">
+  <div class=\\"er-steps medium horizontal\\">
     <div class=\\"er-steps-item active\\">
       <div class=\\"step\\"><span>0</span></div>
       <div class=\\"title\\"></div>
@@ -89,7 +89,7 @@ exports[`should render  Step with different size 1`] = `
       <div class=\\"desc\\"></div>
     </div>
   </div>
-  <div class=\\"er-steps mini\\">
+  <div class=\\"er-steps mini horizontal\\">
     <div class=\\"er-steps-item active\\">
       <div class=\\"step\\"><span>0</span></div>
       <div class=\\"title\\"></div>
@@ -106,7 +106,7 @@ exports[`should render  Step with different size 1`] = `
       <div class=\\"desc\\"></div>
     </div>
   </div>
-  <div class=\\"er-steps small\\">
+  <div class=\\"er-steps small horizontal\\">
     <div class=\\"er-steps-item active\\">
       <div class=\\"step\\"><span>0</span></div>
       <div class=\\"title\\"></div>
@@ -127,7 +127,7 @@ exports[`should render  Step with different size 1`] = `
 `;
 
 exports[`should render  Step with title and desc 1`] = `
-"<div class=\\"er-steps medium\\">
+"<div class=\\"er-steps default horizontal\\">
   <div class=\\"er-steps-item active\\">
     <div class=\\"step\\"><span>0</span></div>
     <div class=\\"title\\">开始</div>
@@ -147,7 +147,7 @@ exports[`should render  Step with title and desc 1`] = `
 `;
 
 exports[`should render Step with active first one item 1`] = `
-"<div class=\\"er-steps medium\\">
+"<div class=\\"er-steps default horizontal\\">
   <div class=\\"er-steps-item active\\">
     <div class=\\"step\\"><span>0</span></div>
     <div class=\\"title\\"></div>
@@ -167,7 +167,7 @@ exports[`should render Step with active first one item 1`] = `
 `;
 
 exports[`should render Step with vertical mode 1`] = `
-"<div class=\\"er-steps vertical medium\\">
+"<div class=\\"er-steps default vertical\\">
   <div class=\\"er-steps-item active\\">
     <div class=\\"step\\"><span>0</span></div>
     <div class=\\"vertical-main\\">
@@ -193,7 +193,7 @@ exports[`should render Step with vertical mode 1`] = `
 `;
 
 exports[`should render default Step 1`] = `
-"<div class=\\"er-steps medium\\">
+"<div class=\\"er-steps default horizontal\\">
   <div class=\\"er-steps-item active\\">
     <div class=\\"step\\"><span>0</span></div>
     <div class=\\"title\\"></div>

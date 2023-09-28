@@ -7,14 +7,10 @@ import type {
   Ref
 } from 'vue'
 import { StepContextKey } from './constants'
-
+import { createNamespace } from '../utils'
 export type ModeType = 'horizontal' | 'vertical'
-export type SizeType = 'mini' | 'small' | 'medium'
+export type SizeType = 'mini' | 'small' | 'default'
 const stepProps = {
-  size: {
-    type: Number,
-    default: 48
-  },
   mode: {
     type: String as PropType<ModeType>,
     default: 'horizontal'
@@ -25,7 +21,7 @@ const stepProps = {
   },
   size: {
     type: String as PropType<SizeType>,
-    default: 'medium'
+    default: 'default'
   }
 }
 export type StepExpose = {
@@ -40,7 +36,7 @@ export type StepContext = {
 
 export type StepProps = ExtractPropTypes<typeof stepProps>
 export type StepInstance = ComponentPublicInstance<StepProps, StepExpose>
-
+const [stepClassName] = createNamespace('steps')
 export default defineComponent({
   name: 'ErStep',
   props: stepProps,
@@ -59,15 +55,7 @@ export default defineComponent({
       getActiveIndex: () => props.activeIndex
     })
     return () => (
-      <div
-        class={{
-          'er-steps': true,
-          vertical: props.mode === 'vertical',
-          mini: props.size === 'mini',
-          small: props.size === 'small',
-          medium: props.size === 'medium'
-        }}
-      >
+      <div class={[stepClassName, props.size, props.mode]}>
         {slots.default?.()}
       </div>
     )

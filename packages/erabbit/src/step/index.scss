@@ -1,9 +1,9 @@
 :root {
-  --step--vertical-width: 48px;
-  --step--medium-width: 48px;
-  --step--small-width: 36px;
-  --step--mini-width: 30px;
-  --step--vertical-lineHeight: 50px;
+  --er--step--vertical-width: 48px;
+  --er--step--default-width: 48px;
+  --er--step--small-width: 36px;
+  --er--step--mini-width: 30px;
+  --er--step--vertical-lineHeight: 50px;
 
 }
 .er-steps {
@@ -12,9 +12,9 @@
     &.small {
       .step {
         > span {
-          width: var(--step--small-width);
-          height: var(--step--small-width);
-          line-height: var(--step--small-width);
+          width: var(--er--step--small-width);
+          height: var(--er--step--small-width);
+          line-height: var(--er--step--small-width);
           font-size: 20px;
         }
       }
@@ -22,9 +22,9 @@
     &.mini {
       .step {
         > span {
-          width: var(--step--mini-width);
-          height: var(--step--mini-width);
-          line-height: var(--step--mini-width);
+          width: var(--er--step--mini-width);
+          height: var(--er--step--mini-width);
+          line-height: var(--er--step--mini-width);
           font-size: 14px
         }
         &::after,
@@ -34,9 +34,9 @@
       }
     }
   
-    &.vertical.medium, &.vertical.mini, &.vertical.small {
+    &.vertical.default, &.vertical.mini, &.vertical.small {
       .er-steps-item {
-        margin-bottom: calc(var(--step--vertical-lineHeight) * 2) ;
+        margin-bottom: calc(var(--er--step--vertical-lineHeight) * 2) ;
         display: flex;
         justify-content: center;
       }
@@ -54,7 +54,7 @@
         &::after,
         &::before {
           content: "";
-          width: var(--step--vertical-lineHeight);
+          width: var(--er--step--vertical-lineHeight);
           height: 2px;
           background: #e4e4e4;
           transform: rotate(90deg) translate(53px, 0px);
@@ -69,7 +69,7 @@
         &::after,
         &::before {
           content: "";
-          width: var(--step--vertical-lineHeight);
+          width: var(--er--step--vertical-lineHeight);
           height: 2px;
           background: #e4e4e4;
           transform: rotate(90deg) translate(41px, -6px);
@@ -92,7 +92,7 @@
         &::after,
         &::before {
           content: "";
-          width: var(--step--vertical-lineHeight);
+          width: var(--er--step--vertical-lineHeight);
           height: 2px;
           background: #e4e4e4;
           transform: rotate(90deg) translate(46px, -9px);
@@ -129,24 +129,24 @@
       &.active {
         .step {
           > span {
-            border-color: var(--xtx-color) !important;
-            background: var(--xtx-color) !important;
+            border-color: var(--er-primary) !important;
+            background: var(--er-primary) !important;
             color: #fff;
           }
           &::before,
           &::after {
-            background: var(--xtx-color) !important;
+            background: var(--er-primary) !important;
           }
         }
         .title {
-          color: var(--xtx-color);
+          color: var(--er-primary);
         }
       }
       .step {
         position: relative;
         > span {
-          width: var(--step--medium-width);
-          height: var(--step--medium-width);
+          width: var(--er--step--default-width);
+          height: var(--er--step--default-width);
           font-size: 28px;
           border: 2px solid #e4e4e4;
           background: #fff;

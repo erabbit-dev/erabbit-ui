@@ -6,6 +6,7 @@ import { Carousel, CarouselItem } from './carousel'
 import { Checkbox } from './checkbox'
 import { Confirm, showConfirm } from './confirm'
 import { Icon } from './icon'
+import { Step, StepItem } from './step'
 
 const components = [
   Area,
@@ -16,7 +17,9 @@ const components = [
   CarouselItem,
   Checkbox,
   Confirm,
-  Icon
+  Icon,
+  Step,
+  StepItem
 ]
 
 export function installer(app: App) {

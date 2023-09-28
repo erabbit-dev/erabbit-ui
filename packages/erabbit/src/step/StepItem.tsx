@@ -9,6 +9,8 @@ import {
 import { StepContextKey } from './constants'
 import type { StepContext } from './Step'
 import type { ComponentPublicInstance, ExtractPropTypes } from 'vue'
+import { createNamespace } from '../utils'
+
 const stepProps = {
   title: {
     type: String,
@@ -22,7 +24,7 @@ const stepProps = {
 export type StepItemProps = ExtractPropTypes<typeof stepProps>
 
 export type StepItemInstance = ComponentPublicInstance<StepItemProps>
-
+const [stepItemClassName] = createNamespace('steps-item')
 export default defineComponent({
   name: 'ErStepItem',
   props: stepProps,
@@ -43,10 +45,10 @@ export default defineComponent({
     })
     return () => (
       <div
-        class={{
-          'er-steps-item': true,
-          active: currentIndex.value <= parentProps.activeIndex
-        }}
+        class={[
+          stepItemClassName,
+          currentIndex.value <= parentProps.activeIndex ? 'active' : ''
+        ]}
       >
         <div class="step">
           <span>{currentIndex.value + 1}</span>
