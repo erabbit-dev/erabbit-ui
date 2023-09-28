@@ -33,10 +33,22 @@ To change the display mode to `vertical` or `horizontal`, you can set the mode p
     <er-step-item title="审核" desc="后台审核" />
     <er-step-item title="流程结束" desc="流程结束" />
   </er-step>
+  <er-step :active-index="2" :mode="currentMode" size="small">
+    <er-step-item title="开始" desc="活动详情" />
+    <er-step-item title="下单" desc="浏览" />
+    <er-step-item title="审核" desc="后台审核" />
+    <er-step-item title="流程结束" desc="流程结束" />
+  </er-step>
+  <er-step :active-index="2" :mode="currentMode" size="mini">
+    <er-step-item title="开始" desc="活动详情" />
+    <er-step-item title="下单" desc="浏览" />
+    <er-step-item title="审核" desc="后台审核" />
+    <er-step-item title="流程结束" desc="流程结束" />
+  </er-step>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
-const currentMode = ref('vertical');
+const currentMode = ref('horizontal');
 const changeMode = () => {
   currentMode.value =
     currentMode.value === 'horizontal' ? 'vertical' : 'horizontal';
