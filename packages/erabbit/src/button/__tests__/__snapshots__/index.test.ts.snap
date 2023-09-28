@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render default button 1`] = `
-"<button class=\\"er-button ellipsis er-button--default er-button--default\\">
+"<button class=\\"er-button ellipsis er-button--middle er-button--default\\">
   <!---->Submit
 </button>"
 `;
