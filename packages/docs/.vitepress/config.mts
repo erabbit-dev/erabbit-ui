@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import MarkdownPreview from 'vite-plugin-markdown-preview'
+import {visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -7,12 +8,19 @@ export default defineConfig({
   description: "Erabbit UI docs",
   base: '/erabbit-ui/',
   vite: {
-    plugins: [MarkdownPreview()]
+    plugins: [MarkdownPreview(),visualizer()],
+    build: {
+      sourcemap: false
+    }
+  },
+  markdown: {
+    lineNumbers: true,
   },
   themeConfig: {
     search: {
       provider: 'local'
     },
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Get Start', link: '/installation' },
