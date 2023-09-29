@@ -3,7 +3,6 @@ import {
   defineComponent,
   getCurrentInstance,
   inject,
-  onMounted,
   onUnmounted,
   type ExtractPropTypes,
 } from 'vue'
@@ -35,10 +34,8 @@ export default defineComponent({
       inject<StepContext>(StepContextKey)!
 
     const uid = getCurrentInstance()!.uid
+    addChild({ uid })
 
-    onMounted(() => {
-      addChild({ uid })
-    })
     onUnmounted(() => {
       removeChild(uid)
     })
