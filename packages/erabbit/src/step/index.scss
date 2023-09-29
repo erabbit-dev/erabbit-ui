@@ -1,0 +1,210 @@
+:root {
+  --er--step--vertical-width: 48px;
+  --er--step--default-width: 48px;
+  --er--step--small-width: 36px;
+  --er--step--mini-width: 30px;
+  --er--step--vertical-lineHeight: 50px;
+}
+.er-steps {
+  display: flex;
+  text-align: center;
+  &.small {
+    .step {
+      > span {
+        width: var(--er--step--small-width);
+        height: var(--er--step--small-width);
+        line-height: var(--er--step--small-width);
+        font-size: 20px;
+      }
+    }
+    .title {
+      font-size: 16px;
+    }.desc{
+      font-size: 12px;
+    }
+  }
+  &.mini {
+    .step {
+      > span {
+        width: var(--er--step--mini-width);
+        height: var(--er--step--mini-width);
+        line-height: var(--er--step--mini-width);
+        font-size: 14px;
+      }
+      &::after,
+      &::before {
+        top: 12px;
+      }
+    }
+    .title {
+      font-size: 14px;
+    }.desc{
+      font-size: 12px;
+    }
+  }
+  
+  &.vertical.default,
+  &.vertical.mini,
+  &.vertical.small {
+    width: 300px;
+    .er-steps-item {
+      margin-bottom: calc(var(--er--step--vertical-lineHeight) * 2);
+      display: flex;
+      justify-content: center;
+    
+    }
+    flex-direction: column;
+    .title,
+    .desc {
+      margin-left: 10px;
+      height: 26px;
+      line-height: 26px;
+      padding: 0;
+    }
+    .vertical-main {
+      width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+    }
+    .desc {
+      padding: 0;
+    }
+    .step {
+      &::after,
+      &::before {
+        content: '';
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
+        height: 2px;
+        background: #e4e4e4;
+        transform: rotate(90deg) translate(47px, -3px);
+      }
+      &::before {
+        transform: rotate(90deg) translate(-53px, 1px);
+      }
+    }
+  }
+  &.vertical.small {
+    .step {
+      &::after,
+      &::before {
+        content: '';
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
+        height: 2px;
+        background: #e4e4e4;
+        transform: rotate(90deg) translate(43px, -8px);
+      }
+      &::before {
+        transform: rotate(90deg) translate(-43px, 8px);
+      }
+    }
+    .title,
+    .desc {
+      height: 18px;
+      line-height: 18px;
+      font-size: 14px;
+    }
+    .desc {
+      font-size: 12px;
+    }
+  }
+  &.vertical.mini {
+    .step {
+      &::after,
+      &::before {
+        content: '';
+        width: calc(var(--er--step--vertical-lineHeight) + 2px) ;
+        height: 2px;
+        background: #e4e4e4;
+        transform: rotate(90deg) translate(40px, -11px);
+      }
+      &::before {
+        transform: rotate(90deg) translate(-40px, 11px);
+      }
+    }
+    .title,
+    .desc {
+      height: 16px;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    .desc {
+      transform: scale(0.8);
+    }
+  }
+  &-item {
+    flex: 1;
+    &:first-child {
+      .step {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    &:last-child {
+      .step {
+        &::after {
+          display: none;
+        }
+      }
+    }
+    &.active {
+      .step {
+        > span {
+          border-color: var(--er-primary) !important;
+          background: var(--er-primary) !important;
+          color: #fff;
+        }
+        &::before,
+        &::after {
+          background: var(--er-primary) !important;
+        }
+      }
+      .title {
+        color: var(--er-primary);
+      }
+    }
+    .step {
+      position: relative;
+      > span {
+        width: var(--er--step--default-width);
+        height: var(--er--step--default-width);
+        font-size: 28px;
+        border: 2px solid #e4e4e4;
+        background: #fff;
+        border-radius: 50%;
+        line-height: 44px;
+        color: #ccc;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+      }
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 50%;
+        height: 2px;
+        background: #e4e4e4;
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+    .title {
+      color: #999;
+      padding-top: 12px;
+    }
+    .desc {
+      font-size: 12px;
+      color: #999;
+      padding-top: 6px;
+    }
+  }
+}

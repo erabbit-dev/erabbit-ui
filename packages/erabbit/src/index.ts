@@ -5,6 +5,7 @@ export * from './carousel'
 export * from './checkbox'
 export * from './confirm'
 export * from './icon'
+export * from './step'
 
 // global install
 import { installer } from './installer'
