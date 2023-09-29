@@ -44,7 +44,8 @@ export default defineComponent({
     })
 
     const currentIndex = computed(() => {
-      return children.value.findIndex((item) => item.uid === uid)
+      const index = children.value.findIndex((item) => item.uid === uid)
+      return index > -1 ? index : 0
     })
 
     return () => (

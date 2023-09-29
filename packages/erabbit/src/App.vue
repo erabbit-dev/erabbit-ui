@@ -26,6 +26,7 @@ body {
 #app {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 .aside {
   width: 200px;
@@ -34,5 +35,7 @@ body {
 .main {
   padding: 50px;
   flex: 1;
+  height: 100%;
+  overflow-y: auto;
 }
 </style>
