@@ -73,23 +73,31 @@
     }
     // active item
     &--active {
-      .er-step {
-        &-item {
-          &__head {
-            &::before,
-            &::after {
-              background-color: var(--er-primary);
-            }
-          }
-          &__box {
+      .er-step-item {
+        &__head {
+          &::before,
+          &::after {
             background-color: var(--er-primary);
-            border-color: var(--er-primary);
-            color: var(--er-white);
-          }
-          &__title {
-            color: var(--er-primary);
           }
         }
+        &__box {
+          background-color: var(--er-primary);
+          border-color: var(--er-primary);
+          color: var(--er-white);
+        }
+        &__title {
+          color: var(--er-primary);
+        }
+      }
+    }
+    &:first-child {
+      .er-step-item__head::before {
+        display: none;
+      }
+    }
+    &:last-child {
+      .er-step-item__head::after {
+        display: none;
       }
     }
   }
@@ -97,37 +105,35 @@
   &.is-vertical {
     flex-direction: column;
     align-items: self-start;
-    .er-step {
-      &-item {
-        flex: none;
-        height: var(--er-step-vertical-space);
-        width: 100%;
-        display: flex;
-        align-items: start;
-        &__head {
-          &::before {
-            display: none;
-          }
-          &::after {
-            width: 2px;
-            height: var(--er-step-vertical-space);
-            top: 100%;
-            left: calc(50% - 1px);
-          }
+    .er-step-item {
+      flex: none;
+      height: var(--er-step-vertical-space);
+      width: 100%;
+      display: flex;
+      align-items: start;
+      &__head {
+        &::before {
+          display: none;
         }
-        &__box {
-          margin: 0;
+        &::after {
+          width: 2px;
+          height: var(--er-step-vertical-space);
+          top: 100%;
+          left: calc(50% - 1px);
         }
-        &__text {
-          text-align: left;
-          padding-left: 10px;
-        }
-        &__title {
-          margin-top: 0;
-        }
-        &:last-child {
-          height: auto;
-        }
+      }
+      &__box {
+        margin: 0;
+      }
+      &__text {
+        text-align: left;
+        padding-left: 10px;
+      }
+      &__title {
+        margin-top: 0;
+      }
+      &:last-child {
+        height: auto;
       }
     }
   }

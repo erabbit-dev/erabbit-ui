@@ -54,13 +54,7 @@ export default defineComponent({
           currentIndex.value <= parentProps.activeIndex ? bem('active') : '',
         ]}
       >
-        <div
-          class={[
-            bem('__head'),
-            currentIndex.value === 0 ? 'is-first' : '',
-            currentIndex.value === children.value.length - 1 ? 'is-last' : '',
-          ]}
-        >
+        <div class={[bem('__head')]}>
           <div class={bem('__box')}>
             {slots.icon ? slots.icon() : currentIndex.value + 1}
           </div>

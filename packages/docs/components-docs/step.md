@@ -23,6 +23,13 @@ set the property.
 A variety of custom icons can be used in the step bar.
 
 ```vue preview
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const index = ref(-1);
+const next = () => index.value++;
+</script>
+
 <template>
   <er-step :active-index="1">
     <er-step-item title="开始" desc="下单">
@@ -41,6 +48,7 @@ A variety of custom icons can be used in the step bar.
       </template>
     </er-step-item>
   </er-step>
+  <er-button @click="next">下一步</er-button>
 </template>
 ```
 
@@ -59,7 +67,7 @@ const changeMode = () => {
 </script>
 
 <template>
-  <er-button @click="changeMode" type="primary">垂直/水平</er-button>
+  <er-button @click="changeMode">垂直/水平</er-button>
   <er-step :active-index="2" :mode="currentMode">
     <er-step-item title="开始" desc="活动详情" />
     <er-step-item title="下单" desc="浏览" />
