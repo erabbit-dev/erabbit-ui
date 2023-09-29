@@ -1,15 +1,25 @@
-import { defineComponent, getCurrentInstance, provide } from 'vue'
-import { useChildren } from '../composables'
 import type {
   ComponentPublicInstance,
   ExtractPropTypes,
   PropType,
   Ref,
 } from 'vue'
-import { StepContextKey } from './constants'
+import { defineComponent, getCurrentInstance, provide } from 'vue'
+
+import { useChildren } from '../composables'
 import { createNamespace } from '../utils'
+import { StepContextKey } from './constants'
+
 export type ModeType = 'horizontal' | 'vertical'
-export type SizeType = 'mini' | 'small' | 'default'
+export type SizeType = 'large' | 'default' | 'small'
+
+export type StepContext = {
+  children: Ref<Array<{ uid: number }>>
+  addChild: (item: { uid: number }) => void
+  removeChild: (uid: number) => void
+  parentProps: StepProps
+}
+
 const stepProps = {
   mode: {
     type: String as PropType<ModeType>,
@@ -24,19 +34,16 @@ const stepProps = {
     default: 'default',
   },
 }
+
 export type StepExpose = {
   getActiveIndex: () => number
-}
-export type StepContext = {
-  children: Ref<Array<{ uid: number }>>
-  addChild: (item: { uid: number }) => void
-  removeChild: (uid: number) => void
-  parentProps: StepProps
 }
 
 export type StepProps = ExtractPropTypes<typeof stepProps>
 export type StepInstance = ComponentPublicInstance<StepProps, StepExpose>
-const [stepClassName] = createNamespace('steps')
+
+const [className, bem] = createNamespace('step')
+
 export default defineComponent({
   name: 'ErStep',
   props: stepProps,
@@ -51,11 +58,20 @@ export default defineComponent({
       removeChild,
       parentProps: props,
     })
-    expose({
+
+    const stepExpose: StepExpose = {
       getActiveIndex: () => props.activeIndex,
-    })
+    }
+    expose(stepExpose)
+
     return () => (
-      <div class={[stepClassName, props.size, props.mode]}>
+      <div
+        class={[
+          className,
+          bem(props.size),
+          props.mode === 'vertical' ? 'is-vertical' : '',
+        ]}
+      >
         {slots.default?.()}
       </div>
     )

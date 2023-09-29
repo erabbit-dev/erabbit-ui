@@ -2,218 +2,237 @@
 
 exports[`should add or remove a step by button event 1`] = `
 "<div><button class=\\"addStep\\">添加步骤</button><button class=\\"removeStep\\">移除步骤</button>
-  <div class=\\"er-steps default horizontal\\"></div>
+  <div class=\\"er-step er-step--default\\"></div>
 </div>"
 `;
 
 exports[`should change acitve item by btn click trigger 1`] = `
 "<div><button></button>
-  <div class=\\"er-steps default vertical\\">
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
+  <div class=\\"er-step er-step--default is-vertical\\">
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
       </div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
       </div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
-      </div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
-      </div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
-      </div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"vertical-main\\">
-        <div class=\\"title\\"></div>
-        <div class=\\"desc\\"></div>
-      </div>
-    </div>
-  </div>
-</div>"
-`;
-
-exports[`should render  Step with different size 1`] = `
-"<div>
-  <div class=\\"er-steps medium horizontal\\">
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-  </div>
-  <div class=\\"er-steps mini horizontal\\">
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-  </div>
-  <div class=\\"er-steps small horizontal\\">
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
-    </div>
-    <div class=\\"er-steps-item active\\">
-      <div class=\\"step\\"><span>0</span></div>
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
     </div>
   </div>
 </div>"
 `;
 
 exports[`should render  Step with title and desc 1`] = `
-"<div class=\\"er-steps default horizontal\\">
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\">开始</div>
-    <div class=\\"desc\\">2023-09-28 10:23:45</div>
+"<div class=\\"er-step er-step--default\\">
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\">开始</div>
+      <div class=\\"er-step-item__desc\\">2023-09-28 10:23:45</div>
+    </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\">中间</div>
-    <div class=\\"desc\\">2023-09-28 10:25:46</div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\">中间</div>
+      <div class=\\"er-step-item__desc\\">2023-09-28 10:25:46</div>
+    </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\">结束</div>
-    <div class=\\"desc\\">2023-09-28 10:26:03</div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\">结束</div>
+      <div class=\\"er-step-item__desc\\">2023-09-28 10:26:03</div>
+    </div>
   </div>
 </div>"
 `;
 
 exports[`should render Step with active first one item 1`] = `
-"<div class=\\"er-steps default horizontal\\">
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
+"<div class=\\"er-step er-step--default\\">
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
+    </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
+    </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`should render Step with different size 1`] = `
+"<div>
+  <div class=\\"er-step er-step--large\\">
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+  </div>
+  <div class=\\"er-step er-step--default\\">
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+  </div>
+  <div class=\\"er-step er-step--small\\">
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
+    <div class=\\"er-step-item er-step-item--active\\">
+      <div class=\\"er-step-item__head is-last\\">
+        <div class=\\"er-step-item__box\\">0</div>
+      </div>
+      <div class=\\"er-step-item__text\\">
+        <div class=\\"er-step-item__title\\"></div>
+        <div class=\\"er-step-item__desc\\"></div>
+      </div>
+    </div>
   </div>
 </div>"
 `;
 
 exports[`should render Step with vertical mode 1`] = `
-"<div class=\\"er-steps default vertical\\">
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"vertical-main\\">
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
+"<div class=\\"er-step er-step--default is-vertical\\">
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
     </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"vertical-main\\">
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
+    </div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
     </div>
   </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"vertical-main\\">
-      <div class=\\"title\\"></div>
-      <div class=\\"desc\\"></div>
+  <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item__head is-last\\">
+      <div class=\\"er-step-item__box\\">0</div>
     </div>
-  </div>
-</div>"
-`;
-
-exports[`should render default Step 1`] = `
-"<div class=\\"er-steps default horizontal\\">
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
-  </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
-  </div>
-  <div class=\\"er-steps-item active\\">
-    <div class=\\"step\\"><span>0</span></div>
-    <div class=\\"title\\"></div>
-    <div class=\\"desc\\"></div>
+    <div class=\\"er-step-item__text\\">
+      <div class=\\"er-step-item__title\\"></div>
+      <div class=\\"er-step-item__desc\\"></div>
+    </div>
   </div>
 </div>"
 `;

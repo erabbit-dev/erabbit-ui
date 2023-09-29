@@ -1,70 +1,75 @@
 import {
+  computed,
   defineComponent,
   getCurrentInstance,
-  onUnmounted,
+  inject,
   onMounted,
-  computed,
-  inject
+  onUnmounted,
+  type ExtractPropTypes,
 } from 'vue'
-import { StepContextKey } from './constants'
+
 import type { StepContext } from './Step'
-import type { ComponentPublicInstance, ExtractPropTypes } from 'vue'
+
 import { createNamespace } from '../utils'
+import { StepContextKey } from './constants'
 
 const stepProps = {
   title: {
     type: String,
-    default: ''
+    default: '',
   },
   desc: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 }
 export type StepItemProps = ExtractPropTypes<typeof stepProps>
 
-export type StepItemInstance = ComponentPublicInstance<StepItemProps>
-const [stepItemClassName] = createNamespace('steps-item')
+const [className, bem] = createNamespace('step-item')
+
 export default defineComponent({
   name: 'ErStepItem',
   props: stepProps,
-  setup(props) {
+  setup(props, { slots }) {
     const { children, addChild, removeChild, parentProps } =
-      inject<StepContext>(StepContextKey)
-    const uid = getCurrentInstance()?.uid
-    const currentIndex = computed(() => {
-      return children.value.findIndex((item) => item.uid === uid)
-    })
+      inject<StepContext>(StepContextKey)!
+
+    const uid = getCurrentInstance()!.uid
 
     onMounted(() => {
-      // add a child to Step parent
       addChild({ uid })
     })
     onUnmounted(() => {
       removeChild(uid)
     })
+
+    const currentIndex = computed(() => {
+      return children.value.findIndex((item) => item.uid === uid)
+    })
+
     return () => (
       <div
         class={[
-          stepItemClassName,
-          currentIndex.value <= parentProps.activeIndex ? 'active' : ''
+          className,
+          currentIndex.value <= parentProps.activeIndex ? bem('active') : '',
         ]}
       >
-        <div class="step">
-          <span>{currentIndex.value + 1}</span>
-        </div>
-        {parentProps.mode === 'vertical' ? (
-          <div class="vertical-main">
-            <div class="title">{props.title}</div>
-            <div class="desc">{props.desc}</div>
+        <div
+          class={[
+            bem('__head'),
+            currentIndex.value === 0 ? 'is-first' : '',
+            currentIndex.value === children.value.length - 1 ? 'is-last' : '',
+          ]}
+        >
+          <div class={bem('__box')}>
+            {slots.icon ? slots.icon() : currentIndex.value + 1}
           </div>
-        ) : (
-          <>
-            <div class="title">{props.title}</div>
-            <div class="desc">{props.desc}</div>
-          </>
-        )}
+        </div>
+        <div class={bem('__text')}>
+          <div class={bem('__title')}>{props.title}</div>
+          <div class={bem('__desc')}>{props.desc}</div>
+        </div>
       </div>
     )
-  }
+  },
 })

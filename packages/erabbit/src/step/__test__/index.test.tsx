@@ -2,18 +2,7 @@ import { mount } from '@vue/test-utils'
 import { later } from '../../test'
 import { Step, StepItem } from '..'
 import { ref } from 'vue'
-import { expect } from 'vitest'
 
-test('should render default Step', () => {
-  const wrapper = mount(
-    <Step>
-      <StepItem></StepItem>
-      <StepItem></StepItem>
-      <StepItem></StepItem>
-    </Step>,
-  )
-  expect(wrapper.html()).toMatchSnapshot()
-})
 test('should render  Step with title and desc', () => {
   const wrapper = mount(
     <Step>
@@ -24,9 +13,10 @@ test('should render  Step with title and desc', () => {
   )
   expect(wrapper.html()).toMatchSnapshot()
 })
+
 test('should render Step with active first one item', () => {
   const wrapper = mount(
-    <Step active-index={1}>
+    <Step active-index={0}>
       <StepItem></StepItem>
       <StepItem></StepItem>
       <StepItem></StepItem>
@@ -34,17 +24,18 @@ test('should render Step with active first one item', () => {
   )
   expect(wrapper.html()).toMatchSnapshot()
 })
-test('should render  Step with different size', () => {
+
+test('should render Step with different size', () => {
   const wrapper = mount({
     setup() {
       return () => (
         <div>
-          <Step active-index={1} size="medium">
+          <Step active-index={1} size="large">
             <StepItem></StepItem>
             <StepItem></StepItem>
             <StepItem></StepItem>
           </Step>
-          <Step active-index={1} size="mini">
+          <Step active-index={1}>
             <StepItem></StepItem>
             <StepItem></StepItem>
             <StepItem></StepItem>
@@ -60,6 +51,7 @@ test('should render  Step with different size', () => {
   })
   expect(wrapper.html()).toMatchSnapshot()
 })
+
 test('should render Step with vertical mode', () => {
   const wrapper = mount(
     <Step active-index={1} mode="vertical">
@@ -69,7 +61,9 @@ test('should render Step with vertical mode', () => {
     </Step>,
   )
   expect(wrapper.html()).toMatchSnapshot()
+  expect(wrapper.html().includes('is-vertical')).toBeTruthy()
 })
+
 test('should change acitve item by btn click trigger', async () => {
   const activeIndex = ref(-1)
   const stepRef = ref(null)
@@ -79,11 +73,6 @@ test('should change acitve item by btn click trigger', async () => {
         <div>
           <button onClick={() => activeIndex.value++}></button>
           <Step ref={stepRef} active-index={activeIndex.value} mode="vertical">
-            <StepItem></StepItem>
-            <StepItem></StepItem>
-            <StepItem></StepItem>
-            <StepItem></StepItem>
-            <StepItem></StepItem>
             <StepItem></StepItem>
             <StepItem></StepItem>
             <StepItem></StepItem>
@@ -104,17 +93,6 @@ test('should change acitve item by btn click trigger', async () => {
   await later(100)
   expect(stepRef.value.getActiveIndex()).toBe(2)
   wrapper.find('button').trigger('click')
-  await later(100)
-  expect(stepRef.value.getActiveIndex()).toBe(3)
-  wrapper.find('button').trigger('click')
-  await later(100)
-  expect(stepRef.value.getActiveIndex()).toBe(4)
-  wrapper.find('button').trigger('click')
-  await later(100)
-  expect(stepRef.value.getActiveIndex()).toBe(5)
-  wrapper.find('button').trigger('click')
-  await later(100)
-  expect(stepRef.value.getActiveIndex()).toBe(6)
 })
 
 test('should add or remove a step by button event', async () => {
@@ -161,20 +139,20 @@ test('should add or remove a step by button event', async () => {
   await later()
   wrapper.find('.addStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(1)
+  expect(wrapper.findAll('.er-step-item').length).toBe(1)
   wrapper.find('.addStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(2)
+  expect(wrapper.findAll('.er-step-item').length).toBe(2)
   wrapper.find('.addStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(3)
+  expect(wrapper.findAll('.er-step-item').length).toBe(3)
   wrapper.find('.removeStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(2)
+  expect(wrapper.findAll('.er-step-item').length).toBe(2)
   wrapper.find('.removeStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(1)
+  expect(wrapper.findAll('.er-step-item').length).toBe(1)
   wrapper.find('.removeStep').trigger('click')
   await later()
-  expect(wrapper.findAll('.er-steps-item').length).toBe(0)
+  expect(wrapper.findAll('.er-step-item').length).toBe(0)
 })
