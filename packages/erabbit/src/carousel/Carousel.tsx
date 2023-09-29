@@ -14,6 +14,7 @@ import { Icon } from '../icon'
 import { CarouselContextKey } from './constants'
 import { onMounted } from 'vue'
 import { computed } from 'vue'
+import { createNamespace } from '../utils'
 
 type Item = { uid: number; height?: number }
 export type CarouselContext = {
@@ -50,6 +51,8 @@ export type CarouselInstance = ComponentPublicInstance<
   CarouselProps,
   CarouselExpose
 >
+
+const [className] = createNamespace('carousel')
 
 export default defineComponent({
   name: 'ErCarousel',
@@ -137,7 +140,7 @@ export default defineComponent({
     expose(exposeContext)
 
     return () => (
-      <div class="er-carousel" onMouseenter={onStop} onMouseleave={onStart}>
+      <div class={className} onMouseenter={onStop} onMouseleave={onStart}>
         <div
           class="carousel-body"
           style={{

@@ -126,10 +126,8 @@ export default defineComponent({
                   <p>{props.message}</p>
                 </div>
                 <div class={bem('__footer')}>
-                  <Button size="mini" onClick={onCancel}>
-                    {props.cancelText}
-                  </Button>
-                  <Button size="mini" type="primary" onClick={onSubmit}>
+                  <Button onClick={onCancel}>{props.cancelText}</Button>
+                  <Button type="primary" onClick={onSubmit}>
                     {props.submitText}
                   </Button>
                 </div>
