@@ -20,7 +20,7 @@ exports[`should change acitve item by btn click trigger 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">2</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -29,7 +29,7 @@ exports[`should change acitve item by btn click trigger 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">3</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -38,7 +38,7 @@ exports[`should change acitve item by btn click trigger 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">4</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -62,7 +62,7 @@ exports[`should render  Step with title and desc 1`] = `
   </div>
   <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">2</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\">中间</div>
@@ -71,7 +71,7 @@ exports[`should render  Step with title and desc 1`] = `
   </div>
   <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">3</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\">结束</div>
@@ -83,7 +83,7 @@ exports[`should render  Step with title and desc 1`] = `
 
 exports[`should render Step with active first one item 1`] = `
 "<div class=\\"er-step er-step--default\\">
-  <div class=\\"er-step-item er-step-item--active\\">
+  <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
       <div class=\\"er-step-item__box\\">1</div>
     </div>
@@ -94,7 +94,7 @@ exports[`should render Step with active first one item 1`] = `
   </div>
   <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">2</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\"></div>
@@ -103,7 +103,7 @@ exports[`should render Step with active first one item 1`] = `
   </div>
   <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">3</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\"></div>
@@ -116,7 +116,7 @@ exports[`should render Step with active first one item 1`] = `
 exports[`should render Step with different size 1`] = `
 "<div>
   <div class=\\"er-step er-step--large\\">
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
         <div class=\\"er-step-item__box\\">1</div>
       </div>
@@ -125,9 +125,9 @@ exports[`should render Step with different size 1`] = `
         <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">2</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -136,7 +136,7 @@ exports[`should render Step with different size 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">3</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -145,7 +145,7 @@ exports[`should render Step with different size 1`] = `
     </div>
   </div>
   <div class=\\"er-step er-step--default\\">
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
         <div class=\\"er-step-item__box\\">1</div>
       </div>
@@ -154,9 +154,9 @@ exports[`should render Step with different size 1`] = `
         <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">2</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -165,7 +165,7 @@ exports[`should render Step with different size 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">3</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -174,7 +174,7 @@ exports[`should render Step with different size 1`] = `
     </div>
   </div>
   <div class=\\"er-step er-step--small\\">
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
         <div class=\\"er-step-item__box\\">1</div>
       </div>
@@ -183,9 +183,9 @@ exports[`should render Step with different size 1`] = `
         <div class=\\"er-step-item__desc\\"></div>
       </div>
     </div>
-    <div class=\\"er-step-item er-step-item--active\\">
+    <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">2</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -194,7 +194,7 @@ exports[`should render Step with different size 1`] = `
     </div>
     <div class=\\"er-step-item\\">
       <div class=\\"er-step-item__head\\">
-        <div class=\\"er-step-item__box\\">3</div>
+        <div class=\\"er-step-item__box\\">1</div>
       </div>
       <div class=\\"er-step-item__text\\">
         <div class=\\"er-step-item__title\\"></div>
@@ -207,7 +207,7 @@ exports[`should render Step with different size 1`] = `
 
 exports[`should render Step with vertical mode 1`] = `
 "<div class=\\"er-step er-step--default is-vertical\\">
-  <div class=\\"er-step-item er-step-item--active\\">
+  <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
       <div class=\\"er-step-item__box\\">1</div>
     </div>
@@ -216,9 +216,9 @@ exports[`should render Step with vertical mode 1`] = `
       <div class=\\"er-step-item__desc\\"></div>
     </div>
   </div>
-  <div class=\\"er-step-item er-step-item--active\\">
+  <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">2</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\"></div>
@@ -227,7 +227,7 @@ exports[`should render Step with vertical mode 1`] = `
   </div>
   <div class=\\"er-step-item\\">
     <div class=\\"er-step-item__head\\">
-      <div class=\\"er-step-item__box\\">3</div>
+      <div class=\\"er-step-item__box\\">1</div>
     </div>
     <div class=\\"er-step-item__text\\">
       <div class=\\"er-step-item__title\\"></div>

@@ -84,5 +84,5 @@ Practical & Beautiful component library, A Vue 3 based component library for era
 | `Pagination`      | <input type="checkbox"  disabled />         | Pagination Component      |
 | `Skeleton`        | <input type="checkbox"  disabled />         | Skeleton Component        |
 | `Sku`             | <input type="checkbox"  disabled />         | Sku Component             |
-| `Step`            | <input type="checkbox"  disabled />         | Step Component            |
+| `Step`            | <input type="checkbox"  checked disabled /> | Step Component            |
 | `Tab`             | <input type="checkbox"  disabled />         | Tab Component             |

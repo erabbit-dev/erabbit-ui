@@ -3,6 +3,7 @@ import {
   defineComponent,
   getCurrentInstance,
   inject,
+  onMounted,
   onUnmounted,
   type ExtractPropTypes,
 } from 'vue'
@@ -11,6 +12,8 @@ import type { StepContext } from './Step'
 
 import { createNamespace } from '../utils'
 import { StepContextKey } from './constants'
+import { ref } from 'vue'
+import { nextTick } from 'vue'
 
 const stepProps = {
   title: {
@@ -34,8 +37,14 @@ export default defineComponent({
       inject<StepContext>(StepContextKey)!
 
     const uid = getCurrentInstance()!.uid
-    addChild({ uid })
 
+    const isMounted = ref(false)
+    onMounted(() => {
+      addChild({ uid })
+      nextTick(() => {
+        isMounted.value = true
+      })
+    })
     onUnmounted(() => {
       removeChild(uid)
     })
@@ -49,7 +58,9 @@ export default defineComponent({
       <div
         class={[
           className,
-          currentIndex.value <= parentProps.activeIndex ? bem('active') : '',
+          isMounted.value && currentIndex.value <= parentProps.activeIndex
+            ? bem('active')
+            : '',
         ]}
       >
         <div class={[bem('__head')]}>
