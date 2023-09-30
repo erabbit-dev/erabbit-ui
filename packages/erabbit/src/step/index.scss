@@ -112,14 +112,17 @@
       display: flex;
       align-items: start;
       &__head {
+        &::after,
         &::before {
-          display: none;
+          width: 2px;
+          height: calc(var(--er-step-vertical-space) / 2);
+          left: calc(50% - 1px);
+        }
+        &::before {
+          top: calc( 50% - var(--er-step-vertical-space) / 2);
         }
         &::after {
-          width: 2px;
-          height: var(--er-step-vertical-space);
-          top: 100%;
-          left: calc(50% - 1px);
+          top: 50%;
         }
       }
       &__box {

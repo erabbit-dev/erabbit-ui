@@ -33,6 +33,7 @@ body {
   background-color: #f5f5f5;
 }
 .main {
+  box-sizing: border-box;
   padding: 50px;
   flex: 1;
   height: 100%;
