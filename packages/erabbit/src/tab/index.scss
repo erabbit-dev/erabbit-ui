@@ -1,0 +1,44 @@
+.er-tabs {
+    .er-tabs-title {
+        display: flex;
+        border-bottom: 2px solid var(--er-border);
+        box-sizing: border-box;
+        position: relative;
+        a {
+            font-size: 16px;
+            color: var(--er-text);
+            text-decoration: none;
+            padding: 10px 16px ;
+            &:hover {
+                color: var(--er-primary);
+            }
+            &:first-child {
+                padding: 10px 0px;
+            }
+            &.active {
+                color: var(--er-primary);
+                border-color: var(--er-primary);
+            }
+        }
+     .er-tabs-select-scroll {
+        height: 2px;
+        width: 0;
+        background-color: var(--er-primary);
+        position:absolute;
+        bottom: -2px;
+        left: 0;
+        transition: transform .3s;
+     }
+    }
+   
+    .er-tabs-container {
+        display: flex;
+        padding: 10px 0;
+        .er-tabs-panel {
+          display: none;
+          &.current {
+            display: block;
+          }
+        }
+    }
+}
