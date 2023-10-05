@@ -80,3 +80,53 @@ const changeMode = () => {
   </er-step>
 </template>
 ```
+
+## Dynamic setting activeIndex
+
+You can dynamically set the current step through a reactive property called activeIndex
+
+```vue preview
+<script lang="ts" setup>
+import { ref } from 'vue';
+const activeIndex = ref(0);
+const setActive = () => {
+  activeIndex.value++;
+};
+</script>
+<template>
+  <er-button type="primary" @click="setActive">步骤推进</er-button>
+  <er-step size="mini" :active-index="activeIndex" :mode="currentMode">
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+    <er-step-item />
+  </er-step>
+</template>
+```
+
+## Step API
+
+### Step Attributes
+
+| Name        | Description                            | Type                  | Default    |
+| ----------- | -------------------------------------- | --------------------- | ---------- |
+| mode        | Set the horizontal or vertical display | `horizontal/vertical` | horizontal |
+| size        | Set the size                           | `mini/small/default`  | default    |
+| activeIndex | Set current step                       | `number               | -1         |
+
+### Step Methods
+
+| Name           | Description                | Parameters |
+| -------------- | -------------------------- | ---------- |
+| getActiveIndex | Get the current step index | -          |
+
+### StepItem Attributes
+
+| Name  | Description      | Type     | Default |
+| ----- | ---------------- | -------- | ------- |
+| title | Set main title   | `string` | -       |
+| desc  | Set the subtitle | `string` | -       |

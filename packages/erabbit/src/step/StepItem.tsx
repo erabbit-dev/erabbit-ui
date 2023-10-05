@@ -4,7 +4,7 @@ import {
   onUnmounted,
   onMounted,
   computed,
-  inject
+  inject,
 } from 'vue'
 import { StepContextKey } from './constants'
 import type { StepContext } from './Step'
@@ -14,12 +14,12 @@ import { createNamespace } from '../utils'
 const stepProps = {
   title: {
     type: String,
-    default: ''
+    default: '',
   },
   desc: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 }
 export type StepItemProps = ExtractPropTypes<typeof stepProps>
 
@@ -47,7 +47,7 @@ export default defineComponent({
       <div
         class={[
           stepItemClassName,
-          currentIndex.value <= parentProps.activeIndex ? 'active' : ''
+          currentIndex.value <= parentProps.activeIndex ? 'active' : '',
         ]}
       >
         <div class="step">
@@ -66,5 +66,5 @@ export default defineComponent({
         )}
       </div>
     )
-  }
+  },
 })
