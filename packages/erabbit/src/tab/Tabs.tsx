@@ -5,6 +5,7 @@ import {
   getCurrentInstance,
   watchEffect,
   ref,
+  onMounted,
   nextTick,
 } from 'vue'
 import { useChildren } from '../composables'
@@ -34,6 +35,7 @@ export type TabsProps = ExtractPropTypes<typeof tabsProps>
 export default defineComponent({
   name: 'ErTabs',
   props: tabsProps,
+  emits: ['update:modelValue', 'change'],
   setup(props, { slots, emit }) {
     const { children, addChild, removeChild } = useChildren(
       getCurrentInstance()!,
@@ -49,11 +51,20 @@ export default defineComponent({
       removeChild,
       activeName,
     })
-    const setScrollBorder = (event?: MouseEvent) => {
+    const setScrollBorder = (
+      event?: MouseEvent,
+      selectNode?: HTMLAnchorElement,
+    ) => {
       const firstNodeLeft = titleRef.value?.querySelector('a')
-      const width = event?.target?.offsetWidth || firstNodeLeft?.offsetWidth
+      const width =
+        event?.target?.offsetWidth ||
+        selectNode?.offsetWidth ||
+        firstNodeLeft?.offsetWidth
       const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
-      const x = event?.target?.getBoundingClientRect()?.left || relateLeft
+      const x =
+        event?.target?.getBoundingClientRect()?.left ||
+        selectNode?.getBoundingClientRect()?.left ||
+        relateLeft
       scrollStyle.value = `width: ${width}px; transform: translateX(${
         x - relateLeft
       }px)`
@@ -64,17 +75,28 @@ export default defineComponent({
       } else {
         activeName.value = 0
       }
-      nextTick(() => setScrollBorder())
+      if (titleRef.value) {
+        nextTick(() =>
+          setScrollBorder(null, titleRef.value?.querySelector('.active')),
+        )
+      }
     })
     const changeActive = (name: string | number, event: MouseEvent) => {
       emit('update:modelValue', name)
+      emit('change', name)
       activeName.value = name
       setScrollBorder(event)
     }
+    onMounted(() => {
+      if (children.value.length) {
+        nextTick(() =>
+          setScrollBorder(null, titleRef.value?.querySelector('.active')),
+        )
+      }
+    })
 
-    const [tabsClassName] = createNamespace('tabs')
     return () => (
-      <div class={[tabsClassName]}>
+      <div class={[createNamespace('tabs'), props.size]}>
         <div class={createNamespace('tabs-title')} ref={titleRef}>
           <div
             class={createNamespace('tabs-select-scroll')}

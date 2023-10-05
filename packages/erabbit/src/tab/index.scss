@@ -1,4 +1,14 @@
+
 .er-tabs {
+    &.default .er-tabs-title a {
+        font-size: 16px;
+    }
+    &.small .er-tabs-title a {
+        font-size: 14px;
+    }
+    &.mini .er-tabs-title a {
+        font-size: 12px;
+    }
     .er-tabs-title {
         display: flex;
         border-bottom: 2px solid var(--er-border);
