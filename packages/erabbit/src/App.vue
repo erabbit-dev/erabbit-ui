@@ -7,9 +7,9 @@ const router = useRouter()
 <template>
   <div class="aside">
     <ul>
-      <li v-for="item in router.getRoutes()" :key="item.path">
+      <li v-for="item in router.getRoutes().reverse()" :key="item.path">
         <router-link :to="item.path">
-          {{ item.path }}
+          {{ item.path.replace('/demo', '') }}
         </router-link>
       </li>
     </ul>
