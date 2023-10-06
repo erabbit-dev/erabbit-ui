@@ -40,6 +40,7 @@ export type TabsContext = {
   activeName: string | number
 }
 export type TabsProps = ExtractPropTypes<typeof tabsProps>
+export type TabsInstance = ComponentPublicInstance<TabsProps>
 
 export default defineComponent({
   name: 'ErTabs',

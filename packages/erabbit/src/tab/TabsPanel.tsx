@@ -12,12 +12,17 @@ const tabsPanelProps = {
   label: {
     type: String,
     default: '',
+    required: true,
   },
   name: {
     type: [String, Number],
     default: '',
+    required: true,
   },
 }
+export type TabsPanelProps = ExtractPropTypes<typeof tabsPanelProps>
+export type TabsPaneInstance = ComponentPublicInstance<TabsPanelProps>
+
 export default defineComponent({
   name: 'ErTabsPanel',
   props: tabsPanelProps,

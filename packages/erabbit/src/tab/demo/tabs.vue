@@ -8,9 +8,9 @@ const activeName = ref('third')
 <template>
   <div>
     <Tabs>
-      <TabsPanel label="首页">1</TabsPanel>
-      <TabsPanel label="用户管理">2</TabsPanel>
-      <TabsPanel label="角色管理">3</TabsPanel>
+      <TabsPanel label="首页" name="first">1</TabsPanel>
+      <TabsPanel label="用户管理" name="second">2</TabsPanel>
+      <TabsPanel label="角色管理" name="third">3</TabsPanel>
     </Tabs>
     <Tabs v-model="activeName">
       <TabsPanel label="首页" name="first">1</TabsPanel>
