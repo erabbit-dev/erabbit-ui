@@ -13,7 +13,8 @@ import { createNamespace } from '../utils'
 import { TabsContextKey } from './contants'
 
 export type SizeType = 'mini' | 'small' | 'default'
-
+export type ShowType = 'card' | 'border-card' | 'default'
+export type PositionType = 'left' | 'top' | 'right' | 'bottom'
 const tabsProps = {
   modelValue: {
     type: [String, Number],
@@ -22,6 +23,14 @@ const tabsProps = {
   size: {
     type: String as PropType<SizeType>,
     default: 'default',
+  },
+  type: {
+    type: String as PropType<ShowType>,
+    default: 'default',
+  },
+  tabPosition: {
+    type: String as PropType<PositionType>,
+    default: 'top',
   },
 }
 export type TabsContext = {
@@ -35,7 +44,7 @@ export type TabsProps = ExtractPropTypes<typeof tabsProps>
 export default defineComponent({
   name: 'ErTabs',
   props: tabsProps,
-  emits: ['update:modelValue', 'change'],
+  emits: ['update:modelValue', 'tab-click'],
   setup(props, { slots, emit }) {
     const { children, addChild, removeChild } = useChildren(
       getCurrentInstance()!,
@@ -55,19 +64,35 @@ export default defineComponent({
       event?: MouseEvent,
       selectNode?: HTMLAnchorElement,
     ) => {
-      const firstNodeLeft = titleRef.value?.querySelector('a')
-      const width =
-        event?.target?.offsetWidth ||
-        selectNode?.offsetWidth ||
-        firstNodeLeft?.offsetWidth
-      const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
-      const x =
-        event?.target?.getBoundingClientRect()?.left ||
-        selectNode?.getBoundingClientRect()?.left ||
-        relateLeft
-      scrollStyle.value = `width: ${width}px; transform: translateX(${
-        x - relateLeft
-      }px)`
+      if (props.tabPosition === 'left' || props.tabPosition === 'right') {
+        const firstNodeLeft = titleRef.value?.querySelector('a')
+        const height =
+          event?.target?.offsetHeight ||
+          selectNode?.offsetHeight ||
+          firstNodeLeft?.offsetHeight
+        const relateTop = firstNodeLeft?.getBoundingClientRect()?.top || 0
+        const x =
+          event?.target?.getBoundingClientRect()?.top ||
+          selectNode?.getBoundingClientRect()?.top ||
+          relateTop
+        scrollStyle.value = `height: ${height}px; transform: translateY(${
+          x - relateTop
+        }px)`
+      } else {
+        const firstNodeLeft = titleRef.value?.querySelector('a')
+        const width =
+          event?.target?.offsetWidth ||
+          selectNode?.offsetWidth ||
+          firstNodeLeft?.offsetWidth
+        const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
+        const x =
+          event?.target?.getBoundingClientRect()?.left ||
+          selectNode?.getBoundingClientRect()?.left ||
+          relateLeft
+        scrollStyle.value = `width: ${width}px; transform: translateX(${
+          x - relateLeft
+        }px)`
+      }
     }
     watchEffect(() => {
       if (props.modelValue || props.modelValue === 0) {
@@ -83,7 +108,7 @@ export default defineComponent({
     })
     const changeActive = (name: string | number, event: MouseEvent) => {
       emit('update:modelValue', name)
-      emit('change', name)
+      emit('tab-click', name)
       activeName.value = name
       setScrollBorder(event)
     }
@@ -96,8 +121,15 @@ export default defineComponent({
     })
 
     return () => (
-      <div class={[createNamespace('tabs'), props.size]}>
-        <div class={createNamespace('tabs-title')} ref={titleRef}>
+      <div
+        class={[
+          createNamespace('tabs'),
+          props.size,
+          props.type,
+          props.tabPosition,
+        ]}
+      >
+        <div class={[createNamespace('tabs-title'), props.type]} ref={titleRef}>
           <div
             class={createNamespace('tabs-select-scroll')}
             style={scrollStyle.value}
@@ -117,7 +149,9 @@ export default defineComponent({
             </a>
           ))}
         </div>
-        <div class={createNamespace('tabs-container')}>{slots.default?.()}</div>
+        <div class={[createNamespace('tabs-container'), props.type]}>
+          {slots.default?.()}
+        </div>
       </div>
     )
   },
