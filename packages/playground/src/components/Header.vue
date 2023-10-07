@@ -81,6 +81,11 @@ watch(copied, () => {
 </template>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 768px) {
+  .text {
+    display: none;
+  }
+}
 .dark .playground-header {
   background-color: #1a1a1a;
   border-color: #383838;
