@@ -57,20 +57,20 @@ Content of each slide is completely customizable, and you just need to place it 
 ```vue preview
 <template>
   <er-carousel :auto-play="false">
-    <er-carousel-item>
+    <er-carousel-item style="height: 200px">
       <div class="product-list">
-        <div style="height: 200px" class="product-item" v-for="i in 4"></div>
+        <div class="product-item" v-for="i in 4"></div>
       </div>
     </er-carousel-item>
-    <er-carousel-item>
+    <er-carousel-item style="height: 200px">
       <div class="product-list">
         <div
           class="product-item"
           v-for="i in 4"
-          style="background: #08a;height: 200px"
+          style="background: #08a;"
         ></div>
       </div>
-    </er-carousel-item>
+    </er-carousel-item style="height: 200px">
     <er-carousel-item>
       <div class="product-list">
         <div
