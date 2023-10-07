@@ -16,7 +16,7 @@ const next = () => index.value++;
 </script>
 
 <template>
-  <er-step :active-index="2">
+  <er-step :active-index="index">
     <er-step-item title="开始" desc="活动详情" />
     <er-step-item title="下单" desc="浏览" />
     <er-step-item title="审核" desc="后台审核" />

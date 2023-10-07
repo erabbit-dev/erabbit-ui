@@ -2,7 +2,6 @@
 
 Erabbit UI provides a set of common icons.
 
-
 ## Icon Collection
 
 Click the icon to copy the name to the clipboard.
@@ -23,7 +22,6 @@ Click the icon to copy the name to the clipboard.
 
 Specify the icon by `name`, control the size by `size`, and set the color by `color`.
 
-
 ```vue preview
 <template>
   <div class="demo">
@@ -42,7 +40,7 @@ Specify the icon by `name`, control the size by `size`, and set the color by `co
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .demo {
   display: flex;
   align-items: center;
@@ -54,10 +52,8 @@ Specify the icon by `name`, control the size by `size`, and set the color by `co
 
 ### Icon Attributes
 
-| Name | Description | Type | Default |
-| ---- | ----------- | ---- | ---- |
-| name | icon name | `IconName` | `''` |
-| size | icon size, if number, the default unit is px  | `string \| number` | `1em` |
-| color | icon color | `string` | `#333333` |
-
-
+| Name  | Description                                  | Type               | Default   |
+| ----- | -------------------------------------------- | ------------------ | --------- |
+| name  | icon name                                    | `IconName`         | `''`      |
+| size  | icon size, if number, the default unit is px | `string \| number` | `1em`     |
+| color | icon color                                   | `string`           | `#333333` |
