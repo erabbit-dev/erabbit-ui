@@ -65,20 +65,18 @@ Content of each slide is completely customizable, and you just need to place it 
     <er-carousel-item>
       <div class="product-list">
         <div
-          style="height: 200px"
           class="product-item"
           v-for="i in 4"
-          style="background: #08a;"
+          style="background: #08a;height: 200px"
         ></div>
       </div>
     </er-carousel-item>
     <er-carousel-item>
       <div class="product-list">
         <div
-          style="height: 200px"
           class="product-item"
           v-for="i in 4"
-          style="background: #a80;"
+          style="background: #a80;height: 200px"
         ></div>
       </div>
     </er-carousel-item>
