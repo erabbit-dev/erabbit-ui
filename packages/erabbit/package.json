@@ -1,6 +1,6 @@
 {
   "name": "erabbit",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Erabbit UI Components built with Vue3",
   "scripts": {
     "build": "tsx ./scripts/build.ts",
