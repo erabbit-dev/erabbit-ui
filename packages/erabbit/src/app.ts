@@ -26,7 +26,11 @@ const router = createRouter({
     { path: '/carousel', component: () => import('./carousel/demo/index.vue') },
     { path: '/checkbox', component: () => import('./checkbox/demo/index.vue') },
     { path: '/confirm', component: () => import('./confirm/demo/index.vue') },
-    { path: '/icon', component: () => import('./icon/demo/index.vue') }
+    { path: '/icon', component: () => import('./icon/demo/index.vue') },
+    {
+      path: '/input-number',
+      component: () => import('./input-number/demo/index.vue')
+    }
   ]
 })
 
