@@ -2,10 +2,58 @@
 
 import { type StoreOptions, File, ReplStore, compileFile } from '@vue/repl'
 import { ref, computed } from 'vue'
+import { getImportMap } from './utils'
 
-import appFileCode from './template/App.vue?raw'
-import mainFileCode from './template/Main.vue?raw'
-import erabbitUIFileCode from './template/erabbit-ui.js?raw'
+const appFileCode = `
+  <script setup lang="ts">
+  import { ref } from 'vue'
+
+  const msg = ref('Hello World!')
+  </script>
+
+  <template>
+    <input v-model="msg" />
+    <h1>{{ msg }}</h1>
+    <div>Erabbit UI <er-button type="plain">按钮</er-button></div>
+  </template>
+  `
+const mainFileCode = `
+  <script setup>
+  import App from './App.vue'
+  import { setupErabbitUI } from './erabbit-ui.js'
+
+  setupErabbitUI()
+  </script>
+
+  <template>
+    <App />
+  </template>
+  `
+const erabbitUIFileCode = `
+  import { getCurrentInstance } from 'vue'
+  import ErabbitUI from 'erabbit'
+
+  let installed = false
+  await loadStyle()
+
+  export function setupErabbitUI() {
+    if (installed) return
+    const instance = getCurrentInstance()
+    instance.appContext.app.use(ErabbitUI)
+    installed = true
+  }
+
+  export function loadStyle() {
+    return new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = '#STYLE#'
+      link.addEventListener('load', resolve)
+      link.addEventListener('error', reject)
+      document.body.append(link)
+    })
+  }
+  `
 
 const style = ref(
   'https://cdn.jsdelivr.net/npm/erabbit@latest/dist/erabbit.min.css',
@@ -76,10 +124,6 @@ export class ErabbitUIStore extends ReplStore {
 
     compileFile(this, install).then((errs) => this.state.errors.push(...errs))
 
-    this.setImportMap({
-      imports: {
-        erabbit: `https://cdn.jsdelivr.net/npm/erabbit@${v}/dist/erabbit.esm-browser.js`,
-      },
-    })
+    this.setImportMap(getImportMap(v))
   }
 }

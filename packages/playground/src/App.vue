@@ -6,6 +6,7 @@ import '@vue/repl/style.css'
 
 import { watchEffect } from 'vue'
 import { ErabbitUIStore } from './store'
+import { getImportMap } from './utils'
 
 const hash = location.hash.slice(1)
 
@@ -17,13 +18,7 @@ const store = new ErabbitUIStore(
   hash,
 )
 
-store.setImportMap({
-  imports: {
-    '@vueuse/shared': `https://cdn.jsdelivr.net/npm/@vueuse/shared@latest/+esm`,
-    '@vueuse/core': `https://cdn.jsdelivr.net/npm/@vueuse/core@latest/+esm`,
-    erabbit: `https://cdn.jsdelivr.net/npm/erabbit@latest/dist/erabbit.esm-browser.js`,
-  },
-})
+store.setImportMap(getImportMap('latest'))
 
 watchEffect(() => {
   const newHash = store.serialize()

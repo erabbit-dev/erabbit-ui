@@ -14,6 +14,15 @@ export const getVersions = (pkg: MaybeRef<string>) => {
 export const getSupportedErabbitUIVersions = () => {
   const versions = getVersions('erabbit')
   return computed(() =>
-    versions.value.filter((version) => gte(version, '0.0.1')),
+    versions.value.filter((version) => gte(version, '0.2.6')),
   )
+}
+
+export const getImportMap = (v: string) => {
+  return {
+    imports: {
+      '@vueuse/core': `https://cdn.jsdelivr.net/npm/@vueuse/core@latest/+esm`,
+      erabbit: `https://cdn.jsdelivr.net/npm/erabbit@${v}/dist/erabbit.esm-browser.js`,
+    },
+  }
 }

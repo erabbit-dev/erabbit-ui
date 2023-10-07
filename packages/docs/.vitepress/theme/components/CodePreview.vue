@@ -35,9 +35,9 @@ export default defineComponent({
     }
     const onPlayground = () => {
       const files = {
-        'src/App.vue': decodeURIComponent(props.code)
+        'App.vue': decodeURIComponent(props.code)
       }
-      const url = 'http://127.0.0.1:5000/#'
+      const url = 'https://erabbit-ui-playground.vercel.app/#'
       window.open(url + utoa(JSON.stringify(files)))
     }
     return {
