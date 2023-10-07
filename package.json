@@ -21,7 +21,7 @@
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
     "build-plugin": "pnpm --dir packages/erabbit-auto-import build",
-    "dev-play": "pnpm --dir packages/playground dev",
+    "dev-play": "pnpm --dir packages/playground dev --port 5000",
     "build-play": "pnpm --dir packages/playground build"
   },
   "lint-staged": {
