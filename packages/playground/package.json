@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/semver": "^7.5.3",
+    "@vue/compiler-core": "^3.3.4",
+    "@vue/repl": "^2.5.8",
+    "semver": "^7.5.4"
+  }
 }

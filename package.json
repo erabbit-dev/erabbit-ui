@@ -20,7 +20,9 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint --config commitlint.config.js -e -V",
-    "build-plugin": "pnpm --dir packages/erabbit-auto-import build"
+    "build-plugin": "pnpm --dir packages/erabbit-auto-import build",
+    "dev-play": "pnpm --dir packages/playground dev",
+    "build-play": "pnpm --dir packages/playground build"
   },
   "lint-staged": {
     "*.md": [
@@ -72,7 +74,7 @@
   },
   "engines": {
     "node": ">=16.19.0",
-    "pnpm": ">=8.7.6"
+    "pnpm": ">=8.8.0"
   },
-  "packageManager": "pnpm@8.7.6"
+  "packageManager": "pnpm@8.8.0"
 }
