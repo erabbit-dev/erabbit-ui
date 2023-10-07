@@ -5,7 +5,7 @@ import { createNamespace } from '../utils'
 import type { PropType } from 'vue'
 const [className, bem] = createNamespace('input-number')
 
-type Size = 'large' | 'middle' | 'small'
+type Size = 'large' | 'middle' | 'small' | 'default'
 
 const props = {
   id: String,
@@ -27,7 +27,7 @@ const props = {
   },
   size: {
     type: String as PropType<Size>,
-    default: 'middle',
+    default: 'default',
   },
 }
 
@@ -40,27 +40,28 @@ export default defineComponent({
   setup(props, { emit, expose }) {
     const inputRef = ref<HTMLInputElement>()
 
+    let oldValue = props.modelValue
+
     const onInput = (event: Event) => {
-      const valueAsNumber = (event.target as HTMLInputElement).valueAsNumber
-      emit('update:modelValue', valueAsNumber)
+      oldValue = props.modelValue
+      const newValue = (event.target as HTMLInputElement).valueAsNumber
+      emit('update:modelValue', newValue)
     }
 
     const onNumberChange = (value: number) => {
-      const valueAsNumber = Number(props.modelValue) + value
-      if (isNaN(valueAsNumber)) {
+      oldValue = props.modelValue
+      const newValue = Number(props.modelValue) + value
+      if (isNaN(newValue)) {
         emit('update:modelValue', 1)
       } else {
-        setValue(valueAsNumber)
+        setValue(newValue)
       }
     }
 
-    const setValue = (value: number) => {
-      const oldValue = props.modelValue
-      let newValue = value
-
-      if (value > props.max) {
+    const setValue = (newValue: number) => {
+      if (newValue > props.max) {
         newValue = props.max
-      } else if (value < props.min) {
+      } else if (newValue < props.min) {
         newValue = props.min
       }
 
@@ -72,8 +73,9 @@ export default defineComponent({
 
     const onBlur = (event: FocusEvent) => {
       emit('blur', event)
-      const valueAsNumber = (event.target as HTMLInputElement).valueAsNumber
-      setValue(valueAsNumber)
+      const newValue = (event.target as HTMLInputElement).valueAsNumber
+      if (isNaN(newValue)) return
+      setValue(newValue)
     }
 
     const onFocus = (event: FocusEvent) => {
@@ -87,7 +89,6 @@ export default defineComponent({
 
     return () => (
       <>
-        <h4>{JSON.stringify(props)}</h4>
         <div class={[className, props.disabled && 'disabled', bem(props.size)]}>
           <button
             disabled={props.disabled}
