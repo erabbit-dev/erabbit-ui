@@ -19,8 +19,9 @@ const store = new ErabbitUIStore(
 
 store.setImportMap({
   imports: {
+    '@vueuse/shared': `https://cdn.jsdelivr.net/npm/@vueuse/shared@latest/+esm`,
     '@vueuse/core': `https://cdn.jsdelivr.net/npm/@vueuse/core@latest/+esm`,
-    erabbit: `https://cdn.jsdelivr.net/npm/erabbit@latest/+esm`,
+    erabbit: `https://cdn.jsdelivr.net/npm/erabbit@latest/dist/erabbit.esm-browser.js`,
   },
 })
 

@@ -78,7 +78,7 @@ export class ErabbitUIStore extends ReplStore {
 
     this.setImportMap({
       imports: {
-        erabbit: `https://cdn.jsdelivr.net/npm/erabbit@${v}/+esm`,
+        erabbit: `https://cdn.jsdelivr.net/npm/erabbit@${v}/dist/erabbit.esm-browser.js`,
       },
     })
   }

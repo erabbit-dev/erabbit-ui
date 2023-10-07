@@ -39,6 +39,12 @@ export default defineConfig({
           },
           inlineDynamicImports: false,
         },
+        {
+          format: 'es',
+          entryFileNames: 'erabbit.esm-browser.js',
+          dir: 'dist',
+          inlineDynamicImports: false,
+        },
       ],
     },
     lib: {
