@@ -82,7 +82,7 @@ watch(copied, () => {
 
 <style lang="scss" scoped>
 @media screen and (max-width: 768px) {
-  .text {
+  h1 {
     display: none;
   }
 }
