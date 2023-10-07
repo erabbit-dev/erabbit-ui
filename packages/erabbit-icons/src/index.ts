@@ -23,7 +23,7 @@ const config = {
     'weixin',
     'wind',
     'yuan',
-    'zan'
+    'zan',
   ] as const,
   outlined: [
     'checked-o',
@@ -31,9 +31,9 @@ const config = {
     'star-o',
     'safe-o',
     'see-o',
-    'warn-o'
+    'warn-o',
   ] as const,
-  filled: ['checked', 'heart', 'star', 'safe', 'see', 'warn'] as const
+  filled: ['checked', 'heart', 'star', 'safe', 'see', 'warn'] as const,
 }
 
 export type IconName =

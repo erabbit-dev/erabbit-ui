@@ -6,7 +6,7 @@ import {
   nextTick,
   ref,
   watch,
-  type ExtractPropTypes
+  type ExtractPropTypes,
 } from 'vue'
 import { Button } from '../button'
 import { Icon } from '../icon'
@@ -22,28 +22,28 @@ const confirmProps = {
   visible: Boolean,
   title: {
     type: String,
-    default: ''
+    default: '',
   },
   message: {
     type: String,
-    default: ''
+    default: '',
   },
   cancelText: {
     type: String,
-    default: 'Cancel'
+    default: 'Cancel',
   },
   submitText: {
     type: String,
-    default: 'OK'
+    default: 'OK',
   },
   teleport: {
     type: [String, Object] as PropType<TeleportProps['to']>,
-    default: 'body'
+    default: 'body',
   },
   lockScroll: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 }
 
 export type ConfirmProps = ExtractPropTypes<typeof confirmProps>
@@ -69,7 +69,7 @@ export default defineComponent({
         } else {
           close()
         }
-      }
+      },
     )
 
     onMounted(() => {
@@ -126,10 +126,8 @@ export default defineComponent({
                   <p>{props.message}</p>
                 </div>
                 <div class={bem('__footer')}>
-                  <Button size="mini" onClick={onCancel}>
-                    {props.cancelText}
-                  </Button>
-                  <Button size="mini" type="primary" onClick={onSubmit}>
+                  <Button onClick={onCancel}>{props.cancelText}</Button>
+                  <Button type="primary" onClick={onSubmit}>
                     {props.submitText}
                   </Button>
                 </div>
@@ -146,5 +144,5 @@ export default defineComponent({
       ) : (
         renderConfirm()
       )
-  }
+  },
 })

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import 'erabbit/dist/es/confirm/style'
 import { showConfirm } from '..'
 
 const onShowConfirm = async () => {
@@ -11,7 +10,7 @@ const onShowConfirm = async () => {
     },
     cancel: () => {
       console.log('cancel')
-    }
+    },
   })
   console.log('ok')
 }

@@ -12,7 +12,7 @@ hero:
       link: /installation
     - theme: alt
       text: Components Docs
-      link: /components-docs/carousel
+      link: /components-docs/button
   image: /logo3.png
 
 features:

@@ -6,6 +6,7 @@ export * from './checkbox'
 export * from './confirm'
 export * from './icon'
 export * from './input-number'
+export * from './step'
 
 // global install
 import { installer } from './installer'

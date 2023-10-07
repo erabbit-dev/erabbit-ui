@@ -3,7 +3,7 @@ import {
   shallowRef,
   type ComponentInternalInstance,
   type VNode,
-  type VNodeNormalizedChildren
+  type VNodeNormalizedChildren,
 } from 'vue'
 
 function flattedChildren(children: VNodeNormalizedChildren) {
@@ -19,7 +19,7 @@ function flattedChildren(children: VNodeNormalizedChildren) {
       result.push(child as VNode)
       if (isVNode(child) && child.component?.subTree) {
         result.push(
-          ...flattedChildren(child.component.subTree as unknown as VNode[])
+          ...flattedChildren(child.component.subTree as unknown as VNode[]),
         )
       }
     }
@@ -30,13 +30,13 @@ function flattedChildren(children: VNodeNormalizedChildren) {
 const getOrderedChildren = <T>(
   vm: ComponentInternalInstance,
   childComponentName: string,
-  children: Record<number, T>
+  children: Record<number, T>,
 ): T[] => {
   const nodes = flattedChildren(vm.subTree.children).filter(
     (n): n is VNode =>
       isVNode(n) &&
       (n.type as any)?.name === childComponentName &&
-      !!n.component
+      !!n.component,
   )
   const uids = nodes.map((n) => n.component!.uid)
   return uids.map((uid) => children[uid]).filter((p) => !!p)
@@ -44,7 +44,7 @@ const getOrderedChildren = <T>(
 
 export const useChildren = <T extends { uid: number }>(
   vm: ComponentInternalInstance,
-  childComponentName: string
+  childComponentName: string,
 ) => {
   const children: Record<number, T> = {}
   const orderedChildren = shallowRef<T[]>([])
@@ -56,13 +56,13 @@ export const useChildren = <T extends { uid: number }>(
   const removeChild = (uid: number) => {
     delete children[uid]
     orderedChildren.value = orderedChildren.value.filter(
-      (children) => children.uid !== uid
+      (children) => children.uid !== uid,
     )
   }
 
   return {
     children: orderedChildren,
     addChild,
-    removeChild
+    removeChild,
   }
 }

@@ -9,12 +9,12 @@ const [className, bem] = createNamespace('checkbox')
 const checkboxProps = {
   modelValue: {
     type: Boolean,
-    default: false
+    default: false,
   },
   indeterminate: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 }
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>
@@ -32,7 +32,7 @@ export default defineComponent({
       () => props.modelValue,
       (val) => {
         checked.value = val
-      }
+      },
     )
 
     const indeterminate = ref(props.indeterminate)
@@ -40,7 +40,7 @@ export default defineComponent({
       () => props.indeterminate,
       (val) => {
         indeterminate.value = val
-      }
+      },
     )
 
     const onChange = () => {
@@ -59,7 +59,7 @@ export default defineComponent({
         class={[
           className,
           checked.value && 'is_checked',
-          indeterminate.value && 'is_indeterminate'
+          indeterminate.value && 'is_indeterminate',
         ]}
       >
         <span class={bem('__input')}>
@@ -69,5 +69,5 @@ export default defineComponent({
         <span class={bem('__label')}>{slots.default?.()}</span>
       </label>
     )
-  }
+  },
 })

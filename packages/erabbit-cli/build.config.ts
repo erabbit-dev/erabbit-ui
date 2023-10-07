@@ -7,8 +7,8 @@ export default defineBuildConfig({
       builder: 'mkdist',
       input: './src/',
       outDir: './lib',
-      format: 'esm'
-    }
+      format: 'esm',
+    },
   ],
   outDir: 'lib',
   declaration: true,
@@ -21,6 +21,6 @@ export default defineBuildConfig({
     'postcss',
     'unbuild',
     'picocolors',
-    'enquirer'
-  ]
+    'enquirer',
+  ],
 })

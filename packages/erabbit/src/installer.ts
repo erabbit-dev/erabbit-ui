@@ -7,6 +7,7 @@ import { Checkbox } from './checkbox'
 import { Confirm, showConfirm } from './confirm'
 import { Icon } from './icon'
 import { InputNumber } from './input-number'
+import { Step, StepItem } from './step'
 
 const components = [
   Area,
@@ -18,7 +19,9 @@ const components = [
   Checkbox,
   Confirm,
   Icon,
-  InputNumber
+  InputNumber,
+  Step,
+  StepItem,
 ]
 
 export function installer(app: App) {

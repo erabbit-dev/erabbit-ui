@@ -1,22 +1,34 @@
-import { defineConfig } from 'vitepress'
-import MarkdownPreview from 'vite-plugin-markdown-preview'
+import { defineConfig } from 'vitepress';
+import MarkdownPreview from 'vite-plugin-markdown-preview';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Erabbit UI",
-  description: "Erabbit UI docs",
+  title: 'Erabbit UI',
+  description: 'Erabbit UI docs',
   base: '/erabbit-ui/',
   vite: {
-    plugins: [MarkdownPreview()]
+    plugins: [MarkdownPreview(), visualizer()],
+    build: {
+      chunkSizeWarningLimit: 1500,
+    },
+  },
+  markdown: {
+    lineNumbers: true,
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    },
   },
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: 'local',
     },
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Get Start', link: '/installation' },
-      { text: 'Components Docs', link: '/components-docs/carousel' }
+      { text: 'Components Docs', link: '/components-docs/button' },
     ],
 
     sidebar: [
@@ -24,8 +36,8 @@ export default defineConfig({
         text: 'Get Start',
         items: [
           { text: 'Installation', link: '/installation' },
-          { text: 'Quick Start', link: '/quick-start' }
-        ]
+          { text: 'Quick Start', link: '/quick-start' },
+        ],
       },
       {
         text: 'Components Docs',
@@ -39,24 +51,27 @@ export default defineConfig({
           { text: 'Dialog', link: '/components-docs/dialog' },
           { text: 'Icon', link: '/components-docs/icon' },
           { text: 'ImageView', link: '/components-docs/image-view' },
-          { text: 'InfiniteLoading', link: '/components-docs/infinite-loading' },
+          {
+            text: 'InfiniteLoading',
+            link: '/components-docs/infinite-loading',
+          },
           { text: 'Message', link: '/components-docs/message' },
           { text: 'More', link: '/components-docs/more' },
           { text: 'Pagination', link: '/components-docs/pagination' },
           { text: 'Sku', link: '/components-docs/sku' },
           { text: 'Step', link: '/components-docs/step' },
-          { text: 'Tab', link: '/components-docs/tab' }
-        ]
-      }
+          { text: 'Tab', link: '/components-docs/tab' },
+        ],
+      },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/erabbit-dev/erabbit-ui' }
+      { icon: 'github', link: 'https://github.com/erabbit-dev/erabbit-ui' },
     ],
 
     outline: {
       level: 'deep',
-      label: 'CONTENTS'
-    }
-  }
-})
+      label: 'CONTENTS',
+    },
+  },
+});

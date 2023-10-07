@@ -45,7 +45,7 @@ A Vue 3 based component library for erabbit web applications
 | `Pagination`      | ❎        | Pagination Component      |
 | `Skeleton`        | ❎        | Skeleton Component        |
 | `Sku`             | ❎        | Sku Component             |
-| `Step`            | ❎        | Step Component            |
+| `Step`            | ✅        | Step Component            |
 | `Tab`             | ❎        | Tab Component             |
 
 ## All Contributors

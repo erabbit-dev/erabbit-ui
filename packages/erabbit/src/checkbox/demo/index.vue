@@ -8,7 +8,7 @@ const indeterminate = ref(false)
 const checkItems = ref([
   { label: 'Apple', value: false },
   { label: 'Pear', value: false },
-  { label: 'Orange', value: false }
+  { label: 'Orange', value: false },
 ])
 
 const onChange = (val: boolean) => {
@@ -40,7 +40,7 @@ watch(
       return
     }
   },
-  { immediate: true, deep: true }
+  { immediate: true, deep: true },
 )
 </script>
 

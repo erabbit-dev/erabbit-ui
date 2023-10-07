@@ -5,7 +5,7 @@ import {
   onUnmounted,
   provide,
   ref,
-  watch
+  watch,
 } from 'vue'
 import { useChildren } from '../composables'
 
@@ -14,6 +14,7 @@ import { Icon } from '../icon'
 import { CarouselContextKey } from './constants'
 import { onMounted } from 'vue'
 import { computed } from 'vue'
+import { createNamespace } from '../utils'
 
 type Item = { uid: number; height?: number }
 export type CarouselContext = {
@@ -26,16 +27,16 @@ export type CarouselContext = {
 const carouselProps = {
   duration: {
     type: Number,
-    default: 3000
+    default: 3000,
   },
   autoPlay: {
     type: Boolean,
-    default: true
+    default: true,
   },
   height: {
     type: String,
-    default: 'auto'
-  }
+    default: 'auto',
+  },
 }
 
 export type CarouselProps = ExtractPropTypes<typeof carouselProps>
@@ -51,6 +52,8 @@ export type CarouselInstance = ComponentPublicInstance<
   CarouselExpose
 >
 
+const [className] = createNamespace('carousel')
+
 export default defineComponent({
   name: 'ErCarousel',
 
@@ -62,7 +65,7 @@ export default defineComponent({
     const {
       children: items,
       addChild: addItem,
-      removeChild: removeItem
+      removeChild: removeItem,
     } = useChildren(getCurrentInstance()!, 'ErCarouselItem')
 
     const index = ref(0)
@@ -71,7 +74,7 @@ export default defineComponent({
       items,
       addItem,
       removeItem,
-      index
+      index,
     })
 
     let timer: ReturnType<typeof setInterval>
@@ -126,7 +129,7 @@ export default defineComponent({
       },
       setActiveItem: (index: number) => {
         onToggle(index)
-      }
+      },
     }
 
     const height = computed(() => {
@@ -137,11 +140,12 @@ export default defineComponent({
     expose(exposeContext)
 
     return () => (
-      <div class="er-carousel" onMouseenter={onStop} onMouseleave={onStart}>
+      <div class={className} onMouseenter={onStop} onMouseleave={onStart}>
         <div
           class="carousel-body"
           style={{
-            height: props.height === 'auto' ? height.value + 'px' : props.height
+            height:
+              props.height === 'auto' ? height.value + 'px' : props.height,
           }}
         >
           {slots.default?.()}
@@ -171,5 +175,5 @@ export default defineComponent({
         </div>
       </div>
     )
-  }
+  },
 })
