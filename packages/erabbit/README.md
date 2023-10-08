@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="http://erabbit.itheima.net/img/logo.0940ebb5.png">
+  <img width="200px" src="https://erabbit-dev.github.io/erabbit-ui/logo.png">
 </p>
 
 <p align="center">
@@ -55,3 +55,46 @@ Thanks to the following friends for their contributions to ErabbitUI:
 <a href="https://github.com/erabbit-dev/erabbit-ui/graphs/contributors">
   <img src="https://opencollective.com/erabbit/contributors.svg?width=890&button=false" alt="contributors">
 </a>
+
+## All Contributors
+
+Thanks to the following friends for their contributions to ErabbitUI:
+
+<a href="https://github.com/erabbit-dev/erabbit-ui/graphs/contributors">
+  <img src="https://opencollective.com/erabbit/contributors.svg?width=890&button=false" alt="contributors">
+</a>
+
+## Contribution Guide
+
+- Fork the main repository. If you have already forked, please synchronize the latest code from the main repository.
+
+- Follow the steps below to develop ErabbitUI components locally.
+
+```sh
+# Clone repository
+git clone git@github.com:you-repo-name/erabbit-ui.git
+
+# Install dependencies
+pnpm i
+
+# Build builtin dependencies
+pnpm build-all
+
+# Start development
+pnpm dev
+```
+
+## Directory Structure
+
+```
+root
+└─ packages
+   ├─ erabbit                  # Component library
+   ├─ erabbit-cli              # Scaffolding
+   ├─ erabbit-icons            # Icon library
+   ├─ erabbit-auto-import      # Composition API
+   ├─ erabbit-eslint-config    # Eslint
+   ├─ playground               # Play Demo
+   └─ docs                     # Document
+
+```
