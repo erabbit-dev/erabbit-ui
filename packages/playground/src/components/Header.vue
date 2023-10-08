@@ -117,8 +117,8 @@ watch(copied, () => {
     display: flex;
     align-items: center;
     img {
-      width: 36px;
-      height: 36px;
+      width: 30px;
+      height: 30px;
     }
     h1 {
       margin: 0;
