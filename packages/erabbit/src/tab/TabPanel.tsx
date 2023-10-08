@@ -29,17 +29,19 @@ export default defineComponent({
   props: tabPanelProps,
   setup(props, { slots }) {
     const { addChild, removeChild, children, activeName } =
-      inject<TabContext>(TabContextKey)
+      inject<TabContext>(TabContextKey)!
+
     const currentInstance = getCurrentInstance()
+
     onMounted(() => {
       addChild({
-        uid: currentInstance?.uid,
+        uid: currentInstance!.uid,
         label: props.label,
         name: props.name,
       })
     })
     onUnmounted(() => {
-      removeChild(currentInstance?.uid)
+      removeChild(currentInstance!.uid)
     })
 
     return () => {

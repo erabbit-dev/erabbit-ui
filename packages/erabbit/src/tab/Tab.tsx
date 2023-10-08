@@ -1,5 +1,4 @@
 import {
-  PropType,
   defineComponent,
   getCurrentInstance,
   nextTick,
@@ -9,6 +8,7 @@ import {
   watchEffect,
   type ComponentPublicInstance,
   type ExtractPropTypes,
+  type PropType,
   type Ref,
 } from 'vue'
 import { useChildren } from '../composables'
@@ -51,7 +51,7 @@ export type TabProps = ExtractPropTypes<typeof tabProps>
 export type TabInstance = ComponentPublicInstance<TabProps>
 
 export default defineComponent({
-  name: 'ErTabs',
+  name: 'ErTab',
   props: tabProps,
   emits: ['update:modelValue', 'tab-click'],
   setup(props, { slots, emit }) {
@@ -61,7 +61,7 @@ export default defineComponent({
     )
     const activeName = ref<number | string>('')
     const scrollStyle = ref('')
-    const titleRef = ref<HTMLElement>(null)
+    const titleRef = ref<HTMLElement>()
 
     provide(TabContextKey, {
       children,
@@ -112,7 +112,10 @@ export default defineComponent({
       }
       if (titleRef.value) {
         nextTick(() =>
-          setScrollBorder(null, titleRef.value?.querySelector('.active')),
+          setScrollBorder(
+            undefined,
+            titleRef.value?.querySelector('.active') as HTMLAnchorElement,
+          ),
         )
       }
     })
@@ -125,7 +128,10 @@ export default defineComponent({
     onMounted(() => {
       if (children.value.length) {
         nextTick(() =>
-          setScrollBorder(null, titleRef.value?.querySelector('.active')),
+          setScrollBorder(
+            undefined,
+            titleRef.value?.querySelector('.active') as HTMLAnchorElement,
+          ),
         )
       }
     })

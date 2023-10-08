@@ -1,6 +1,6 @@
 {
   "name": "erabbit",
-  "version": "0.0.1",
+  "version": "0.2.6",
   "description": "Erabbit UI Components built with Vue3",
   "main": "index.js",
   "scripts": {
@@ -63,7 +63,7 @@
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.4.9",
+    "vite": "^4.4.11",
     "vite-plugin-dts": "^3.5.3",
     "vite-plugin-pages": "^0.31.0",
     "vitest": "^0.34.3",

@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import { later } from '../../test'
-import { Tab, TabPanel } from '..'
+import { expect, test } from 'vitest'
 import { ref } from 'vue'
-import { expect } from 'vitest'
+import { Tab, TabPanel } from '..'
+import { later } from '../../test'
 
 test('should render default Tab', async () => {
   const wrapper = mount({
@@ -61,7 +61,7 @@ test('should render  mini size Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.mini')).toBe(true)
+  expect(wrapper.find('.er-tabs.mini').exists()).toBe(true)
 })
 test('should render card type Tab', async () => {
   const wrapper = mount(
@@ -80,7 +80,7 @@ test('should render card type Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.card')).toBe(true)
+  expect(wrapper.find('.er-tabs.card').exists()).toBe(true)
 })
 test('should render border-card type Tab', async () => {
   const wrapper = mount(
@@ -99,7 +99,7 @@ test('should render border-card type Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.border-card')).toBe(true)
+  expect(wrapper.find('.er-tabs.border-card').exists()).toBe(true)
 })
 
 test('should render left position Tab', async () => {
@@ -119,7 +119,7 @@ test('should render left position Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.left')).toBe(true)
+  expect(wrapper.find('.er-tabs.left').exists()).toBe(true)
 })
 test('should render right position Tab', async () => {
   const wrapper = mount(
@@ -156,7 +156,7 @@ test('should render bottom position Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.bottom')).toBe(true)
+  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
 })
 test('should render bottom position and card type Tab', async () => {
   const wrapper = mount(
@@ -175,8 +175,8 @@ test('should render bottom position and card type Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.bottom')).toBe(true)
-  expect(wrapper.find('.er-tabs').exists('.card')).toBe(true)
+  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
+  expect(wrapper.find('.er-tabs.card').exists()).toBe(true)
 })
 test('should render bottom position and border-card type and mini size Tab', async () => {
   const wrapper = mount(
@@ -195,8 +195,8 @@ test('should render bottom position and border-card type and mini size Tab', asy
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.bottom')).toBe(true)
-  expect(wrapper.find('.er-tabs').exists('.border-card')).toBe(true)
+  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
+  expect(wrapper.find('.er-tabs.border-card').exists()).toBe(true)
 })
 test('should render bottom position and small size Tab', async () => {
   const wrapper = mount(
@@ -215,8 +215,8 @@ test('should render bottom position and small size Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.bottom')).toBe(true)
-  expect(wrapper.find('.er-tabs').exists('.small')).toBe(true)
+  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
+  expect(wrapper.find('.er-tabs.small').exists()).toBe(true)
 })
 test('should render bottom position and mini size Tab', async () => {
   const wrapper = mount(
@@ -235,8 +235,8 @@ test('should render bottom position and mini size Tab', async () => {
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
   expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs').exists('.bottom')).toBe(true)
-  expect(wrapper.find('.er-tabs').exists('.mini')).toBe(true)
+  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
+  expect(wrapper.find('.er-tabs.mini').exists()).toBe(true)
 })
 
 test('should render active Tab', async () => {
