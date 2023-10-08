@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should render  mini size Tabs 1`] = `
+exports[`should render  mini size Tab 1`] = `
 "<div class=\\"er-tabs mini default top\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -13,7 +13,7 @@ exports[`should render  mini size Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render active Tabs 1`] = `
+exports[`should render active Tab 1`] = `
 "<div class=\\"er-tabs default default top\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -26,7 +26,7 @@ exports[`should render active Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render border-card type Tabs 1`] = `
+exports[`should render border-card type Tab 1`] = `
 "<div class=\\"er-tabs default border-card top\\">
   <div class=\\"er-tabs-title border-card\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -39,7 +39,7 @@ exports[`should render border-card type Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render bottom position Tabs 1`] = `
+exports[`should render bottom position Tab 1`] = `
 "<div class=\\"er-tabs default default bottom\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -52,7 +52,7 @@ exports[`should render bottom position Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render bottom position and border-card type and mini size Tabs 1`] = `
+exports[`should render bottom position and border-card type and mini size Tab 1`] = `
 "<div class=\\"er-tabs mini border-card bottom\\">
   <div class=\\"er-tabs-title border-card\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -65,7 +65,7 @@ exports[`should render bottom position and border-card type and mini size Tabs 1
 </div>"
 `;
 
-exports[`should render bottom position and card type Tabs 1`] = `
+exports[`should render bottom position and card type Tab 1`] = `
 "<div class=\\"er-tabs default card bottom\\">
   <div class=\\"er-tabs-title card\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -78,7 +78,7 @@ exports[`should render bottom position and card type Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render bottom position and mini size Tabs 1`] = `
+exports[`should render bottom position and mini size Tab 1`] = `
 "<div class=\\"er-tabs mini default bottom\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -91,7 +91,7 @@ exports[`should render bottom position and mini size Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render bottom position and small size Tabs 1`] = `
+exports[`should render bottom position and small size Tab 1`] = `
 "<div class=\\"er-tabs small default bottom\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -104,7 +104,7 @@ exports[`should render bottom position and small size Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render card type Tabs 1`] = `
+exports[`should render card type Tab 1`] = `
 "<div class=\\"er-tabs default card top\\">
   <div class=\\"er-tabs-title card\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -117,7 +117,7 @@ exports[`should render card type Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render default Tabs 1`] = `
+exports[`should render default Tab 1`] = `
 "<div class=\\"er-tabs default default top\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -130,7 +130,7 @@ exports[`should render default Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render left position Tabs 1`] = `
+exports[`should render left position Tab 1`] = `
 "<div class=\\"er-tabs default default left\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"height: 0px; transform: translateY(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -143,7 +143,7 @@ exports[`should render left position Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render right position Tabs 1`] = `
+exports[`should render right position Tab 1`] = `
 "<div class=\\"er-tabs default default right\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"height: 0px; transform: translateY(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>
@@ -156,7 +156,7 @@ exports[`should render right position Tabs 1`] = `
 </div>"
 `;
 
-exports[`should render small size Tabs 1`] = `
+exports[`should render small size Tab 1`] = `
 "<div class=\\"er-tabs small default top\\">
   <div class=\\"er-tabs-title default\\">
     <div class=\\"er-tabs-select-scroll\\" style=\\"width: 0px; transform: translateX(0px);\\"></div><a class=\\"active\\" href=\\"javascript:;\\">首页</a><a class=\\"\\" href=\\"javascript:;\\">用户管理</a><a class=\\"\\" href=\\"javascript:;\\">角色管理</a>

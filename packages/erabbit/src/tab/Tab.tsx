@@ -74,16 +74,16 @@ export default defineComponent({
       event?: MouseEvent,
       selectNode?: HTMLAnchorElement,
     ) => {
-      const target = event.target as HTMLAnchorElement
+      const target = event?.target as HTMLAnchorElement
       if (props.tabPosition === 'left' || props.tabPosition === 'right') {
         const firstNodeLeft = titleRef.value?.querySelector('a')
         const height =
-          target.offsetHeight ||
+          target?.offsetHeight ||
           selectNode?.offsetHeight ||
           firstNodeLeft?.offsetHeight
         const relateTop = firstNodeLeft?.getBoundingClientRect()?.top || 0
         const x =
-          target.getBoundingClientRect()?.top ||
+          target?.getBoundingClientRect()?.top ||
           selectNode?.getBoundingClientRect()?.top ||
           relateTop
         scrollStyle.value = `height: ${height}px; transform: translateY(${
@@ -92,12 +92,12 @@ export default defineComponent({
       } else {
         const firstNodeLeft = titleRef.value?.querySelector('a')
         const width =
-          target.offsetWidth ||
+          target?.offsetWidth ||
           selectNode?.offsetWidth ||
           firstNodeLeft?.offsetWidth
         const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
         const x =
-          target.getBoundingClientRect()?.left ||
+          target?.getBoundingClientRect()?.left ||
           selectNode?.getBoundingClientRect()?.left ||
           relateLeft
         scrollStyle.value = `width: ${width}px; transform: translateX(${
