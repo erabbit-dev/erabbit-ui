@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300px" src="http://erabbit.itheima.net/img/logo.0940ebb5.png">
+  <img width="200px" src="https://erabbit-dev.github.io/erabbit-ui/logo.png">
 </p>
 
 <p align="center">

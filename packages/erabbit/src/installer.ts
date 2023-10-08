@@ -8,6 +8,7 @@ import { Confirm, showConfirm } from './confirm'
 import { Icon } from './icon'
 import { InputNumber } from './input-number'
 import { Step, StepItem } from './step'
+import { Tab, TabPanel } from './tab'
 
 const components = [
   Area,
@@ -22,6 +23,8 @@ const components = [
   InputNumber,
   Step,
   StepItem,
+  Tab,
+  TabPanel,
 ]
 
 export function installer(app: App) {

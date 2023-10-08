@@ -11,6 +11,8 @@ import 'erabbit/dist/erabbit.min.css'
 import './style.scss'
 import IconCollection from './components/IconCollection.vue'
 
+import CodePreview from './components/CodePreview.vue'
+
 export default {
   extends: Theme,
   Layout: () => {
@@ -25,5 +27,6 @@ export default {
     app.use(ErabbitUI)
     
     app.component(IconCollection.name, IconCollection)
+    app.component(CodePreview.name, CodePreview)
   }
 }

@@ -20,15 +20,29 @@ export default defineConfig({
       dark: 'vitesse-dark',
     },
   },
+
+  head: [
+    [
+      'link',
+      {
+        rel: 'shortcut icon',
+        href: './favicon.ico',
+      },
+    ],
+  ],
+
   themeConfig: {
     search: {
       provider: 'local',
     },
 
+    logo: './logo.svg',
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Get Start', link: '/installation' },
       { text: 'Components Docs', link: '/components-docs/button' },
+      { text: 'Playground', link: 'https://erabbit-ui-playground.vercel.app/' },
     ],
 
     sidebar: [

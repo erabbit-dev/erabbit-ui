@@ -80,7 +80,7 @@ Use `disabled` attribute to determine whether a button is disabled. It accepts a
 
 ## Sizes
 
-Use attribute `size` to set additional sizes with `large`, `small`, `mini`, default `middle`.
+Use attribute `size` to set additional sizes with `large`, `small`, `default`, default `default`.
 
 ```vue preview
 <template>

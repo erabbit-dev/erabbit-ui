@@ -4,9 +4,9 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-1: #27ba9b;
+  --vp-c-brand-2: #27ba9b;
+  --vp-c-brand-3: #42b883;
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
@@ -49,14 +49,14 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    #bd34fe 30%,
-    #41d1ff
+    #42d392 30%,
+    #647eff
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    #bd34fe 50%,
-    #47caff 50%
+    #647eff 50%,
+    #42d392 50%
   );
   --vp-home-hero-image-filter: blur(40px);
 }
@@ -121,7 +121,7 @@
 
     &.tip {
       font-size: 10px;
-      color: green;
+      color: #42b883;
       padding-top: 5px;
     }
   }

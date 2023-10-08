@@ -13,7 +13,7 @@ hero:
     - theme: alt
       text: Components Docs
       link: /components-docs/button
-  image: /logo3.png
+  image: /logo.png
 
 features:
   - title: Sku Components
