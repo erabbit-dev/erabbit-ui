@@ -24,7 +24,7 @@ export type TabsPanelProps = ExtractPropTypes<typeof tabsPanelProps>
 export type TabsPaneInstance = ComponentPublicInstance<TabsPanelProps>
 
 export default defineComponent({
-  name: 'ErTabsPanel',
+  name: 'ErTabPanel',
   props: tabsPanelProps,
   setup(props, { slots }) {
     const { addChild, removeChild, children, activeName } =
