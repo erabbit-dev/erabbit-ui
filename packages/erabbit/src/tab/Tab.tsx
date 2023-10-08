@@ -132,19 +132,9 @@ export default defineComponent({
     })
 
     return () => (
-      <div
-        class={[
-          createNamespace('tabs'),
-          props.size,
-          props.type,
-          props.tabPosition,
-        ]}
-      >
-        <div class={[createNamespace('tabs-title'), props.type]} ref={titleRef}>
-          <div
-            class={createNamespace('tabs-select-scroll')}
-            style={scrollStyle.value}
-          ></div>
+      <div class={['er-tabs', props.size, props.type, props.tabPosition]}>
+        <div class={['er-tabs-title', props.type]} ref={titleRef}>
+          <div class={'er-tabs-select-scroll'} style={scrollStyle.value}></div>
           {children.value.map((item, index) => (
             <a
               onClick={(event) => changeActive(item.name || index, event)}
@@ -160,9 +150,7 @@ export default defineComponent({
             </a>
           ))}
         </div>
-        <div class={[createNamespace('tabs-container'), props.type]}>
-          {slots.default?.()}
-        </div>
+        <div class={['er-tabs-container', props.type]}>{slots.default?.()}</div>
       </div>
     )
   },

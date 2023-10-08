@@ -42,7 +42,6 @@ export default defineComponent({
     onUnmounted(() => {
       removeChild(currentInstance?.uid)
     })
-    const tabsPanelClass = createNamespace('tabs-panel')
 
     return () => {
       const currentIndex = children.value.findIndex(
@@ -51,7 +50,7 @@ export default defineComponent({
       return (
         <div
           class={[
-            tabsPanelClass,
+            'er-tabs-panel',
             (props.name === activeName.value && props.name) ||
             currentIndex === activeName.value
               ? 'current'
