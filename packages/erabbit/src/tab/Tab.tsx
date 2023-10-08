@@ -1,18 +1,17 @@
 import {
-  defineComponent,
   PropType,
-  provide,
+  defineComponent,
   getCurrentInstance,
-  watchEffect,
-  ref,
-  onMounted,
   nextTick,
-  type Ref,
-  type ExtractPropTypes,
+  onMounted,
+  provide,
+  ref,
+  watchEffect,
   type ComponentPublicInstance,
+  type ExtractPropTypes,
+  type Ref,
 } from 'vue'
 import { useChildren } from '../composables'
-import { createNamespace } from '../utils'
 import { TabContextKey } from './constants'
 
 export type SizeType = 'mini' | 'small' | 'default'
