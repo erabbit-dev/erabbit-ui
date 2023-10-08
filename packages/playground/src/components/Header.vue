@@ -87,6 +87,7 @@ watch(copied, () => {
   }
 }
 .dark .playground-header {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #1a1a1a;
   border-color: #383838;
   color: #aaa;
