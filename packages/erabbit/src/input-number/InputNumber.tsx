@@ -44,7 +44,8 @@ export default defineComponent({
 
     const onInput = (event: Event) => {
       oldValue = props.modelValue
-      const newValue = (event.target as HTMLInputElement).valueAsNumber
+      const element = event.target as HTMLInputElement
+      const newValue = element.valueAsNumber
       emit('update:modelValue', newValue)
     }
 
@@ -73,7 +74,8 @@ export default defineComponent({
 
     const onBlur = (event: FocusEvent) => {
       emit('blur', event)
-      const newValue = (event.target as HTMLInputElement).valueAsNumber
+      const element = event.target as HTMLInputElement
+      const newValue = element.valueAsNumber
       if (isNaN(newValue)) return
       setValue(newValue)
     }
