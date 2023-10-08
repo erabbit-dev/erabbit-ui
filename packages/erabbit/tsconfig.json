@@ -1,5 +1,6 @@
 {
   "extends": "../../tsconfig.json",
+  "exclude": ["dist/**/*"],
   "compilerOptions": {
     "moduleResolution": "NodeNext",
     "module": "NodeNext",

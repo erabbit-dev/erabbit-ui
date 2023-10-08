@@ -14,9 +14,9 @@ import {
 import { useChildren } from '../composables'
 import { TabContextKey } from './constants'
 
-export type SizeType = 'mini' | 'small' | 'default'
-export type ShowType = 'card' | 'border-card' | 'default'
-export type PositionType = 'left' | 'top' | 'right' | 'bottom'
+export type TabSizeType = 'small' | 'default' | 'large'
+export type TabShowType = 'card' | 'border-card'
+export type TabPositionType = 'left' | 'top' | 'right' | 'bottom'
 export type Children = {
   uid: number
   label: string
@@ -35,15 +35,14 @@ const tabProps = {
     default: '',
   },
   size: {
-    type: String as PropType<SizeType>,
+    type: String as PropType<TabSizeType>,
     default: 'default',
   },
   type: {
-    type: String as PropType<ShowType>,
-    default: 'default',
+    type: String as PropType<TabShowType>,
   },
   tabPosition: {
-    type: String as PropType<PositionType>,
+    type: String as PropType<TabPositionType>,
     default: 'top',
   },
 }
