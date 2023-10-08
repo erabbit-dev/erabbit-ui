@@ -1,0 +1,174 @@
+.er-tabs {
+  &.border-card {
+    box-shadow:
+      0 2px 4px 0 rgba(0, 0, 0, 0.12),
+      0 0 6px 0 rgba(0, 0, 0, 0.04);
+  }
+  &.default .er-tabs-title a {
+    font-size: 16px;
+  }
+  &.small .er-tabs-title a {
+    font-size: 14px;
+  }
+  &.mini .er-tabs-title a {
+    font-size: 12px;
+  }
+  &.left, &.right {
+    display: flex;
+    flex-direction: row;
+    .er-tabs-title {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid var(--er-border);
+        border-left: none;
+        border-bottom: none;
+        a {
+            text-align: right;
+        }
+        .er-tabs-select-scroll {
+            height: 0;
+            width: 2px;
+            top: 0px;
+            left: 100%;
+        }
+        &.card {
+            a {
+                border-right:none;
+                border-bottom: none;
+                text-align: center;
+              &:last-of-type {
+                border-bottom: 1px solid var(--er-border);
+              }
+            }
+           
+        }
+        &.border-card {
+            a {
+                border-right:none;
+                border-bottom: none;
+                text-align: center;
+               &.active {
+                border-right: none;
+                border-left:none;
+               }
+              &:last-of-type {
+                border-bottom: 1px solid var(--er-border);
+              }
+            }
+           
+        }
+    }
+    &.border-card .er-tabs-container {
+        border: none;
+    }
+  }
+  &.right {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .er-tabs-title { 
+        border-left: 1px solid var(--er-border);
+        border-right: none;
+        a {
+            text-align: left;
+        }
+        .er-tabs-select-scroll {
+            height: 0;
+            width: 2px;
+            top: 0px;
+            left: -1px;
+            right: 100%;
+        }
+        &.card {
+            a {
+                border-right: 1px solid var(--er-border);
+            }
+        }
+    }
+  }
+  &.bottom {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .er-tabs-title {
+    display: flex;
+    border-bottom: 2px solid var(--er-border);
+    box-sizing: border-box;
+    position: relative;
+    &.card {
+      border-bottom: none;
+      border-left: 1px solid var(--er-border);
+      .er-tabs-select-scroll {
+        display: none;
+      }
+      a {
+        border-left: none;
+        border-top: 1px solid var(--er-border);
+        border-right: 1px solid var(--er-border);
+        border-bottom: 1px solid var(--er-border);
+        &.active {
+          border-bottom: none;
+          border-color: var(--er-border);
+        }
+      }
+    }
+    &.border-card {
+      border: 1px solid var(--er-border);
+      background-color: var(--er-bg);
+      .er-tabs-select-scroll {
+        display: none;
+      }
+      a {
+        user-select: none;
+        cursor: pointer;
+        border-left: none;
+        &.active {
+          border-right: 1px solid var(--er-border);
+          border-left: 1px solid var(--er-border);
+          background-color: var(--er-white);
+          margin-bottom: -1px;
+        }
+        &:first-of-type {
+          border-left: none;
+        }
+      }
+    }
+    a {
+      font-size: 16px;
+      color: var(--er-text);
+      text-decoration: none;
+      padding: 10px 16px;
+      &:hover {
+        color: var(--er-primary);
+      }
+      &.active {
+        color: var(--er-primary);
+        border-color: var(--er-primary);
+      }
+    }
+    .er-tabs-select-scroll {
+      height: 2px;
+      width: 0;
+      background-color: var(--er-primary);
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      transition: transform 0.3s;
+    }
+  }
+
+  .er-tabs-container {
+    display: flex;
+    padding: 10px;
+    .er-tabs-panel {
+      display: none;
+      &.current {
+        display: block;
+      }
+    }
+    &.border-card {
+      border-left: 1px solid var(--er-border);
+      border-right: 1px solid var(--er-border);
+      border-bottom: 1px solid var(--er-border);
+    }
+  }
+}
