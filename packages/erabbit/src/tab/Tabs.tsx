@@ -49,7 +49,7 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const { children, addChild, removeChild } = useChildren(
       getCurrentInstance()!,
-      'ErTabsPanel',
+      'ErTabPanel',
     )
     const activeName = ref<number | string>('')
     const scrollStyle = ref('')
