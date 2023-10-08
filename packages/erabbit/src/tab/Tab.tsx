@@ -7,15 +7,30 @@ import {
   ref,
   onMounted,
   nextTick,
+  type Ref,
+  type ExtractPropTypes,
+  type ComponentPublicInstance,
 } from 'vue'
 import { useChildren } from '../composables'
 import { createNamespace } from '../utils'
-import { TabsContextKey } from './contants'
+import { TabContextKey } from './constants'
 
 export type SizeType = 'mini' | 'small' | 'default'
 export type ShowType = 'card' | 'border-card' | 'default'
 export type PositionType = 'left' | 'top' | 'right' | 'bottom'
-const tabsProps = {
+export type Children = {
+  uid: number
+  label: string
+  name: string | number
+}
+export type TabContext = {
+  children: Ref<Children[]>
+  addChild: (item: Children) => void
+  removeChild: (uid: number) => void
+  activeName: Ref<string | number>
+}
+
+const tabProps = {
   modelValue: {
     type: [String, Number],
     default: '',
@@ -33,21 +48,15 @@ const tabsProps = {
     default: 'top',
   },
 }
-export type TabsContext = {
-  children: Ref<Array<{ uid: number }>>
-  addChild: (item: { uid: number }) => void
-  removeChild: (uid: number) => void
-  activeName: string | number
-}
-export type TabsProps = ExtractPropTypes<typeof tabsProps>
-export type TabsInstance = ComponentPublicInstance<TabsProps>
+export type TabProps = ExtractPropTypes<typeof tabProps>
+export type TabInstance = ComponentPublicInstance<TabProps>
 
 export default defineComponent({
   name: 'ErTabs',
-  props: tabsProps,
+  props: tabProps,
   emits: ['update:modelValue', 'tab-click'],
   setup(props, { slots, emit }) {
-    const { children, addChild, removeChild } = useChildren(
+    const { children, addChild, removeChild } = useChildren<Children>(
       getCurrentInstance()!,
       'ErTabPanel',
     )
@@ -55,7 +64,7 @@ export default defineComponent({
     const scrollStyle = ref('')
     const titleRef = ref<HTMLElement>(null)
 
-    provide(TabsContextKey, {
+    provide(TabContextKey, {
       children,
       addChild,
       removeChild,
@@ -65,15 +74,16 @@ export default defineComponent({
       event?: MouseEvent,
       selectNode?: HTMLAnchorElement,
     ) => {
+      const target = event.target as HTMLAnchorElement
       if (props.tabPosition === 'left' || props.tabPosition === 'right') {
         const firstNodeLeft = titleRef.value?.querySelector('a')
         const height =
-          event?.target?.offsetHeight ||
+          target.offsetHeight ||
           selectNode?.offsetHeight ||
           firstNodeLeft?.offsetHeight
         const relateTop = firstNodeLeft?.getBoundingClientRect()?.top || 0
         const x =
-          event?.target?.getBoundingClientRect()?.top ||
+          target.getBoundingClientRect()?.top ||
           selectNode?.getBoundingClientRect()?.top ||
           relateTop
         scrollStyle.value = `height: ${height}px; transform: translateY(${
@@ -82,12 +92,12 @@ export default defineComponent({
       } else {
         const firstNodeLeft = titleRef.value?.querySelector('a')
         const width =
-          event?.target?.offsetWidth ||
+          target.offsetWidth ||
           selectNode?.offsetWidth ||
           firstNodeLeft?.offsetWidth
         const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
         const x =
-          event?.target?.getBoundingClientRect()?.left ||
+          target.getBoundingClientRect()?.left ||
           selectNode?.getBoundingClientRect()?.left ||
           relateLeft
         scrollStyle.value = `width: ${width}px; transform: translateX(${

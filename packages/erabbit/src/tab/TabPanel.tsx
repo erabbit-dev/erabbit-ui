@@ -4,11 +4,13 @@ import {
   onUnmounted,
   inject,
   getCurrentInstance,
+  type ComponentPublicInstance,
+  type ExtractPropTypes,
 } from 'vue'
 import { createNamespace } from '../utils'
-import { TabsContextKey } from './contants'
-import type { TabsContext } from './Tabs'
-const tabsPanelProps = {
+import { TabContextKey } from './constants'
+import type { TabContext } from './Tab'
+const tabPanelProps = {
   label: {
     type: String,
     default: '',
@@ -20,15 +22,15 @@ const tabsPanelProps = {
     required: true,
   },
 }
-export type TabsPanelProps = ExtractPropTypes<typeof tabsPanelProps>
-export type TabsPaneInstance = ComponentPublicInstance<TabsPanelProps>
+export type TabPanelProps = ExtractPropTypes<typeof tabPanelProps>
+export type TabPaneInstance = ComponentPublicInstance<TabPanelProps>
 
 export default defineComponent({
   name: 'ErTabPanel',
-  props: tabsPanelProps,
+  props: tabPanelProps,
   setup(props, { slots }) {
     const { addChild, removeChild, children, activeName } =
-      inject<TabsContext>(TabsContextKey)
+      inject<TabContext>(TabContextKey)
     const currentInstance = getCurrentInstance()
     onMounted(() => {
       addChild({

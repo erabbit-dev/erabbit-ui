@@ -1,14 +1,14 @@
-import _Tabs from './Tabs'
-import _TabsPanel from './TabsPanel'
+import _Tab from './Tab'
+import _TabPanel from './TabPanel'
 
-export const Tabs = _Tabs
-export const TabsPanel = _TabsPanel
+export const Tab = _Tab
+export const TabPanel = _TabPanel
 
-export type { TabsProps } from './Tabs'
+export type { TabProps } from './Tab'
 
 declare module 'vue' {
   export interface GlobalComponents {
-    ErTabs: typeof Tabs
-    ErTabsPanel: typeof TabsPanel
+    ErTab: typeof Tab
+    ErTabPanel: typeof TabPanel
   }
 }
