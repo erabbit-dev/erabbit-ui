@@ -26,7 +26,7 @@ export default defineConfig({
       'link',
       {
         rel: 'shortcut icon',
-        href: './favicon.ico',
+        href: '/erabbit-ui/favicon.ico',
       },
     ],
   ],

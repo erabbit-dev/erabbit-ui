@@ -79,10 +79,10 @@ Practical & Beautiful component library, A Vue 3 based component library for era
 | `showMessage`     | <input type="checkbox"  disabled />         | showMessage Function      |
 | `ImageView`       | <input type="checkbox"  disabled />         | ImageView Component       |
 | `InfiniteLoading` | <input type="checkbox"  disabled />         | InfiniteLoading Component |
+| `InputNumber`     | <input type="checkbox"  checked disabled /> | InputNumber Component     |
 | `More`            | <input type="checkbox"  disabled />         | More Component            |
-| `NumberBox`       | <input type="checkbox"  disabled />         | NumberBox Component       |
 | `Pagination`      | <input type="checkbox"  disabled />         | Pagination Component      |
 | `Skeleton`        | <input type="checkbox"  disabled />         | Skeleton Component        |
 | `Sku`             | <input type="checkbox"  disabled />         | Sku Component             |
 | `Step`            | <input type="checkbox"  checked disabled /> | Step Component            |
-| `Tab`             | <input type="checkbox"  disabled />         | Tab Component             |
+| `Tab`             | <input type="checkbox"  checked disabled /> | Tab Component             |
