@@ -1,17 +1,40 @@
+:root {
+  --er-input-number-size: 30px;
+  --er-input-number-width: 120px;
+}
+
+.er-input-number--large {
+  --er-input-number-size: 40px;
+  --er-input-number-width: 160px;
+}
+
+.er-input-number--small {
+  --er-input-number-size: 24px;
+  --er-input-number-width: 100px;
+}
+
 .er-input-number {
-  display: flex;
+  display: inline-flex;
+  width: var(--er-input-number-width);
+  height: var(--er-input-number-size);
+
+  &__input,
+  &__decrease,
+  &__increase {
+    border: 1px solid var(--er-border);
+    transition: border 0.3s;
+  }
 
   // input
   &__input {
-    transition: border 0.4s;
+    box-sizing: border-box;
+    height: var(--er-input-number-size);
     flex: 1;
     overflow: hidden;
-    border: 1px solid var(--er-border);
     border-right: none;
     border-left: none;
     text-align: center;
     z-index: 1;
-    box-sizing: border-box;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -23,14 +46,14 @@
   // button
   &__decrease,
   &__increase {
-    cursor: pointer;
-    transition: border 0.4s;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: var(--er-input-number-size);
+    height: var(--er-input-number-size);
     background-color: #f5f7fa;
     color: #85878b;
-    border: 1px solid var(--er-border);
+    cursor: pointer;
 
     svg {
       width: 13px;
@@ -49,64 +72,10 @@
     cursor: not-allowed;
   }
 
-  // size
-  &--small {
-    width: 110px;
-    height: 24px;
-    .er-input-number {
-      &__input {
-        height: 24px;
-      }
-
-      &__decrease,
-      &__increase {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  &--default,
-  &--middle {
-    width: 120px;
-    height: 30px;
-    .er-input-number {
-      &__input {
-        height: 30px;
-      }
-
-      &__decrease,
-      &__increase {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
-
-  &--large {
-    width: 160px;
-    height: 40px;
-    .er-input-number {
-      &__input {
-        height: 40px;
-        font-size: 16px;
-      }
-
-      &__decrease,
-      &__increase {
-        width: 40px;
-        height: 40px;
-      }
-    }
-  }
-
   // :hover
-  &:not(.disabled):hover {
+  &:not(.is_disabled):hover {
     .er-input-number {
-      &__input {
-        border-color: var(--er-primary);
-      }
-
+      &__input,
       &__decrease,
       &__increase {
         border-color: var(--er-primary);

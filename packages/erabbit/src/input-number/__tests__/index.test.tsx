@@ -29,9 +29,7 @@ describe('InputNumber.vue', () => {
 
   test('set modelValue undefined to display placeholder', async () => {
     const inputText = ref<number | undefined>(1)
-    const wrapper = mount(() => (
-      <InputNumber modelValue={inputText.value} placeholder="input number" />
-    ))
+    const wrapper = mount(() => <InputNumber modelValue={inputText.value} />)
     expect(wrapper.find('input').element.value).toEqual('1')
     inputText.value = undefined
     await nextTick()

@@ -44,8 +44,8 @@ const blur = () => {
     <h4>size="small"</h4>
     <er-input-number size="small" v-model="num" />
 
-    <h4>size="middle"</h4>
-    <er-input-number size="middle" v-model="num" />
+    <h4>size="default"</h4>
+    <er-input-number size="default" v-model="num" />
 
     <h4>size="large"</h4>
     <er-input-number size="large" v-model="num" />

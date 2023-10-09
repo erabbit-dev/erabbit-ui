@@ -1,18 +1,19 @@
-import { type ExtractPropTypes, defineComponent } from 'vue'
-import { ref } from 'vue'
-
+import {
+  type ExtractPropTypes,
+  type PropType,
+  defineComponent,
+  ref,
+  watch,
+} from 'vue'
 import { createNamespace } from '../utils'
-import type { PropType } from 'vue'
+
 const [className, bem] = createNamespace('input-number')
 
-type Size = 'large' | 'middle' | 'small' | 'default'
+type Size = 'large' | 'default' | 'small'
 
 const props = {
-  id: String,
-  placeholder: String,
   modelValue: Number,
   disabled: Boolean,
-  name: String,
   step: {
     type: Number,
     default: 1,
@@ -37,47 +38,46 @@ export default defineComponent({
   name: 'ErInputNumber',
   emits: ['update:modelValue', 'change', 'blur', 'focus'],
   props,
-  setup(props, { emit, expose }) {
+  setup(props, { emit, expose, attrs }) {
     const inputRef = ref<HTMLInputElement>()
 
-    let oldValue = props.modelValue
+    watch(
+      () => props.modelValue,
+      (value, oldValue) => {
+        emit('change', value, oldValue)
+      },
+    )
 
     const onInput = (event: Event) => {
-      oldValue = props.modelValue
       const element = event.target as HTMLInputElement
-      const newValue = element.valueAsNumber
-      emit('update:modelValue', newValue)
+      const valueAsNumber = element.valueAsNumber
+      emit('update:modelValue', valueAsNumber)
     }
 
     const onNumberChange = (value: number) => {
-      oldValue = props.modelValue
-      const newValue = Number(props.modelValue) + value
-      if (isNaN(newValue)) {
+      const valueAsNumber = Number(props.modelValue) + value
+      if (isNaN(valueAsNumber)) {
         emit('update:modelValue', 1)
       } else {
-        setValue(newValue)
+        setValue(valueAsNumber)
       }
     }
 
-    const setValue = (newValue: number) => {
-      if (newValue > props.max) {
-        newValue = props.max
-      } else if (newValue < props.min) {
-        newValue = props.min
+    const setValue = (valueAsNumber: number) => {
+      if (valueAsNumber > props.max) {
+        valueAsNumber = props.max
+      } else if (valueAsNumber < props.min) {
+        valueAsNumber = props.min
       }
-
-      if (oldValue === newValue) return
-
-      emit('update:modelValue', newValue)
-      emit('change', newValue, oldValue)
+      emit('update:modelValue', valueAsNumber)
     }
 
     const onBlur = (event: FocusEvent) => {
       emit('blur', event)
       const element = event.target as HTMLInputElement
-      const newValue = element.valueAsNumber
-      if (isNaN(newValue)) return
-      setValue(newValue)
+      const valueAsNumber = element.valueAsNumber
+      if (isNaN(valueAsNumber)) return
+      setValue(valueAsNumber)
     }
 
     const onFocus = (event: FocusEvent) => {
@@ -91,7 +91,13 @@ export default defineComponent({
 
     return () => (
       <>
-        <div class={[className, props.disabled && 'disabled', bem(props.size)]}>
+        <div
+          class={[
+            className,
+            bem(props.size),
+            props.disabled ? 'is_disabled' : '',
+          ]}
+        >
           <button
             disabled={props.disabled}
             class={bem('__decrease')}
@@ -106,15 +112,13 @@ export default defineComponent({
           </button>
 
           <input
+            {...attrs}
             class={bem('__input')}
             autocomplete="off"
             type="number"
-            id={props.id}
-            name={props.name}
             min={props.min}
             max={props.max}
             step={props.step}
-            placeholder={props.placeholder}
             value={props.modelValue}
             disabled={props.disabled}
             onInput={onInput}
