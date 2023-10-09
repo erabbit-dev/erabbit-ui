@@ -40,13 +40,13 @@ A Vue 3 based component library for erabbit web applications
 | `showMessage`     | ❎        | showMessage Function      |
 | `ImageView`       | ❎        | ImageView Component       |
 | `InfiniteLoading` | ❎        | InfiniteLoading Component |
+| `InputNumber`     | ✅        | InputNumber Component     |
 | `More`            | ❎        | More Component            |
-| `NumberBox`       | ❎        | NumberBox Component       |
 | `Pagination`      | ❎        | Pagination Component      |
 | `Skeleton`        | ❎        | Skeleton Component        |
 | `Sku`             | ❎        | Sku Component             |
 | `Step`            | ✅        | Step Component            |
-| `Tab`             | ❎        | Tab Component             |
+| `Tab`             | ✅        | Tab Component             |
 
 ## All Contributors
 
