@@ -33,7 +33,7 @@ const num = ref(1)
 </script>
 
 <template>
-  <er-input-number v-model="num" :disabled="true" />
+  <er-input-number v-model="num" disabled />
 </template>
 ```
 
@@ -55,7 +55,7 @@ const num = ref(2)
 
 ## Sizes
 
-Use attribute `size` to set additional sizes with `large`, `small`.
+Use attribute `size` to set additional sizes with `large`, `small`, default size is `default`.
 
 ```vue preview
 <script lang="ts" setup>
@@ -96,20 +96,20 @@ const num3 = ref(1)
 | min      | the minimum allowed value         | `number`                          | -Infinity |
 | max      | the maximum allowed value         | `number`                          | Infinity  |
 | step     | incremental step                  | `number`                          | 1         |
-| size     | size of the component             | `'large' \| 'default' \| 'small'` | `default` |
+| size     | size of the component             | `'large' \| 'default' \| 'small'` | default   |
 | disabled | whether the component is disabled | `boolean`                         | false     |
 
 ### Events
 
-| Name   | Description                     | Type       |
-| :----- | :------------------------------ | :--------- |
-| change | triggers when the value changes | `Function` |
-| blur   | triggers when Input blurs       | `Function` |
-| focus  | triggers when Input focuses     | `Function` |
+| Name   | Description                     | Parameters                        |
+| :----- | :------------------------------ | :-------------------------------- |
+| change | triggers when the value changes | `value: number, oldValue: number` |
+| blur   | triggers when Input blurs       | `event: FocusEvent`               |
+| focus  | triggers when Input focuses     | `event: FocusEvent`               |
 
 ### Exposes
 
-| Name  | Description                      | Type       |
+| Name  | Description                      | Parameters |
 | :---- | :------------------------------- | :--------- |
-| focus | get focus the input component    | `Function` |
-| blur  | remove focus the input component | `Function` |
+| focus | get focus the input component    | —          |
+| blur  | remove focus the input component | —          |
