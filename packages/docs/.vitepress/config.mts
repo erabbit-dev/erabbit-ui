@@ -45,6 +45,11 @@ export default defineConfig({
       { text: 'Playground', link: 'https://erabbit-ui-playground.vercel.app/' },
     ],
 
+    footer: {
+      copyright: 'Copyright © 2020-2023 ShuGang Zhou',
+      message: 'Released under the MIT License.',
+    },
+
     sidebar: [
       {
         text: 'Get Start',

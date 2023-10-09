@@ -29,7 +29,7 @@ const showType = ref<TabShowType>()
     </div>
     <hr />
 
-    <ErTab :tab-position="position">
+    <ErTab :tab-position="position" :type="'border-card'">
       <ErTabPanel label="首页" name="first">1</ErTabPanel>
       <ErTabPanel label="用户管理" name="second">2</ErTabPanel>
       <ErTabPanel label="角色管理" name="third">3</ErTabPanel>

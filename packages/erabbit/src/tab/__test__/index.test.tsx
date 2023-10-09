@@ -22,9 +22,9 @@ test('should render default Tab', async () => {
       )
     },
   })
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
 })
 test('should render small size Tab', async () => {
   const wrapper = mount(
@@ -40,13 +40,13 @@ test('should render small size Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
 })
-test('should render  mini size Tab', async () => {
+test('should render small size Tab', async () => {
   const wrapper = mount(
-    <Tab size="mini">
+    <Tab size="small">
       <TabPanel label="首页" name="first">
         1
       </TabPanel>
@@ -58,10 +58,10 @@ test('should render  mini size Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.mini').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--small').exists()).toBe(true)
 })
 test('should render card type Tab', async () => {
   const wrapper = mount(
@@ -77,10 +77,10 @@ test('should render card type Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.card').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--card').exists()).toBe(true)
 })
 test('should render border-card type Tab', async () => {
   const wrapper = mount(
@@ -96,10 +96,10 @@ test('should render border-card type Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.border-card').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--border-card').exists()).toBe(true)
 })
 
 test('should render left position Tab', async () => {
@@ -116,10 +116,10 @@ test('should render left position Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.left').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--left').exists()).toBe(true)
 })
 test('should render right position Tab', async () => {
   const wrapper = mount(
@@ -135,9 +135,10 @@ test('should render right position Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--right').exists()).toBe(true)
 })
 test('should render bottom position Tab', async () => {
   const wrapper = mount(
@@ -153,10 +154,10 @@ test('should render bottom position Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--bottom').exists()).toBe(true)
 })
 test('should render bottom position and card type Tab', async () => {
   const wrapper = mount(
@@ -172,15 +173,15 @@ test('should render bottom position and card type Tab', async () => {
       </TabPanel>
     </Tab>,
   )
-  await later(100)
+  await later()
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
-  expect(wrapper.find('.er-tabs.card').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--card').exists()).toBe(true)
+  expect(wrapper.find('.er-tab--bottom').exists()).toBe(true)
 })
-test('should render bottom position and border-card type and mini size Tab', async () => {
+test('should render bottom position and border-card type and small size Tab', async () => {
   const wrapper = mount(
-    <Tab tabPosition="bottom" type="border-card" size="mini">
+    <Tab tabPosition="bottom" type="border-card" size="small">
       <TabPanel label="首页" name="first">
         1
       </TabPanel>
@@ -194,49 +195,10 @@ test('should render bottom position and border-card type and mini size Tab', asy
   )
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
-  expect(wrapper.find('.er-tabs.border-card').exists()).toBe(true)
-})
-test('should render bottom position and small size Tab', async () => {
-  const wrapper = mount(
-    <Tab tabPosition="bottom" size="small">
-      <TabPanel label="首页" name="first">
-        1
-      </TabPanel>
-      <TabPanel label="用户管理" name="second">
-        2
-      </TabPanel>
-      <TabPanel label="角色管理" name="third">
-        3
-      </TabPanel>
-    </Tab>,
-  )
-  await later(100)
-  expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
-  expect(wrapper.find('.er-tabs.small').exists()).toBe(true)
-})
-test('should render bottom position and mini size Tab', async () => {
-  const wrapper = mount(
-    <Tab tabPosition="bottom" size="mini">
-      <TabPanel label="首页" name="first">
-        1
-      </TabPanel>
-      <TabPanel label="用户管理" name="second">
-        2
-      </TabPanel>
-      <TabPanel label="角色管理" name="third">
-        3
-      </TabPanel>
-    </Tab>,
-  )
-  await later(100)
-  expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
-  expect(wrapper.find('.er-tabs.bottom').exists()).toBe(true)
-  expect(wrapper.find('.er-tabs.mini').exists()).toBe(true)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
+  expect(wrapper.find('.er-tab--border-card').exists()).toBe(true)
+  expect(wrapper.find('.er-tab--bottom').exists()).toBe(true)
+  expect(wrapper.find('.er-tab--small').exists()).toBe(true)
 })
 
 test('should render active Tab', async () => {
@@ -267,18 +229,18 @@ test('should render active Tab', async () => {
   })
   await later(100)
   expect(wrapper.html()).toMatchSnapshot()
-  expect(wrapper.findAll('.er-tabs-title a').length).toBe(3)
+  expect(wrapper.findAll('.er-tab__item').length).toBe(3)
 
-  wrapper.find('.er-tabs-title a:nth-of-type(2)').trigger('click')
+  wrapper.find('.er-tab__item:nth-of-type(2)').trigger('click')
   await later()
   expect(testValue).toBe('second')
-  wrapper.find('.er-tabs-title a:nth-of-type(3)').trigger('click')
+  wrapper.find('.er-tab__item:nth-of-type(3)').trigger('click')
   await later()
   expect(testValue).toBe('third')
-  wrapper.find('.er-tabs-title a:nth-of-type(2)').trigger('click')
+  wrapper.find('.er-tab__item:nth-of-type(2)').trigger('click')
   await later()
   expect(testValue).toBe('second')
-  wrapper.find('.er-tabs-title a:nth-of-type(1)').trigger('click')
+  wrapper.find('.er-tab__item:nth-of-type(1)').trigger('click')
   await later()
   expect(testValue).toBe('first')
 })

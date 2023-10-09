@@ -1,21 +1,24 @@
+import type { CSSProperties, ComputedRef } from 'vue'
 import {
+  computed,
   defineComponent,
   getCurrentInstance,
   nextTick,
-  onMounted,
   provide,
   ref,
-  watchEffect,
+  watch,
   type ComponentPublicInstance,
   type ExtractPropTypes,
   type PropType,
   type Ref,
 } from 'vue'
 import { useChildren } from '../composables'
+import { createNamespace } from '../utils'
 import { TabContextKey } from './constants'
+import { onUnmounted } from 'vue'
 
 export type TabSizeType = 'small' | 'default' | 'large'
-export type TabShowType = 'card' | 'border-card'
+export type TabShowType = 'card' | 'border-card' | ''
 export type TabPositionType = 'left' | 'top' | 'right' | 'bottom'
 export type Children = {
   uid: number
@@ -26,7 +29,7 @@ export type TabContext = {
   children: Ref<Children[]>
   addChild: (item: Children) => void
   removeChild: (uid: number) => void
-  activeName: Ref<string | number>
+  activeIndex: ComputedRef<number>
 }
 
 const tabProps = {
@@ -40,6 +43,7 @@ const tabProps = {
   },
   type: {
     type: String as PropType<TabShowType>,
+    default: '',
   },
   tabPosition: {
     type: String as PropType<TabPositionType>,
@@ -48,6 +52,8 @@ const tabProps = {
 }
 export type TabProps = ExtractPropTypes<typeof tabProps>
 export type TabInstance = ComponentPublicInstance<TabProps>
+
+const [className, bem] = createNamespace('tab')
 
 export default defineComponent({
   name: 'ErTab',
@@ -58,103 +64,88 @@ export default defineComponent({
       getCurrentInstance()!,
       'ErTabPanel',
     )
-    const activeName = ref<number | string>('')
-    const scrollStyle = ref('')
-    const titleRef = ref<HTMLElement>()
+
+    const activeName = ref<number | string>(props.modelValue)
+    const activeIndex = computed(() => {
+      let index = 0
+      if (activeName.value || activeName.value === 0) {
+        index = children.value.findIndex(
+          (item) => item.name === activeName.value,
+        )
+      }
+      return index
+    })
+
+    const onClickTab = (item: Children, index: number) => {
+      emit('tab-click', item, index)
+      if (index === activeIndex.value) return
+      activeName.value = item.name || index
+      emit('update:modelValue', activeName.value)
+    }
+
+    // set line position
+    const tabItemRefs = ref<HTMLAnchorElement[]>([])
+    const tabHeadRef = ref<HTMLDivElement>()
+    const lineStyle = ref<CSSProperties>({})
+    watch(
+      [() => props.tabPosition, () => props.size, activeIndex],
+      async (newVal, oldVal) => {
+        await nextTick()
+        const style: CSSProperties = {}
+        const currentItem = tabItemRefs.value[activeIndex.value]
+        if (currentItem && tabHeadRef.value) {
+          const { width, height, left, top } =
+            currentItem.getBoundingClientRect()
+          const { left: originLeft, top: originTop } =
+            tabHeadRef.value.getBoundingClientRect()
+          if (props.tabPosition === 'left' || props.tabPosition === 'right') {
+            style.height = `${height}px`
+            style.transform = `translateY(${top - originTop}px)`
+          } else {
+            style.width = `${width}px`
+            style.transform = `translateX(${left - originLeft}px)`
+          }
+          if (newVal[0] !== oldVal[0]) {
+            style['transition-duration'] = `0s`
+          } else {
+            style['transition-duration'] = `0.3s`
+          }
+        }
+        lineStyle.value = style
+      },
+      { immediate: true },
+    )
+    onUnmounted(() => {
+      tabItemRefs.value = []
+    })
 
     provide(TabContextKey, {
       children,
       addChild,
       removeChild,
-      activeName,
-    })
-    const setScrollBorder = (
-      event?: MouseEvent,
-      selectNode?: HTMLAnchorElement,
-    ) => {
-      const target = event?.target as HTMLAnchorElement
-      if (props.tabPosition === 'left' || props.tabPosition === 'right') {
-        const firstNodeLeft = titleRef.value?.querySelector('a')
-        const height =
-          target?.offsetHeight ||
-          selectNode?.offsetHeight ||
-          firstNodeLeft?.offsetHeight
-        const relateTop = firstNodeLeft?.getBoundingClientRect()?.top || 0
-        const x =
-          target?.getBoundingClientRect()?.top ||
-          selectNode?.getBoundingClientRect()?.top ||
-          relateTop
-        scrollStyle.value = `height: ${height}px; transform: translateY(${
-          x - relateTop
-        }px)`
-      } else {
-        const firstNodeLeft = titleRef.value?.querySelector('a')
-        const width =
-          target?.offsetWidth ||
-          selectNode?.offsetWidth ||
-          firstNodeLeft?.offsetWidth
-        const relateLeft = firstNodeLeft?.getBoundingClientRect()?.left || 0
-        const x =
-          target?.getBoundingClientRect()?.left ||
-          selectNode?.getBoundingClientRect()?.left ||
-          relateLeft
-        scrollStyle.value = `width: ${width}px; transform: translateX(${
-          x - relateLeft
-        }px)`
-      }
-    }
-    watchEffect(() => {
-      if (props.modelValue || props.modelValue === 0) {
-        activeName.value = props.modelValue
-      } else {
-        activeName.value = 0
-      }
-      if (titleRef.value) {
-        nextTick(() =>
-          setScrollBorder(
-            undefined,
-            titleRef.value?.querySelector('.active') as HTMLAnchorElement,
-          ),
-        )
-      }
-    })
-    const changeActive = (name: string | number, event: MouseEvent) => {
-      emit('update:modelValue', name)
-      emit('tab-click', name)
-      activeName.value = name
-      setScrollBorder(event)
-    }
-    onMounted(() => {
-      if (children.value.length) {
-        nextTick(() =>
-          setScrollBorder(
-            undefined,
-            titleRef.value?.querySelector('.active') as HTMLAnchorElement,
-          ),
-        )
-      }
+      activeIndex,
     })
 
     return () => (
-      <div class={['er-tabs', props.size, props.type, props.tabPosition]}>
-        <div class={['er-tabs-title', props.type]} ref={titleRef}>
-          <div class={'er-tabs-select-scroll'} style={scrollStyle.value}></div>
+      <div class={[className, bem(props.size, props.tabPosition, props.type)]}>
+        <div class={bem('__header')} ref={tabHeadRef}>
+          <div class={bem('__line')} style={lineStyle.value}></div>
           {children.value.map((item, index) => (
             <a
-              onClick={(event) => changeActive(item.name || index, event)}
+              onClick={() => onClickTab(item, index)}
               class={{
-                active:
-                  (item.name === activeName.value && item.name) ||
-                  index === activeName.value,
+                [bem('__item')]: true,
+                'is-active': activeIndex.value === index,
               }}
               key={index}
+              ref={(el) => tabItemRefs.value.push(el as HTMLAnchorElement)}
               href="javascript:;"
             >
               {item.label}
             </a>
           ))}
         </div>
-        <div class={['er-tabs-container', props.type]}>{slots.default?.()}</div>
+        <div class={bem('__content')}>{slots.default?.()}</div>
       </div>
     )
   },
