@@ -90,57 +90,55 @@ export default defineComponent({
     })
 
     return () => (
-      <>
-        <div
-          class={[
-            className,
-            bem(props.size),
-            props.disabled ? 'is_disabled' : '',
-          ]}
+      <div
+        class={[
+          className,
+          bem(props.size),
+          props.disabled ? 'is_disabled' : '',
+        ]}
+      >
+        <button
+          disabled={props.disabled}
+          class={bem('__decrease')}
+          onClick={() => onNumberChange(-props.step)}
         >
-          <button
-            disabled={props.disabled}
-            class={bem('__decrease')}
-            onClick={() => onNumberChange(-props.step)}
-          >
-            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill="currentColor"
-                d="M128 544h768a32 32 0 1 0 0-64H128a32 32 0 0 0 0 64z"
-              ></path>
-            </svg>
-          </button>
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="currentColor"
+              d="M128 544h768a32 32 0 1 0 0-64H128a32 32 0 0 0 0 64z"
+            ></path>
+          </svg>
+        </button>
 
-          <input
-            {...attrs}
-            class={bem('__input')}
-            autocomplete="off"
-            type="number"
-            min={props.min}
-            max={props.max}
-            step={props.step}
-            value={props.modelValue}
-            disabled={props.disabled}
-            onInput={onInput}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            ref={inputRef}
-          />
+        <input
+          {...attrs}
+          class={bem('__input')}
+          autocomplete="off"
+          type="number"
+          min={props.min}
+          max={props.max}
+          step={props.step}
+          value={props.modelValue}
+          disabled={props.disabled}
+          onInput={onInput}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          ref={inputRef}
+        />
 
-          <button
-            class={bem('__increase')}
-            disabled={props.disabled}
-            onClick={() => onNumberChange(props.step)}
-          >
-            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill="currentColor"
-                d="M480 480V128a32 32 0 0 1 64 0v352h352a32 32 0 1 1 0 64H544v352a32 32 0 1 1-64 0V544H128a32 32 0 0 1 0-64h352z"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </>
+        <button
+          class={bem('__increase')}
+          disabled={props.disabled}
+          onClick={() => onNumberChange(props.step)}
+        >
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="currentColor"
+              d="M480 480V128a32 32 0 0 1 64 0v352h352a32 32 0 1 1 0 64H544v352a32 32 0 1 1-64 0V544H128a32 32 0 0 1 0-64h352z"
+            ></path>
+          </svg>
+        </button>
+      </div>
     )
   },
 })

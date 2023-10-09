@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitepress';
-import MarkdownPreview from 'vite-plugin-markdown-preview';
-import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vitepress'
+import MarkdownPreview from 'vite-plugin-markdown-preview'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -69,6 +69,10 @@ export default defineConfig({
             text: 'InfiniteLoading',
             link: '/components-docs/infinite-loading',
           },
+          {
+            text: 'InputNumber',
+            link: '/components-docs/input-number',
+          },
           { text: 'Message', link: '/components-docs/message' },
           { text: 'More', link: '/components-docs/more' },
           { text: 'Pagination', link: '/components-docs/pagination' },
@@ -88,4 +92,4 @@ export default defineConfig({
       label: 'CONTENTS',
     },
   },
-});
+})
