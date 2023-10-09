@@ -22,13 +22,6 @@ export default defineConfig({
           inlineDynamicImports: false,
         },
         {
-          format: 'cjs',
-          entryFileNames: '[name].js',
-          preserveModules: true,
-          dir: 'dist/lib',
-          inlineDynamicImports: false,
-        },
-        {
           format: 'iife',
           entryFileNames: 'erabbit.min.js',
           dir: 'dist',
@@ -43,6 +36,13 @@ export default defineConfig({
           format: 'es',
           entryFileNames: 'erabbit.esm-browser.js',
           dir: 'dist',
+          inlineDynamicImports: false,
+        },
+        {
+          format: 'cjs',
+          entryFileNames: '[name].js',
+          preserveModules: true,
+          dir: 'dist/lib',
           inlineDynamicImports: false,
         },
       ],

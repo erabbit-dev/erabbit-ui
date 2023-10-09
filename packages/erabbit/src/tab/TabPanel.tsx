@@ -11,7 +11,7 @@ import {
   type ExtractPropTypes,
 } from 'vue'
 
-import { createNamespace } from '../utils/create-namespace'
+import { createNamespace } from '../utils'
 import type { TabContext } from './Tab'
 import { TabContextKey } from './constants'
 

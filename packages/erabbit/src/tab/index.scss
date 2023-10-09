@@ -42,10 +42,11 @@
     position: relative;
     box-sizing: border-box;
     color: var(--er-text);
-    text-decoration: none;
+    text-decoration: none !important;
     border: 1px solid transparent;
     border-bottom: none;
     border-right: none;
+    overflow: hidden;
 
     &:last-of-type {
       border-right: 1px solid transparent;

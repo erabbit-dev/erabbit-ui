@@ -14,7 +14,7 @@ import {
   type Ref,
 } from 'vue'
 import { useChildren } from '../composables'
-import { createNamespace } from '../utils/create-namespace'
+import { createNamespace } from '../utils'
 import { TabContextKey } from './constants'
 
 export type TabSizeType = 'small' | 'default' | 'large'
