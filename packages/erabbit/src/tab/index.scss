@@ -110,11 +110,6 @@
         &:first-of-type {
           border-top-left-radius: 0 !important;
         }
-
-        &:last-of-type {
-          border-bottom: 1px solid var(--er-border);
-          border-top-right-radius: 0 !important;
-        }
       }
     }
   }
@@ -211,6 +206,12 @@
   .er-tab__header {
     &::after {
       display: none;
+    }
+  }
+  .er-tab__item {
+    &:last-of-type {
+      border-bottom: 1px solid var(--er-border);
+      border-top-right-radius: 0 !important;
     }
   }
 }
