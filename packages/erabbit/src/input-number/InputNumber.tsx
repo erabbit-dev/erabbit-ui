@@ -5,13 +5,14 @@ import {
   ref,
   watch,
 } from 'vue'
-import { createNamespace } from '../utils'
+import { createNamespace, omit } from '../utils'
 
 const [className, bem] = createNamespace('input-number')
 
 type Size = 'large' | 'default' | 'small'
 
 const props = {
+  placeholder: String,
   modelValue: Number,
   disabled: Boolean,
   step: {
@@ -38,7 +39,7 @@ export default defineComponent({
   name: 'ErInputNumber',
   emits: ['update:modelValue', 'change', 'blur', 'focus'],
   props,
-  setup(props, { emit, expose, attrs }) {
+  setup(props, { emit, expose }) {
     const inputRef = ref<HTMLInputElement>()
 
     watch(
@@ -89,6 +90,8 @@ export default defineComponent({
       blur: () => inputRef.value?.blur(),
     })
 
+    const attrs = omit(props, ['modelValue', 'size'])
+
     return () => (
       <div
         class={[
@@ -111,19 +114,15 @@ export default defineComponent({
         </button>
 
         <input
-          {...attrs}
+          ref={inputRef}
           class={bem('__input')}
           autocomplete="off"
           type="number"
-          min={props.min}
-          max={props.max}
-          step={props.step}
+          {...attrs}
           value={props.modelValue}
-          disabled={props.disabled}
           onInput={onInput}
           onFocus={onFocus}
           onBlur={onBlur}
-          ref={inputRef}
         />
 
         <button
