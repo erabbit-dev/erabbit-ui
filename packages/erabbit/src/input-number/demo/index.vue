@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ErInputNumber from '../InputNumber'
+import ErInputNumber, { type InputNumberInstance } from '../InputNumber'
 import { ref } from 'vue'
 
 const num = ref(1)
@@ -11,14 +11,14 @@ const handleChange = (value: number, oldVal: number) => {
   changeValue.value = { value, oldVal }
 }
 
-const inputNumber = ref<any>()
+const inputNumber = ref<InputNumberInstance>()
 
 const focus = () => {
-  inputNumber.value.focus()
+  inputNumber.value?.focus()
 }
 
 const blur = () => {
-  inputNumber.value.blur()
+  inputNumber.value?.blur()
 }
 </script>
 

@@ -1,6 +1,7 @@
 import {
   type ExtractPropTypes,
   type PropType,
+  type ComponentPublicInstance,
   defineComponent,
   ref,
   watch,
@@ -33,7 +34,17 @@ const props = {
   },
 }
 
-export type ErInputNumberProps = ExtractPropTypes<typeof props>
+export type InputNumberProps = ExtractPropTypes<typeof props>
+
+export type InputNumberExpose = {
+  focus: () => void
+  blur: () => void
+}
+
+export type InputNumberInstance = ComponentPublicInstance<
+  InputNumberProps,
+  InputNumberExpose
+>
 
 export default defineComponent({
   name: 'ErInputNumber',
