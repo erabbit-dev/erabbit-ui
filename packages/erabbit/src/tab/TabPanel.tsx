@@ -1,18 +1,20 @@
 import {
+  computed,
   defineComponent,
   getCurrentInstance,
   inject,
+  nextTick,
   onMounted,
   onUnmounted,
+  ref,
   type ComponentPublicInstance,
   type ExtractPropTypes,
 } from 'vue'
+
+import { createNamespace } from '../utils/create-namespace'
 import type { TabContext } from './Tab'
 import { TabContextKey } from './constants'
-import { ref } from 'vue'
-import { nextTick } from 'vue'
-import { computed } from 'vue'
-import { createNamespace } from '../utils'
+
 const tabPanelProps = {
   label: {
     type: String,

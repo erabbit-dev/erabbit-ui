@@ -4,6 +4,7 @@ import {
   defineComponent,
   getCurrentInstance,
   nextTick,
+  onUnmounted,
   provide,
   ref,
   watch,
@@ -13,9 +14,8 @@ import {
   type Ref,
 } from 'vue'
 import { useChildren } from '../composables'
-import { createNamespace } from '../utils'
+import { createNamespace } from '../utils/create-namespace'
 import { TabContextKey } from './constants'
-import { onUnmounted } from 'vue'
 
 export type TabSizeType = 'small' | 'default' | 'large'
 export type TabShowType = 'card' | 'border-card' | ''
