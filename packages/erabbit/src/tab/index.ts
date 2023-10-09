@@ -4,7 +4,7 @@ import _TabPanel from './TabPanel'
 export const Tab = _Tab
 export const TabPanel = _TabPanel
 
-export type { TabProps } from './Tab'
+export type { TabProps, TabSizeType, TabPositionType, TabShowType } from './Tab'
 
 declare module 'vue' {
   export interface GlobalComponents {
