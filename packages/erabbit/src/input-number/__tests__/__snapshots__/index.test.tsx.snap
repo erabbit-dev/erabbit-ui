@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render InputNumber with props 1`] = `
+"<div class=\\"er-input-number disabled er-input-number--large\\"><button disabled=\\"\\" class=\\"er-input-number__decrease\\"><svg viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <path fill=\\"currentColor\\" d=\\"M128 544h768a32 32 0 1 0 0-64H128a32 32 0 0 0 0 64z\\"></path>
+    </svg></button><input class=\\"er-input-number__input\\" autocomplete=\\"off\\" type=\\"number\\" name=\\"input-number\\" min=\\"0\\" max=\\"10\\" step=\\"2\\" placeholder=\\"请输入数字\\" disabled=\\"\\"><button class=\\"er-input-number__increase\\" disabled=\\"\\"><svg viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <path fill=\\"currentColor\\" d=\\"M480 480V128a32 32 0 0 1 64 0v352h352a32 32 0 1 1 0 64H544v352a32 32 0 1 1-64 0V544H128a32 32 0 0 1 0-64h352z\\"></path>
+    </svg></button></div>"
+`;
+
+exports[`should render default InputNumber 1`] = `
+"<div class=\\"er-input-number er-input-number--default\\"><button class=\\"er-input-number__decrease\\"><svg viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <path fill=\\"currentColor\\" d=\\"M128 544h768a32 32 0 1 0 0-64H128a32 32 0 0 0 0 64z\\"></path>
+    </svg></button><input class=\\"er-input-number__input\\" autocomplete=\\"off\\" type=\\"number\\" min=\\"-Infinity\\" max=\\"Infinity\\" step=\\"1\\"><button class=\\"er-input-number__increase\\"><svg viewBox=\\"0 0 1024 1024\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+      <path fill=\\"currentColor\\" d=\\"M480 480V128a32 32 0 0 1 64 0v352h352a32 32 0 1 1 0 64H544v352a32 32 0 1 1-64 0V544H128a32 32 0 0 1 0-64h352z\\"></path>
+    </svg></button></div>"
+`;

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { Breadcrumb, BreadcrumbItem } from '..'
 
-test('should render default Carousel', () => {
+test('should render default Breadcrumb', () => {
   const wrapper = mount(
     <Breadcrumb separator="&gt;">
       <BreadcrumbItem to="/">首页</BreadcrumbItem>

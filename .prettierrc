@@ -1,3 +1,7 @@
 {
+  "singleQuote": true,
+  "semi": false,
+  "printWidth": 80,
+  "endOfLine": "auto",
   "$schema": "https://json.schemastore.org/prettierrc"
 }

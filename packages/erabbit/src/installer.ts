@@ -6,6 +6,7 @@ import { Carousel, CarouselItem } from './carousel'
 import { Checkbox } from './checkbox'
 import { Confirm, showConfirm } from './confirm'
 import { Icon } from './icon'
+import { InputNumber } from './input-number'
 import { Step, StepItem } from './step'
 import { Tab, TabPanel } from './tab'
 
@@ -19,6 +20,7 @@ const components = [
   Checkbox,
   Confirm,
   Icon,
+  InputNumber,
   Step,
   StepItem,
   Tab,
