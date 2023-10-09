@@ -1,0 +1,93 @@
+:root {
+  --er-input-number-size: 30px;
+  --er-input-number-width: 120px;
+}
+
+.er-input-number--large {
+  --er-input-number-size: 40px;
+  --er-input-number-width: 160px;
+}
+
+.er-input-number--small {
+  --er-input-number-size: 24px;
+  --er-input-number-width: 100px;
+}
+
+.er-input-number {
+  display: inline-flex;
+  width: var(--er-input-number-width);
+  height: var(--er-input-number-size);
+
+  &__input,
+  &__decrease,
+  &__increase {
+    border: 1px solid var(--er-border);
+    transition: border 0.3s;
+  }
+
+  // input
+  &__input {
+    box-sizing: border-box;
+    height: var(--er-input-number-size);
+    flex: 1;
+    overflow: hidden;
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    z-index: 1;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      // hide the number input’s spin box
+      -webkit-appearance: none;
+    }
+  }
+
+  // button
+  &__decrease,
+  &__increase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--er-input-number-size);
+    height: var(--er-input-number-size);
+    background-color: #f5f7fa;
+    color: #85878b;
+    cursor: pointer;
+
+    svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    &:hover {
+      color: var(--er-primary);
+    }
+  }
+
+  // disabled
+  [disabled] {
+    background-color: #f5f7fa;
+    color: #e4e7ed;
+    cursor: not-allowed;
+  }
+
+  // :hover
+  &:not(.is_disabled):hover {
+    .er-input-number {
+      &__input,
+      &__decrease,
+      &__increase {
+        border-color: var(--er-primary);
+      }
+
+      &__decrease {
+        border-right-color: var(--er-border);
+      }
+
+      &__increase {
+        border-left-color: var(--er-border);
+      }
+    }
+  }
+}

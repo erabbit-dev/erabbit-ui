@@ -15,6 +15,11 @@
   --er-bg: #f5f5f5;
 }
 
+// change the color of the focus outline
+:focus-visible {
+  outline: var(--er-primary) auto 1px;
+}
+
 .ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -30,7 +35,7 @@
   overflow: hidden;
 }
 
-// 离开时候淡出动画
+// Fade-out animation when leaving.
 .fade {
   &-leave {
     &-active {
@@ -45,8 +50,8 @@
   }
 }
 
-// 面包屑动画
-.fade-right{
+// Breadcrumb animation.
+.fade-right {
   &-enter-active,
   &-leave-active {
     transition: all 0.5s;
