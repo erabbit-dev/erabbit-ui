@@ -34,7 +34,7 @@ export function ErabbitUIResolver(
           name: partialName,
           from: `erabbit/dist/${moduleType}`,
           sideEffects:
-            importStyle && !name.endsWith('Item')
+            importStyle && !name.endsWith('Item') && !name.endsWith('Panel')
               ? getSideEffects(kebabCase(partialName), moduleType)
               : '',
         }
