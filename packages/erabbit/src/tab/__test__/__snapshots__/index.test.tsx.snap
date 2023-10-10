@@ -3,7 +3,9 @@
 exports[`should render active Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--top\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\" style=\\"width: 0px; transform: translateX(0px); transition-duration: 0.3s;\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\" style=\\"width: -40px; transform: translateX(20px); transition-duration: 0.3s;\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -16,7 +18,9 @@ exports[`should render active Tab 1`] = `
 exports[`should render border-card type Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--top er-tab--border-card\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -29,7 +33,9 @@ exports[`should render border-card type Tab 1`] = `
 exports[`should render bottom position Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--bottom\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -42,7 +48,9 @@ exports[`should render bottom position Tab 1`] = `
 exports[`should render bottom position and border-card type and small size Tab 1`] = `
 "<div class=\\"er-tab er-tab--small er-tab--bottom er-tab--border-card\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -55,7 +63,9 @@ exports[`should render bottom position and border-card type and small size Tab 1
 exports[`should render bottom position and card type Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--bottom er-tab--card\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -68,7 +78,9 @@ exports[`should render bottom position and card type Tab 1`] = `
 exports[`should render card type Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--top er-tab--card\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -81,7 +93,9 @@ exports[`should render card type Tab 1`] = `
 exports[`should render default Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--top\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -94,7 +108,9 @@ exports[`should render default Tab 1`] = `
 exports[`should render left position Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--left\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -107,7 +123,9 @@ exports[`should render left position Tab 1`] = `
 exports[`should render right position Tab 1`] = `
 "<div class=\\"er-tab er-tab--default er-tab--right\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -120,7 +138,9 @@ exports[`should render right position Tab 1`] = `
 exports[`should render small size Tab 1`] = `
 "<div class=\\"er-tab er-tab--small er-tab--top\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>
@@ -133,7 +153,9 @@ exports[`should render small size Tab 1`] = `
 exports[`should render small size Tab 2`] = `
 "<div class=\\"er-tab er-tab--small er-tab--top\\">
   <div class=\\"er-tab__header\\">
-    <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    <div class=\\"er-tab__wrapper\\">
+      <div class=\\"er-tab__line\\"></div><a class=\\"er-tab__item is-active\\" href=\\"javascript:;\\">首页</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">用户管理</a><a class=\\"er-tab__item\\" href=\\"javascript:;\\">角色管理</a>
+    </div>
   </div>
   <div class=\\"er-tab__content\\">
     <div class=\\"er-tab-panel is-active\\">1</div>

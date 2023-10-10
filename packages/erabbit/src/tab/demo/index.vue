@@ -29,7 +29,7 @@ const showType = ref<TabShowType>()
     </div>
     <hr />
 
-    <ErTab :tab-position="position" :type="'border-card'">
+    <ErTab :tab-position="position" :type="showType">
       <ErTabPanel label="首页" name="first">1</ErTabPanel>
       <ErTabPanel label="用户管理" name="second">2</ErTabPanel>
       <ErTabPanel label="角色管理" name="third">3</ErTabPanel>
@@ -41,17 +41,7 @@ const showType = ref<TabShowType>()
       <ErButton @click="position = 'right'">right</ErButton>
       <ErButton @click="position = 'bottom'">bottom</ErButton>
       <ErButton @click="position = 'left'">left</ErButton>
-    </div>
-    <hr />
-
-    <ErTab :type="showType">
-      <ErTabPanel label="首页" name="first">1</ErTabPanel>
-      <ErTabPanel label="用户管理" name="second">2</ErTabPanel>
-      <ErTabPanel label="角色管理" name="third">3</ErTabPanel>
-      <ErTabPanel label="权限管理设置" name="four">4</ErTabPanel>
-      <ErTabPanel label="公司审核制度设计" name="five">5</ErTabPanel>
-    </ErTab>
-    <div class="btn-group">
+      <hr />
       <ErButton @click="showType = undefined">default</ErButton>
       <ErButton @click="showType = 'card'">card</ErButton>
       <ErButton @click="showType = 'border-card'">border-card</ErButton>

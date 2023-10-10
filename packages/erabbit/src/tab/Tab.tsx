@@ -87,6 +87,7 @@ export default defineComponent({
     const tabItemRefs = ref<HTMLAnchorElement[]>([])
     const tabHeadRef = ref<HTMLDivElement>()
     const lineStyle = ref<CSSProperties>({})
+    const gap = 20
     watch(
       [() => props.tabPosition, () => props.size, activeIndex],
       async (newVal, oldVal) => {
@@ -102,8 +103,8 @@ export default defineComponent({
             style.height = `${height}px`
             style.transform = `translateY(${top - originTop}px)`
           } else {
-            style.width = `${width}px`
-            style.transform = `translateX(${left - originLeft}px)`
+            style.width = `${width - 2 * gap}px`
+            style.transform = `translateX(${left - originLeft + gap}px)`
           }
           if (newVal[0] !== oldVal[0]) {
             style['transition-duration'] = `0s`
@@ -128,22 +129,24 @@ export default defineComponent({
 
     return () => (
       <div class={[className, bem(props.size, props.tabPosition, props.type)]}>
-        <div class={bem('__header')} ref={tabHeadRef}>
-          <div class={bem('__line')} style={lineStyle.value}></div>
-          {children.value.map((item, index) => (
-            <a
-              onClick={() => onClickTab(item, index)}
-              class={{
-                [bem('__item')]: true,
-                'is-active': activeIndex.value === index,
-              }}
-              key={index}
-              ref={(el) => tabItemRefs.value.push(el as HTMLAnchorElement)}
-              href="javascript:;"
-            >
-              {item.label}
-            </a>
-          ))}
+        <div class={bem('__header')}>
+          <div class={bem('__wrapper')} ref={tabHeadRef}>
+            <div class={bem('__line')} style={lineStyle.value}></div>
+            {children.value.map((item, index) => (
+              <a
+                onClick={() => onClickTab(item, index)}
+                class={{
+                  [bem('__item')]: true,
+                  'is-active': activeIndex.value === index,
+                }}
+                key={index}
+                ref={(el) => tabItemRefs.value.push(el as HTMLAnchorElement)}
+                href="javascript:;"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
         <div class={bem('__content')}>{slots.default?.()}</div>
       </div>
