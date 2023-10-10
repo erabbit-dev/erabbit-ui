@@ -7,6 +7,7 @@ export * from './confirm'
 export * from './icon'
 export * from './input-number'
 export * from './step'
+export * from './tab'
 
 // global install
 import { installer } from './installer'
