@@ -1,6 +1,6 @@
 {
   "name": "@erabbit-dev/auto-import",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "erabbit ui auto import component",
   "type": "module",
   "exports": {
