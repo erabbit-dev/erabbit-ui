@@ -38,7 +38,7 @@ To change the display size to `small` `large`, you can set the size property. Th
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
   <er-button @click="change"> default/small/large </er-button>
-  <div>Current: {{ size }}</div>
+  <span> Current: {{ size }}</span>
 </template>
 
 <script lang="ts" setup>
@@ -66,15 +66,15 @@ const change = () => {
     <er-tab-panel label="审核" name="approval">3</er-tab-panel>
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
-  <er-button @click="change"> top/right/bottom/left </er-button>
-  <div>Current: {{ position }}</div>
+  <er-button @click="change"> right/bottom/left/top </er-button>
+  <span> Current: {{ position }}</span>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 const position = ref('top')
 
-let list = ['top', 'right', 'bottom', 'left']
+let list = ['right', 'bottom', 'left', 'top']
 const change = () => {
   position.value = list[0]
   list = [...list.slice(1), list[0]]
@@ -97,7 +97,7 @@ You can set the type `card` `border-card` to change the showMode
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
   <er-button @click="change"> card/border-card/default </er-button>
-  <div>Current: {{ type || 'default' }}</div>
+  <span> Current: {{ type || 'default' }}</span>
 </template>
 
 <script lang="ts" setup>
