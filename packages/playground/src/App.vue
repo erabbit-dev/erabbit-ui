@@ -6,7 +6,7 @@ import PlaygroundHeader from './components/Header.vue'
 
 import { reactive, ref, watch, watchEffect } from 'vue'
 import { ErabbitUIStore } from './store'
-import { getImportMap, getSupportedErabbitUIVersions } from './utils'
+import { getSupportedErabbitUIVersions } from './utils'
 
 const hash = location.hash.slice(1)
 
