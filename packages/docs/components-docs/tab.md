@@ -38,6 +38,7 @@ To change the display size to `small` `large`, you can set the size property. Th
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
   <er-button @click="change"> default/small/large </er-button>
+  <div>Current: {{ size }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -66,6 +67,7 @@ const change = () => {
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
   <er-button @click="change"> top/right/bottom/left </er-button>
+  <div>Current: {{ position }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -95,6 +97,7 @@ You can set the type `card` `border-card` to change the showMode
     <er-tab-panel label="流程结束" name="end">4</er-tab-panel>
   </er-tab>
   <er-button @click="change"> card/border-card/default </er-button>
+  <div>Current: {{ type || 'default' }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -115,18 +118,18 @@ const change = () => {
 
 ### Tabs Attributes
 
-| Name        | Description            | Type                       | Default |
-| ----------- | ---------------------- | -------------------------- | ------- |
-| v-model     | Set the active Tab     | `string/number`            | -       |
-| size        | Set the size           | `large/small/default`      | default |
-| type        | Set the show Mode      | `default/card/border-card` | default |
-| tabPosition | Set the tabs direction | `left/right/top/bottom`    | top     |
+| Name        | Description            | Type                                     | Default |
+| ----------- | ---------------------- | ---------------------------------------- | ------- |
+| v-model     | Set the active Tab     | `string \| number`                       | -       |
+| size        | Set the size           | `'large' \| 'small' \| 'default'`        | default |
+| type        | Set the show Mode      | `'card' \| 'border-card'`                | -       |
+| tabPosition | Set the tabs direction | `'left' \| 'right' \| 'top' \| 'bottom'` | top     |
 
 ### Tabs Event
 
-| Name      | Description                   | Parameters              |
-| --------- | ----------------------------- | ----------------------- |
-| tab-click | trigger it when click the tab | tabspanel name or index |
+| Name      | Description                   | Parameters                      |
+| --------- | ----------------------------- | ------------------------------- |
+| tab-click | trigger it when click the tab | `item: Children, index: number` |
 
 ### TabsPanel Attributes
 
