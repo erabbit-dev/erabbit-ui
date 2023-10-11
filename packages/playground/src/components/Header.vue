@@ -1,41 +1,25 @@
 <script setup lang="ts">
-import { reactive, watch } from 'vue'
-import type { ErabbitUIStore } from '../store'
-import { getSupportedErabbitUIVersions } from '../utils'
+import { useClipboard, useDark } from '@vueuse/core'
+import { watch } from 'vue'
 import Github from './Github.vue'
 import Moon from './Moon.vue'
-import Sun from './Sun.vue'
 import Share from './Share.vue'
-import { useClipboard, useDark } from '@vueuse/core'
+import Sun from './Sun.vue'
 
 defineOptions({
   name: 'PlaygroundHeader',
 })
 
-// setting versions
-const { store } = defineProps<{
-  store: ErabbitUIStore
+defineProps<{
+  versions: {
+    erabbitUI: {
+      published: string[]
+      text: string
+      active: string
+    }
+  }
+  setVersion: (e: Event) => void
 }>()
-
-const versions = reactive({
-  erabbitUI: {
-    published: [] as string[],
-    text: 'ErabbitUI',
-    active: 'latest',
-  },
-})
-
-const list = getSupportedErabbitUIVersions()
-
-watch(list, () => {
-  versions.erabbitUI.published = ['latest', ...list.value]
-})
-
-const setVersion = (e: Event) => {
-  const v = (e.target as HTMLSelectElement).value
-  versions.erabbitUI.active = v
-  store.setErabbitUIVersion(v)
-}
 
 // setting dark mode
 const isDark = useDark()
