@@ -37,7 +37,7 @@ watch(list, () => {
   if (list.value.length) {
     versions.erabbitUI.active = list.value[0]
     versions.erabbitUI.published = [...list.value]
-    store.setImportMap(getImportMap(versions.erabbitUI.active))
+    store.setErabbitUIVersion(versions.erabbitUI.active)
     loading.value = false
   }
 })
