@@ -70,4 +70,9 @@ const setVersion = (e: Event) => {
 .loading {
   height: calc(100vh - 45px);
 }
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
