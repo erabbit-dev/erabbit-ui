@@ -56,14 +56,6 @@ Thanks to the following friends for their contributions to ErabbitUI:
   <img src="https://opencollective.com/erabbit/contributors.svg?width=890&button=false" alt="contributors">
 </a>
 
-## All Contributors
-
-Thanks to the following friends for their contributions to ErabbitUI:
-
-<a href="https://github.com/erabbit-dev/erabbit-ui/graphs/contributors">
-  <img src="https://opencollective.com/erabbit/contributors.svg?width=890&button=false" alt="contributors">
-</a>
-
 ## Contribution Guide
 
 - Fork the main repository. If you have already forked, please synchronize the latest code from the main repository.

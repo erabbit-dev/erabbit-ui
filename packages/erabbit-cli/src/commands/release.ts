@@ -58,6 +58,8 @@ function buildPackage(packageManager: string) {
   const command = `${packageManager} run build`
   consola.success(`${color.bold('Build package:')} ${color.green(command)}`)
   execSync(command, { stdio: 'inherit' })
+  // copy readme
+  fse.copyFileSync('../../README.md', 'README.md')
 }
 
 function publishPackage(packageManager: string, tag: string) {
