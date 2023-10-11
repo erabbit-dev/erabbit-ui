@@ -20,8 +20,6 @@ const store = new ErabbitUIStore(
   hash,
 )
 
-store.setImportMap(getImportMap('latest'))
-
 watchEffect(() => {
   const newHash = store.serialize()
   history.replaceState({}, '', newHash)
@@ -41,6 +39,7 @@ watch(list, () => {
   if (list.value.length) {
     versions.erabbitUI.active = list.value[0]
     versions.erabbitUI.published = [...list.value]
+    store.setImportMap(getImportMap(versions.erabbitUI.active))
   }
 })
 
