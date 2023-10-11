@@ -2,7 +2,7 @@ import { type ExtractPropTypes, type PropType, defineComponent } from 'vue'
 import { createNamespace } from '../utils'
 import { type IconProps, Icon } from '../icon'
 
-export type ErButtonType =
+export type ButtonType =
   | 'default'
   | 'primary'
   | 'plain'
@@ -11,15 +11,15 @@ export type ErButtonType =
   | 'warning'
   | 'success'
 
-export type ErButtonSize = 'large' | 'small' | 'middle'
+export type ButtonSize = 'large' | 'small' | 'middle'
 
 const props = {
   type: {
-    type: String as PropType<ErButtonType>,
+    type: String as PropType<ButtonType>,
     default: 'default',
   },
   size: {
-    type: String as PropType<ErButtonSize>,
+    type: String as PropType<ButtonSize>,
     default: 'middle',
   },
   round: Boolean,
