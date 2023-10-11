@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import PlaygroundHeader from './components/Header.vue'
 import { Repl } from '@vue/repl'
 import CodeMirror from '@vue/repl/codemirror-editor'
 import '@vue/repl/style.css'
+import PlaygroundHeader from './components/Header.vue'
 
-import { watchEffect } from 'vue'
+import { reactive, ref, watch, watchEffect } from 'vue'
 import { ErabbitUIStore } from './store'
 import { getImportMap, getSupportedErabbitUIVersions } from './utils'
-import { watch } from 'vue'
-import { reactive } from 'vue'
 
 const hash = location.hash.slice(1)
 
@@ -34,12 +32,13 @@ const versions = reactive({
 })
 
 const list = getSupportedErabbitUIVersions()
-
+const loading = ref(true)
 watch(list, () => {
   if (list.value.length) {
     versions.erabbitUI.active = list.value[0]
     versions.erabbitUI.published = [...list.value]
     store.setImportMap(getImportMap(versions.erabbitUI.active))
+    loading.value = false
   }
 })
 
@@ -56,16 +55,19 @@ const setVersion = (e: Event) => {
     :versions="versions"
     :set-version="setVersion"
   ></PlaygroundHeader>
+  <div v-if="loading" class="loading">loading...</div>
   <Repl
     :store="store"
     :editor="CodeMirror"
     :show-ts-config="false"
     :show-import-map="false"
+    v-else
   />
 </template>
 
 <style lang="scss" scoped>
-.vue-repl {
+.vue-repl,
+.loading {
   height: calc(100vh - 45px);
 }
 </style>
