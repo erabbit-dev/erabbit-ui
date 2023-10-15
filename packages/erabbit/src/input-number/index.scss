@@ -1,30 +1,25 @@
 :root {
-  --er-input-number-size: 30px;
-  --er-input-number-width: 120px;
+  --er-input-number-size: 32px;
+  --er-input-number-width: 124px;
 }
-
 .er-input-number--large {
   --er-input-number-size: 40px;
   --er-input-number-width: 160px;
 }
-
 .er-input-number--small {
   --er-input-number-size: 24px;
   --er-input-number-width: 100px;
 }
-
 .er-input-number {
   display: inline-flex;
   width: var(--er-input-number-width);
   height: var(--er-input-number-size);
-
   &__input,
   &__decrease,
   &__increase {
     border: 1px solid var(--er-border);
     transition: border 0.3s;
   }
-
   // input
   &__input {
     box-sizing: border-box;
@@ -42,7 +37,6 @@
       -webkit-appearance: none;
     }
   }
-
   // button
   &__decrease,
   &__increase {
@@ -51,27 +45,23 @@
     align-items: center;
     width: var(--er-input-number-size);
     height: var(--er-input-number-size);
-    background-color: #f5f7fa;
-    color: #85878b;
+    background-color: var(--er-bg);
+    color: var(--er-text);
     cursor: pointer;
-
     svg {
       width: 13px;
       height: 13px;
     }
-
     &:hover {
       color: var(--er-primary);
     }
   }
-
   // disabled
   [disabled] {
-    background-color: #f5f7fa;
-    color: #e4e7ed;
+    background-color: var(--er-bg);
+    color: var(--er-gray);
     cursor: not-allowed;
   }
-
   // :hover
   &:not(.is_disabled):hover {
     .er-input-number {
