@@ -1,4 +1,4 @@
-import type { SkuItem, SpecItem } from './Sku'
+import type { SkuItem, SkuSpecItem } from './Sku'
 import powerSet from './power-set'
 
 type PathMap = Record<string, string[]>
@@ -24,7 +24,7 @@ export const getPathMap = (skus: SkuItem[]) => {
   return pathMap
 }
 
-export const getSelectedValues = (specs: SpecItem[]) => {
+export const getSelectedValues = (specs: SkuSpecItem[]) => {
   const arr: (string | undefined)[] = []
   specs.forEach((item) => {
     const selectedVal = item.values.find((val) => val.selected)
@@ -33,7 +33,10 @@ export const getSelectedValues = (specs: SpecItem[]) => {
   return arr
 }
 
-export const updateDisabledStatus = (specs: SpecItem[], pathMap: PathMap) => {
+export const updateDisabledStatus = (
+  specs: SkuSpecItem[],
+  pathMap: PathMap,
+) => {
   specs.forEach((item, i) => {
     const selectedValues = getSelectedValues(specs)
     item.values.forEach((val) => {
@@ -46,7 +49,7 @@ export const updateDisabledStatus = (specs: SpecItem[], pathMap: PathMap) => {
 }
 
 export const updateSelectedStatus = (
-  specs: SpecItem[],
+  specs: SkuSpecItem[],
   skus: SkuItem[],
   skuId?: string,
 ) => {

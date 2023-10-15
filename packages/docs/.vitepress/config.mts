@@ -36,7 +36,7 @@ export default defineConfig({
       provider: 'local',
     },
 
-    logo: './logo.svg',
+    logo: '/logo.svg',
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
