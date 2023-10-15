@@ -1,16 +1,16 @@
 import {
-  type ExtractPropTypes,
-  type PropType,
-  type ComponentPublicInstance,
   defineComponent,
   ref,
   watch,
+  type ComponentPublicInstance,
+  type ExtractPropTypes,
+  type PropType,
 } from 'vue'
 import { createNamespace, omit } from '../utils'
 
 const [className, bem] = createNamespace('input-number')
 
-type Size = 'large' | 'default' | 'small'
+type InputNumberSize = 'large' | 'default' | 'small'
 
 const props = {
   placeholder: String,
@@ -29,7 +29,7 @@ const props = {
     default: Infinity,
   },
   size: {
-    type: String as PropType<Size>,
+    type: String as PropType<InputNumberSize>,
     default: 'default',
   },
 }
@@ -48,8 +48,11 @@ export type InputNumberInstance = ComponentPublicInstance<
 
 export default defineComponent({
   name: 'ErInputNumber',
+
   emits: ['update:modelValue', 'change', 'blur', 'focus'],
+
   props,
+
   setup(props, { emit, expose }) {
     const inputRef = ref<HTMLInputElement>()
 
@@ -96,10 +99,12 @@ export default defineComponent({
       emit('focus', event)
     }
 
-    expose({
+    const exposeContext: InputNumberExpose = {
       focus: () => inputRef.value?.focus(),
       blur: () => inputRef.value?.blur(),
-    })
+    }
+
+    expose(exposeContext)
 
     const attrs = omit(props, ['modelValue', 'size'])
 
