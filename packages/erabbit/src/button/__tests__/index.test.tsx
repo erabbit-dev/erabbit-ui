@@ -18,6 +18,7 @@ test('should trigger click event', () => {
     props: {
       size: 'large',
       type: 'primary',
+      icon: 'cart',
     },
   })
 
