@@ -13,7 +13,11 @@ import { useFetch } from '@vueuse/core'
 
 const goods = ref()
 onMounted(async () => {
-  const { data } = await useFetch('/erabbit-ui/sku.json').get().json()
+  const { data } = await useFetch(
+    'https://erabbit-dev.github.io/erabbit-ui/sku.json',
+  )
+    .get()
+    .json()
   goods.value = data.value
 })
 </script>
@@ -47,7 +51,11 @@ export type SkuItem = {
 
 const goods = ref()
 onMounted(async () => {
-  const { data } = await useFetch('/erabbit-ui/sku.json').get().json()
+  const { data } = await useFetch(
+    'https://erabbit-dev.github.io/erabbit-ui/sku.json',
+  )
+    .get()
+    .json()
   goods.value = data.value
 })
 
