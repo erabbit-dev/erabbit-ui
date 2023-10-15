@@ -6,11 +6,7 @@ exports[`should render default button 1`] = `
 </button>"
 `;
 
-exports[`should trigger click event 1`] = `
-"<button class=\\"er-button ellipsis er-button--large er-button--primary\\">
-  <!----><span class=\\"er-button__text\\">Submit</span>
-</button>"
-`;
+exports[`should trigger click event 1`] = `"<button class=\\"er-button ellipsis er-button--large er-button--primary\\"><i class=\\"er-icon er-icon--cart er-button__icon\\" style=\\"font-size: 1em;\\"></i><span class=\\"er-button__text\\">Submit</span></button>"`;
 
 exports[`should trigger click event when loading or disabled 1`] = `
 "<button class=\\"er-button ellipsis er-button--middle er-button--default\\">
