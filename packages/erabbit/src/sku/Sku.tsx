@@ -14,18 +14,18 @@ import {
   updateSelectedStatus,
 } from './utils'
 
-export type SpecItemValue = {
+export type SkuSpecItemValue = {
   name: string
   picture?: string
   selected?: boolean
   disabled?: boolean
 }
-export type SpecItem = {
+export type SkuSpecItem = {
   name: string
-  values: SpecItemValue[]
+  values: SkuSpecItemValue[]
 }
 
-export type SpecItemPick = {
+export type SkuSpecItemPick = {
   name: string
   valueName: string
 }
@@ -36,13 +36,13 @@ export type SkuItem = {
   price: string
   oldPrice: string
   inventory: number
-  specs: SpecItemPick[]
+  specs: SkuSpecItemPick[]
   specsText?: string
 }
 
 const skuProps = {
   specs: {
-    type: Array as PropType<SpecItem[]>,
+    type: Array as PropType<SkuSpecItem[]>,
     default: () => [],
   },
   skus: {
@@ -82,7 +82,7 @@ export default defineComponent({
       },
     )
 
-    const changeSku = (spec: SpecItem, val: SpecItemValue) => {
+    const changeSku = (spec: SkuSpecItem, val: SkuSpecItemValue) => {
       if (val.disabled) return
       if (val.selected) {
         val.selected = false
