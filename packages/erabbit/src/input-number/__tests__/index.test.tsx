@@ -1,6 +1,7 @@
 import { InputNumber } from '..'
 import { mount } from '@vue/test-utils'
 import { nextTick, ref } from 'vue'
+import { pick } from '../../utils'
 
 describe('InputNumber.vue', () => {
   test('create', async () => {
@@ -59,7 +60,7 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => <InputNumber v-model={num.value} />)
     const inputWrapper = wrapper.find('input')
     const nativeInput = inputWrapper.element
-    nativeInput.value = 1
+    nativeInput.value = '1'
     await inputWrapper.trigger('input')
     nativeInput.value = ''
     await inputWrapper.trigger('input')
@@ -151,5 +152,12 @@ describe('InputNumber.vue', () => {
     const wrapper = mount(() => <InputNumber v-model={num.value} />)
     await wrapper.find('input').trigger('focus')
     expect(wrapper.getComponent(InputNumber).emitted('focus')).toHaveLength(1)
+  })
+
+  test('pick utils', () => {
+    const obj = { name: 'jack', age: 100 }
+    const pickObj = pick(obj, ['age'])
+    console.log(pickObj)
+    expect(pickObj).toEqual({ age: 100 })
   })
 })

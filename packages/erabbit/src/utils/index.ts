@@ -20,24 +20,26 @@ export function mountComponent<T>(RootComponent: Component) {
   }
 }
 
-export function omit<T extends Record<string, unknown>>(
+export function omit<T extends Record<string, unknown>, U extends keyof T>(
   obj: T,
-  keys: (keyof T)[],
+  keys: ReadonlyArray<U>,
 ) {
   const result = { ...obj }
   keys.forEach((key) => delete result[key])
   return result
 }
 
-export function pick<T extends Record<string, unknown>>(
+export function pick<T extends Record<string, unknown>, U extends keyof T>(
   obj: T,
-  keys: (keyof T)[],
+  keys: ReadonlyArray<U>,
 ) {
-  const result = { ...obj }
-  keys.forEach((key) => {
-    if (!obj[key]) delete result[key]
-  })
-  return result
+  return keys.reduce(
+    (prev, key) => {
+      prev[key] = obj[key]
+      return prev
+    },
+    {} as Pick<T, U>,
+  )
 }
 
 export function createNamespace(
