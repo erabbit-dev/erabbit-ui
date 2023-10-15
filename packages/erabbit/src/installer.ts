@@ -9,6 +9,7 @@ import { Icon } from './icon'
 import { InputNumber } from './input-number'
 import { Step, StepItem } from './step'
 import { Tab, TabPanel } from './tab'
+import { Sku } from './sku'
 
 const components = [
   Area,
@@ -25,6 +26,7 @@ const components = [
   StepItem,
   Tab,
   TabPanel,
+  Sku,
 ]
 
 export function installer(app: App) {

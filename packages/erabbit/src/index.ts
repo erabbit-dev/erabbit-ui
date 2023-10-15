@@ -8,6 +8,7 @@ export * from './icon'
 export * from './input-number'
 export * from './step'
 export * from './tab'
+export * from './sku'
 
 // global install
 import { installer } from './installer'

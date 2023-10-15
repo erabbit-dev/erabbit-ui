@@ -1,0 +1,56 @@
+:root {
+  --er-sku-border-color: var(--er-border);
+  --er-sku-active-color: var(--er-primary);
+  --er-sku-button-gap: 10px;
+  --er-sku-label-color: #999;
+}
+@mixin sku-state-mixin {
+  border: 1px solid var(--er-sku-border-color);
+  margin-right: var(--er-sku-button-gap);
+  margin-bottom: 10px;
+  cursor: pointer;
+  &.is-selected {
+    border-color: var(--er-sku-active-color);
+  }
+  &.is-disabled {
+    opacity: 0.6;
+    border-style: dashed;
+    cursor: not-allowed;
+  }
+}
+.er-sku {
+  padding: 20px;
+  .er-sku {
+    &__row {
+      display: flex;
+      padding-bottom: 10px;
+      align-items: flex-start;
+      margin: 0;
+    }
+    &__label {
+      width: 50px;
+      color: var(--er-sku-label-color);
+      font-size: 14px;
+      line-height: 32px;
+      height: 32px;
+    }
+    &__wrapper {
+      flex: 1;
+      color: var(--er-text);
+      margin: 0;
+    }
+    &__img {
+      width: 50px;
+      height: 50px;
+      @include sku-state-mixin;
+    }
+    &__btn {
+      display: inline-block;
+      height: 30px;
+      line-height: 28px;
+      padding: 0 20px;
+      font-size: 14px;
+      @include sku-state-mixin;
+    }
+  }
+}
