@@ -98,6 +98,7 @@ export type SkuSpecItemValue = {
   selected?: boolean
   disabled?: boolean
 }
+
 export type SkuSpecItem = {
   name: string
   values: SkuSpecItemValue[]
