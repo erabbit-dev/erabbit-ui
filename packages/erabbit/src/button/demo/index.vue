@@ -35,6 +35,11 @@
     <er-button type="primary">middle</er-button>
     <er-button type="primary" size="small">small</er-button>
   </div>
+  <hr />
+  <div class="demo">
+    <er-button icon="close">取消</er-button>
+    <er-button type="primary" loading>保存</er-button>
+  </div>
 </template>
 
 <style scoped>

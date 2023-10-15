@@ -11,9 +11,9 @@ exports[`should render default Confirm 1`] = `
         <p>This is message</p>
       </div>
       <div class=\\"er-confirm__footer\\"><button class=\\"er-button ellipsis er-button--middle er-button--default\\">
-          <!---->Cancel
+          <!----><span class=\\"er-button__text\\">Cancel</span>
         </button><button class=\\"er-button ellipsis er-button--middle er-button--primary\\">
-          <!---->OK
+          <!----><span class=\\"er-button__text\\">OK</span>
         </button></div>
     </div>
   </div>
@@ -66,17 +66,25 @@ exports[`should use showConfirm function control confirmation box 1`] = `
             class="er-button ellipsis er-button--middle er-button--default"
           >
             <!---->
-            
-            Cancel
-            
+            <span
+              class="er-button__text"
+            >
+              
+              Cancel
+              
+            </span>
           </button>
           <button
             class="er-button ellipsis er-button--middle er-button--primary"
           >
             <!---->
-            
-            OK
-            
+            <span
+              class="er-button__text"
+            >
+              
+              OK
+              
+            </span>
           </button>
         </div>
       </div>
@@ -131,17 +139,25 @@ exports[`should use showConfirm function control confirmation box 2`] = `
             class="er-button ellipsis er-button--middle er-button--default"
           >
             <!---->
-            
-            Cancel
-            
+            <span
+              class="er-button__text"
+            >
+              
+              Cancel
+              
+            </span>
           </button>
           <button
             class="er-button ellipsis er-button--middle er-button--primary"
           >
             <!---->
-            
-            OK
-            
+            <span
+              class="er-button__text"
+            >
+              
+              OK
+              
+            </span>
           </button>
         </div>
       </div>

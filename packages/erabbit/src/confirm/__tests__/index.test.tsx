@@ -80,8 +80,8 @@ test('should use showConfirm function control confirmation box', async () => {
 
   expect(div).toMatchSnapshot()
 
-  expect(div.querySelector('.er-confirm__header h3').innerHTML).toBe('Title')
-  await div.querySelector('.er-button--default').click()
+  expect(div.querySelector('.er-confirm__header h3')?.innerHTML).toBe('Title')
+  await (div.querySelector('.er-button--default') as HTMLButtonElement).click()
   expect(cancel).toHaveBeenCalled()
 
   showConfirm({
@@ -95,7 +95,9 @@ test('should use showConfirm function control confirmation box', async () => {
   await later(0)
 
   expect(div).toMatchSnapshot()
-  expect(div.querySelector('.er-confirm__header h3').innerHTML).toBe('温馨提示')
-  await div.querySelector('.er-button--primary').click()
+  expect(div.querySelector('.er-confirm__header h3')?.innerHTML).toBe(
+    '温馨提示',
+  )
+  await (div.querySelector('.er-button--primary') as HTMLButtonElement).click()
   expect(submit).toHaveBeenCalled()
 })

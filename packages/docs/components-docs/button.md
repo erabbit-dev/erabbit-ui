@@ -37,6 +37,11 @@ Use `type` and `size` to define Button's style.
     <er-button type="warning" circle icon="lamp"></er-button>
     <er-button type="danger" circle icon="close"></er-button>
   </div>
+  <hr />
+  <div class="demo">
+    <er-button icon="close">取消</er-button>
+    <er-button type="primary" loading>保存</er-button>
+  </div>
 </template>
 
 <style scoped>
