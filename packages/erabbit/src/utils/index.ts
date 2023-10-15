@@ -20,9 +20,23 @@ export function mountComponent<T>(RootComponent: Component) {
   }
 }
 
-export function omit(obj: Record<string, any>, keys: string[]) {
+export function omit<T extends Record<string, unknown>>(
+  obj: T,
+  keys: (keyof T)[],
+) {
   const result = { ...obj }
   keys.forEach((key) => delete result[key])
+  return result
+}
+
+export function pick<T extends Record<string, unknown>>(
+  obj: T,
+  keys: (keyof T)[],
+) {
+  const result = { ...obj }
+  keys.forEach((key) => {
+    if (!obj[key]) delete result[key]
+  })
   return result
 }
 

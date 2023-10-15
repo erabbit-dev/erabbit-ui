@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default sku 1`] = `
+"<div class=\\"er-sku\\">
+  <dl class=\\"er-sku__row\\">
+    <dt class=\\"er-sku__label\\">颜色</dt>
+    <dd class=\\"er-sku__wrapper\\"><img class=\\"er-sku__img\\" src=\\"https://yanxuan-item.nosdn.127.net/e19067221f1e4e93b2afca3973479496.png\\" alt=\\"白色（女）\\" title=\\"白色（女）\\"><img class=\\"er-sku__img\\" src=\\"https://yanxuan-item.nosdn.127.net/51e0f8bd91e0a4987a797b2586be1ec1.png\\" alt=\\"蓝白（女）\\" title=\\"蓝白（女）\\"><img class=\\"er-sku__img\\" src=\\"https://yanxuan-item.nosdn.127.net/71354df110d7a93e1c46d51fcdd5840e.png\\" alt=\\"白黑（男）\\" title=\\"白黑（男）\\"><img class=\\"er-sku__img\\" src=\\"https://yanxuan-item.nosdn.127.net/032583c92671e01c7ca417210fa29c75.png\\" alt=\\"黑色（男）\\" title=\\"黑色（男）\\"></dd>
+  </dl>
+  <dl class=\\"er-sku__row\\">
+    <dt class=\\"er-sku__label\\">尺码</dt>
+    <dd class=\\"er-sku__wrapper\\"><span class=\\"er-sku__btn\\">女S(35-36)</span><span class=\\"er-sku__btn\\">女L(39-40)</span><span class=\\"er-sku__btn\\">男M（40-41）</span><span class=\\"er-sku__btn\\">男L（42-43）</span><span class=\\"er-sku__btn\\">女M(37-38)</span><span class=\\"er-sku__btn\\">男XL(44-45)</span></dd>
+  </dl>
+</div>"
+`;
+
+exports[`should render set props sku-id 1`] = `
+"<div class=\\"er-sku\\">
+  <dl class=\\"er-sku__row\\">
+    <dt class=\\"er-sku__label\\">颜色</dt>
+    <dd class=\\"er-sku__wrapper\\"><img class=\\"er-sku__img is-selected\\" src=\\"https://yanxuan-item.nosdn.127.net/e19067221f1e4e93b2afca3973479496.png\\" alt=\\"白色（女）\\" title=\\"白色（女）\\"><img class=\\"er-sku__img\\" src=\\"https://yanxuan-item.nosdn.127.net/51e0f8bd91e0a4987a797b2586be1ec1.png\\" alt=\\"蓝白（女）\\" title=\\"蓝白（女）\\"><img class=\\"er-sku__img is-disabled\\" src=\\"https://yanxuan-item.nosdn.127.net/71354df110d7a93e1c46d51fcdd5840e.png\\" alt=\\"白黑（男）\\" title=\\"白黑（男）\\"><img class=\\"er-sku__img is-disabled\\" src=\\"https://yanxuan-item.nosdn.127.net/032583c92671e01c7ca417210fa29c75.png\\" alt=\\"黑色（男）\\" title=\\"黑色（男）\\"></dd>
+  </dl>
+  <dl class=\\"er-sku__row\\">
+    <dt class=\\"er-sku__label\\">尺码</dt>
+    <dd class=\\"er-sku__wrapper\\"><span class=\\"er-sku__btn\\">女S(35-36)</span><span class=\\"er-sku__btn is-selected\\">女L(39-40)</span><span class=\\"er-sku__btn is-disabled\\">男M（40-41）</span><span class=\\"er-sku__btn is-disabled\\">男L（42-43）</span><span class=\\"er-sku__btn\\">女M(37-38)</span><span class=\\"er-sku__btn is-disabled\\">男XL(44-45)</span></dd>
+  </dl>
+</div>"
+`;
