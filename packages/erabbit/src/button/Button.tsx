@@ -26,6 +26,7 @@ const props = {
   disabled: Boolean,
   icon: String as PropType<IconProps['name']>,
   circle: Boolean,
+  loading: Boolean,
 }
 
 export type ErButtonProps = ExtractPropTypes<typeof props>
@@ -37,7 +38,24 @@ export default defineComponent({
 
   props,
 
+  emit: ['click'],
+
   setup(props, { slots }) {
+    const renderText = () => {
+      const def = slots.default?.()
+      if (def) {
+        return <span class={bem('__text')}>{def}</span>
+      }
+    }
+
+    const renderIcon = () => {
+      if (props.loading) {
+        return <Icon name="loading" class={bem('__icon')} />
+      }
+      if (props.icon) {
+        return <Icon name={props.icon} class={bem('__icon')} />
+      }
+    }
     return () => (
       <button
         class={[
@@ -47,11 +65,12 @@ export default defineComponent({
           props.round ? 'is-round' : undefined,
           props.circle ? 'is-circle' : undefined,
           props.disabled ? bem('disabled') : undefined,
+          props.loading ? bem('loading') : undefined,
         ]}
-        disabled={props.disabled}
+        disabled={props.disabled || props.loading}
       >
-        {props.icon && <Icon name={props.icon} class={bem('icon')} />}
-        {slots.default?.()}
+        {renderIcon()}
+        {renderText()}
       </button>
     )
   },

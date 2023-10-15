@@ -24,6 +24,7 @@ const config = {
     'wind',
     'yuan',
     'zan',
+    'loading',
   ] as const,
   outlined: [
     'checked-o',

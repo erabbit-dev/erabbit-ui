@@ -1,6 +1,6 @@
 import _Button from './Button'
 
-export type { ErButtonType, ErButtonSize, ErButtonProps } from './Button'
+export type { ButtonType, ButtonSize, ErButtonProps } from './Button'
 
 export const Button = _Button
 

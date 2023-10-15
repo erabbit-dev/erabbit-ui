@@ -157,7 +157,6 @@ describe('InputNumber.vue', () => {
   test('pick utils', () => {
     const obj = { name: 'jack', age: 100 }
     const pickObj = pick(obj, ['age'])
-    console.log(pickObj)
     expect(pickObj).toEqual({ age: 100 })
   })
 })

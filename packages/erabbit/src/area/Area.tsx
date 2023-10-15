@@ -140,7 +140,7 @@ export default defineComponent({
           <div class={bem('__popper')}>
             {loading.value ? (
               <div class="loading">
-                <div class="er-loader"></div>
+                <Icon name="loading" color="var(--er-primary)" size={32} />
               </div>
             ) : null}
             {currAreaList.value.map((item) => (

@@ -2,12 +2,18 @@
 
 exports[`should render default button 1`] = `
 "<button class=\\"er-button ellipsis er-button--middle er-button--default\\">
-  <!---->Submit
+  <!----><span class=\\"er-button__text\\">Submit</span>
 </button>"
 `;
 
 exports[`should trigger click event 1`] = `
 "<button class=\\"er-button ellipsis er-button--large er-button--primary\\">
-  <!---->Submit
+  <!----><span class=\\"er-button__text\\">Submit</span>
+</button>"
+`;
+
+exports[`should trigger click event when loading or disabled 1`] = `
+"<button class=\\"er-button ellipsis er-button--middle er-button--default\\">
+  <!----><span class=\\"er-button__text\\">Submit</span>
 </button>"
 `;
