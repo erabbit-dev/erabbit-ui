@@ -44,7 +44,16 @@ export default defineComponent({
     const renderText = () => {
       const def = slots.default?.()
       if (def) {
-        return <span class={bem('__text')}>{def}</span>
+        return (
+          <span
+            class={bem('__text')}
+            style={
+              props.icon || props.loading ? { paddingLeft: '5px' } : undefined
+            }
+          >
+            {def}
+          </span>
+        )
       }
     }
 
