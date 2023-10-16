@@ -10,6 +10,7 @@ import { InputNumber } from './input-number'
 import { Step, StepItem } from './step'
 import { Tab, TabPanel } from './tab'
 import { Sku } from './sku'
+import { Message } from './message'
 
 const components = [
   Area,
@@ -27,6 +28,7 @@ const components = [
   Tab,
   TabPanel,
   Sku,
+  Message,
 ]
 
 export function installer(app: App) {

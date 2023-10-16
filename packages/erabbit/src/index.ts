@@ -9,6 +9,7 @@ export * from './input-number'
 export * from './step'
 export * from './tab'
 export * from './sku'
+export * from './message'
 
 // global install
 import { installer } from './installer'
