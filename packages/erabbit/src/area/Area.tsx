@@ -59,7 +59,7 @@ export default defineComponent({
       loading.value = true
       if (window && window.areaData) {
         area.value = window.areaData
-        loading.value
+        loading.value = false
       } else {
         fetch(url)
           .then((res) => res.json())
