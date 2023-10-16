@@ -2,10 +2,10 @@
 
 .er-icon--loading {
   display: inline-block;
-  animation: er-spin 1s infinite linear;
   svg {
     vertical-align: middle;
     display: inline-block;
+    animation: er-spin 1s infinite linear;
   }
 }
 

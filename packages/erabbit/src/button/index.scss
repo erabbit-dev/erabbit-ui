@@ -15,6 +15,7 @@
   }
   &__icon {
     display: inline-block;
+    line-height: 0;
   }
   &--disabled {
     opacity: 0.6 !important;

@@ -39,8 +39,8 @@ Use `type` and `size` to define Button's style.
   </div>
   <hr />
   <div class="demo">
-    <er-button icon="close">取消</er-button>
-    <er-button type="primary" loading>保存</er-button>
+    <er-button icon="close">Cancel</er-button>
+    <er-button type="primary" loading>Save</er-button>
   </div>
 </template>
 
