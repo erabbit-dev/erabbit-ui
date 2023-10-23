@@ -1,4 +1,5 @@
 import _Message from './Message'
+export { showMessage, showLoadingMessage, clearMessage } from './showMessage'
 
 export const Message = _Message
 
