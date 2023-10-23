@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: center;
     pointer-events: none;
+    z-index: 1999;
   }
 
   display: flex;
@@ -41,6 +42,7 @@
   font-size: 16px;
   margin-bottom: var(--er-message-gap);
   will-change: transform, opacity;
+  user-select: none;
 
   &__icon {
     margin-right: 6px;
