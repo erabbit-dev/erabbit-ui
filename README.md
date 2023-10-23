@@ -36,8 +36,8 @@ A Vue 3 based component library for erabbit web applications
 | `Dialog`          | ❎        | Dialog Component          |
 | `showDialog`      | ❎        | showDialog Function       |
 | `Icon`            | ✅        | Icon Component            |
-| `Message`         | ❎        | Message Component         |
-| `showMessage`     | ❎        | showMessage Function      |
+| `Message`         | ✅        | Message Component         |
+| `showMessage`     | ✅        | showMessage Function      |
 | `ImageView`       | ❎        | ImageView Component       |
 | `InfiniteLoading` | ❎        | InfiniteLoading Component |
 | `InputNumber`     | ✅        | InputNumber Component     |

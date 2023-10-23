@@ -1,6 +1,6 @@
 {
   "name": "erabbit",
-  "version": "0.2.6",
+  "version": "0.3.8",
   "description": "Erabbit UI Components built with Vue3",
   "main": "index.js",
   "scripts": {
