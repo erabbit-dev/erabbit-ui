@@ -73,10 +73,9 @@ Practical & Beautiful component library, A Vue 3 based component library for era
 | `Confirm`         | <input type="checkbox" checked disabled />  | Confirm Component         |
 | `showConfirm`     | <input type="checkbox" checked disabled />  | showConfirm Function      |
 | `Dialog`          | <input type="checkbox"  disabled />         | Dialog Component          |
-| `showDialog`      | <input type="checkbox"  disabled />         | showDialog Function       |
 | `Icon`            | <input type="checkbox"  checked disabled /> | Icon Component            |
-| `Message`         | <input type="checkbox"  disabled />         | Message Component         |
-| `showMessage`     | <input type="checkbox"  disabled />         | showMessage Function      |
+| `Message`         | <input type="checkbox"  checked disabled /> | Message Component         |
+| `showMessage`     | <input type="checkbox"  checked disabled /> | showMessage Function      |
 | `ImageView`       | <input type="checkbox"  disabled />         | ImageView Component       |
 | `InfiniteLoading` | <input type="checkbox"  disabled />         | InfiniteLoading Component |
 | `InputNumber`     | <input type="checkbox"  checked disabled /> | InputNumber Component     |
