@@ -1,0 +1,96 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default Message 1`] = `"<div class=\\"er-message er-message--info\\"><span class=\\"er-message__icon\\"><svg viewBox=\\"64 64 896 896\\" focusable=\\"false\\" width=\\"1em\\" height=\\"1em\\" fill=\\"currentColor\\" aria-hidden=\\"true\\"><path d=\\"M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z\\"></path></svg></span><span class=\\"er-message__text\\">test</span></div>"`;
+
+exports[`should show message when exec  showLoadingMessage 1`] = `
+<body>
+  <div
+    data-v-app=""
+  >
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <div
+    class="er-message-wrapper"
+  >
+    <transition-group-stub
+      appear="false"
+      css="true"
+      name="msg"
+      persisted="false"
+    >
+      
+      <div
+        class="er-message er-message--info"
+        id="er-message_1"
+        style="width: 0px;"
+      >
+        <div
+          class="er-icon er-icon--loading er-message__icon"
+          style="font-size: 1em;"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="0 0 1024 1024"
+            width="1em"
+          >
+            <path
+              d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+            />
+          </svg>
+        </div>
+        <span
+          class="er-message__text"
+        >
+          Loading...
+        </span>
+      </div>
+      
+    </transition-group-stub>
+  </div>
+  
+</body>
+`;
+
+exports[`should show message when exec showMessage 1`] = `
+<body>
+  <div
+    data-v-app=""
+  >
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+  <div
+    class="er-message-wrapper"
+  >
+    <transition-group-stub
+      appear="false"
+      css="true"
+      name="msg"
+      persisted="false"
+    >
+      
+      <div
+        class="er-message er-message--success"
+        id="er-message_0"
+        style="width: 0px;"
+      >
+        <i
+          class="er-icon er-icon--arrow-up er-message__icon"
+          style="font-size: 1em;"
+        />
+        <span
+          class="er-message__text"
+        >
+          This is message
+        </span>
+      </div>
+      
+    </transition-group-stub>
+  </div>
+  
+</body>
+`;
