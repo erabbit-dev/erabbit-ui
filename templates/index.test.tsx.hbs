@@ -1,0 +1,7 @@
+import { {{UpperCamelCase name}} } from '..'
+import { mount } from '@vue/test-utils'
+
+test('should render default {{UpperCamelCase name}}', () => {
+  const wrapper = mount({{UpperCamelCase name}})
+  expect(wrapper.html()).toMatchSnapshot()
+})

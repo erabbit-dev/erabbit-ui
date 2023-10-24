@@ -1,0 +1,15 @@
+import { defineComponent } from 'vue'
+import { createNamespace } from '../utils'
+
+const [className, bem] = createNamespace('{{name}}')
+
+export default defineComponent({
+  name: 'Er{{UpperCamelCase name}}',
+  setup() {
+    return () => (
+      <div class={className}>
+        <div class={bem('__wrapper')}>{{ name }}</div>
+      </div>
+    )
+  },
+})

@@ -1,0 +1,9 @@
+import _{{UpperCamelCase name}} from './{{UpperCamelCase name}}'
+
+export const {{UpperCamelCase name}} = _{{UpperCamelCase name}}
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    Er{{UpperCamelCase name}}: typeof {{UpperCamelCase name}}
+  }
+}

@@ -22,7 +22,8 @@
     "commitlint": "commitlint --config commitlint.config.js -e -V",
     "build-plugin": "pnpm --dir packages/erabbit-auto-import build",
     "dev-play": "pnpm --dir packages/playground dev --port 5000",
-    "build-play": "pnpm --dir packages/playground build"
+    "build-play": "pnpm --dir packages/playground build",
+    "plop": "plop"
   },
   "lint-staged": {
     "*.md": [
@@ -56,6 +57,7 @@
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
     "picocolors": "^1.0.0",
+    "plop": "^4.0.0",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.69.0",
     "terser": "^5.21.0",
