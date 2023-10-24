@@ -24,29 +24,28 @@ A Vue 3 based component library for erabbit web applications
 
 ## Components List
 
-| Name              | Completed | Description               |
-| ----------------- | --------- | ------------------------- |
-| `Area`            | ✅        | Area Component            |
-| `Button`          | ✅        | Button Component          |
-| `Breadcrumb`      | ✅        | Breadcrumb Component      |
-| `Carousel`        | ✅        | Carousel Component        |
-| `Checkbox`        | ✅        | Checkbox Component        |
-| `Confirm`         | ✅        | Confirm Component         |
-| `showConfirm`     | ✅        | showConfirm Function      |
-| `Dialog`          | ❎        | Dialog Component          |
-| `showDialog`      | ❎        | showDialog Function       |
-| `Icon`            | ✅        | Icon Component            |
-| `Message`         | ✅        | Message Component         |
-| `showMessage`     | ✅        | showMessage Function      |
-| `ImageView`       | ❎        | ImageView Component       |
-| `InfiniteLoading` | ❎        | InfiniteLoading Component |
-| `InputNumber`     | ✅        | InputNumber Component     |
-| `More`            | ❎        | More Component            |
-| `Pagination`      | ❎        | Pagination Component      |
-| `Skeleton`        | ❎        | Skeleton Component        |
-| `Sku`             | ✅        | Sku Component             |
-| `Step`            | ✅        | Step Component            |
-| `Tab`             | ✅        | Tab Component             |
+| Name                          | Completed | Description               |
+| ----------------------------- | --------- | ------------------------- |
+| `Area`                        | ✅        | Area Component            |
+| `Button`                      | ✅        | Button Component          |
+| `Breadcrumb` `BreadcrumbItem` | ✅        | Breadcrumb Component      |
+| `Carousel` `CarouselItem`     | ✅        | Carousel Component        |
+| `Checkbox`                    | ✅        | Checkbox Component        |
+| `Confirm`                     | ✅        | Confirm Component         |
+| `showConfirm`                 | ✅        | showConfirm Function      |
+| `Dialog`                      | ❎        | Dialog Component          |
+| `Icon`                        | ✅        | Icon Component            |
+| `Message`                     | ✅        | Message Component         |
+| `showMessage`                 | ✅        | showMessage Function      |
+| `ImageView`                   | ❎        | ImageView Component       |
+| `InfiniteLoading`             | ❎        | InfiniteLoading Component |
+| `InputNumber`                 | ✅        | InputNumber Component     |
+| `More`                        | ❎        | More Component            |
+| `Pagination`                  | ❎        | Pagination Component      |
+| `Skeleton`                    | ❎        | Skeleton Component        |
+| `Sku`                         | ✅        | Sku Component             |
+| `Step` `StepItem`             | ✅        | Step Component            |
+| `Tab` `TabPanel`              | ✅        | Tab Component             |
 
 ## All Contributors
 
