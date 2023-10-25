@@ -10,6 +10,7 @@ export * from './step'
 export * from './tab'
 export * from './sku'
 export * from './message'
+export * from './image-view'
 
 // global install
 import { installer } from './installer'

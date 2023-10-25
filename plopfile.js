@@ -41,6 +41,19 @@ module.exports = function (plop) {
         path: 'packages/erabbit/src/{{name}}/__tests__/index.test.tsx',
         templateFile: 'templates/index.test.tsx.hbs',
       },
+      {
+        type: 'modify',
+        path: 'packages/erabbit/src/installer.ts',
+        pattern: /\nconst components = \[/,
+        template:
+          "import { {{UpperCamelCase name}} } from './{{name}}'\n\nconst components = [\n  {{{UpperCamelCase name}}},",
+      },
+      {
+        type: 'modify',
+        path: 'packages/erabbit/src/index.ts',
+        pattern: /\n\/\/ global install/,
+        template: "export * from './{{name}}'\n\n// global install",
+      },
     ],
   })
 }

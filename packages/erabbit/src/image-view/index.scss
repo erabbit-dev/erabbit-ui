@@ -1,0 +1,11 @@
+:root{
+  --er-image-view-color: var(--er-primary);
+}
+
+.image-view {
+  display: flex;
+  
+  &__wrapper {
+    display: flex;
+  }
+}
