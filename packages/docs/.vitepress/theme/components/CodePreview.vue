@@ -37,7 +37,7 @@ export default defineComponent({
       const files = {
         'App.vue': decodeURIComponent(props.code)
       }
-      const url = 'https://erabbit-ui-playground.vercel.app/#'
+      const url = 'https://erabbit-playground.zhousg.top/#'
       window.open(url + utoa(JSON.stringify(files)))
     }
     return {

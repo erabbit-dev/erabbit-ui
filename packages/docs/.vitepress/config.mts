@@ -42,7 +42,7 @@ export default defineConfig({
     nav: [
       { text: 'Get Start', link: '/installation' },
       { text: 'Components Docs', link: '/components-docs/button' },
-      { text: 'Playground', link: 'https://erabbit-ui-playground.vercel.app/' },
+      { text: 'Playground', link: 'https://erabbit-playground.zhousg.top/' },
     ],
 
     footer: {
